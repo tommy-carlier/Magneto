@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C66D6625-4053-4BDD-B273-0CE80E956845}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TC.Magneto</RootNamespace>
+    <AssemblyName>TC.Magneto</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Magneto.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\TC.Magneto.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Releases\TC.Magneto.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Circuit.cs" />
+    <Compile Include="Compiler.cs" />
+    <Compile Include="CoreFunctions.cs" />
+    <Compile Include="Curl.cs" />
+    <Compile Include="DataType.cs" />
+    <Compile Include="DataTypes.cs" />
+    <Compile Include="MagnetoException.cs" />
+    <Compile Include="Modules\ConstantAttribute.cs" />
+    <Compile Include="Modules\ConversionModule.cs" />
+    <Compile Include="Modules\FunctionArgumentSignature.cs" />
+    <Compile Include="Modules\FunctionAttribute.cs" />
+    <Compile Include="Modules\FunctionSignature.cs" />
+    <Compile Include="Magnetic.cs" />
+    <Compile Include="Modules\IOModule.cs" />
+    <Compile Include="Modules\MagnetoModule.cs" />
+    <Compile Include="Modules\MathModule.cs" />
+    <Compile Include="Modules\ModuleManager.cs" />
+    <Compile Include="Modules\StringModule.cs" />
+    <Compile Include="MsilGenerator.cs" />
+    <Compile Include="Parsing\Addition.cs" />
+    <Compile Include="Parsing\AndExpression.cs" />
+    <Compile Include="Parsing\Assignment.cs" />
+    <Compile Include="Parsing\BinaryExpression.cs" />
+    <Compile Include="Parsing\BooleanBinaryExpression.cs" />
+    <Compile Include="Parsing\BreakStatement.cs" />
+    <Compile Include="Parsing\CaseStatement.cs" />
+    <Compile Include="Parsing\Comparison.cs" />
+    <Compile Include="Parsing\ComparisonOperator.cs" />
+    <Compile Include="Parsing\Concatenation.cs" />
+    <Compile Include="Parsing\Division.cs" />
+    <Compile Include="Parsing\ExitStatement.cs" />
+    <Compile Include="Parsing\Expression.cs" />
+    <Compile Include="Parsing\ForLoopStatement.cs" />
+    <Compile Include="Parsing\FunctionCall.cs" />
+    <Compile Include="Parsing\FunctionCallStatement.cs" />
+    <Compile Include="Parsing\IExpressionVisitor.cs" />
+    <Compile Include="Parsing\IfStatement.cs" />
+    <Compile Include="Parsing\IStatementVisitor.cs" />
+    <Compile Include="Parsing\Literal.cs" />
+    <Compile Include="Parsing\LoopStatement.cs" />
+    <Compile Include="Parsing\ModuloExpression.cs" />
+    <Compile Include="Parsing\Multiplication.cs" />
+    <Compile Include="Parsing\Negation.cs" />
+    <Compile Include="Parsing\NotExpression.cs" />
+    <Compile Include="Parsing\NumericBinaryExpression.cs" />
+    <Compile Include="Parsing\OrExpression.cs" />
+    <Compile Include="Parsing\Parser.cs" />
+    <Compile Include="Parsing\ParserContext.cs" />
+    <Compile Include="Parsing\ParserException.cs" />
+    <Compile Include="Parsing\ParserNode.cs" />
+    <Compile Include="Parsing\PowerExpression.cs" />
+    <Compile Include="Parsing\RepeatLoopStatement.cs" />
+    <Compile Include="Parsing\Statement.cs" />
+    <Compile Include="Parsing\StatementCollection.cs" />
+    <Compile Include="Parsing\Subtraction.cs" />
+    <Compile Include="Parsing\SwitchStatement.cs" />
+    <Compile Include="Parsing\UnaryExpression.cs" />
+    <Compile Include="Parsing\Variable.cs" />
+    <Compile Include="Parsing\VariableDeclaration.cs" />
+    <Compile Include="Parsing\VariableExpression.cs" />
+    <Compile Include="Parsing\VariableReference.cs" />
+    <Compile Include="Parsing\WhileLoopStatement.cs" />
+    <Compile Include="Parsing\XorExpression.cs" />
+    <Compile Include="Polarity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReflectionUtilities.cs" />
+    <Compile Include="TextPosition.cs" />
+    <Compile Include="Tokenizing\CommentToken.cs" />
+    <Compile Include="Tokenizing\IdentifierToken.cs" />
+    <Compile Include="Tokenizing\IntegerLiteralToken.cs" />
+    <Compile Include="Tokenizing\LiteralToken.cs" />
+    <Compile Include="Tokenizing\PredefinedDataTypeToken.cs" />
+    <Compile Include="Tokenizing\PredefinedKeyword.cs" />
+    <Compile Include="Tokenizing\PredefinedKeywordToken.cs" />
+    <Compile Include="Tokenizing\PredefinedLiteral.cs" />
+    <Compile Include="Tokenizing\PredefinedLiteralToken.cs" />
+    <Compile Include="Tokenizing\PredefinedSymbol.cs" />
+    <Compile Include="Tokenizing\PredefinedSymbolToken.cs" />
+    <Compile Include="Tokenizing\PredefinedWords.cs" />
+    <Compile Include="Tokenizing\RealLiteralToken.cs" />
+    <Compile Include="Tokenizing\StringLiteralToken.cs" />
+    <Compile Include="Tokenizing\Token.cs" />
+    <Compile Include="Tokenizing\Tokenizer.cs" />
+    <Compile Include="Tokenizing\TokenizerException.cs" />
+    <Compile Include="Tokenizing\TokenType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Class Diagrams\Expressions.cd" />
+    <None Include="Class Diagrams\Statements.cd" />
+    <None Include="Class Diagrams\Tokens.cd" />
+    <None Include="Magneto.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Documentation\langguide.html" />
+    <Content Include="Documentation\style.css" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

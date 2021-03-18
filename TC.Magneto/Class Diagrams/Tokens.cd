@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TC.Magneto.Tokenizing.Token">
+    <Position X="6.25" Y="0.5" Width="1.75" />
+    <Members>
+      <Method Name="Equals" Hidden="true" />
+      <Field Name="fEndPosition" Hidden="true" />
+      <Field Name="fStartPosition" Hidden="true" />
+      <Field Name="fTokenType" Hidden="true" />
+      <Method Name="Token" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAgAAAQEAAAAAAEwAAAAAACAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Tokenizing\Token.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Tokenizing.CommentToken">
+    <Position X="11.75" Y="2.75" Width="2" />
+    <Members>
+      <Method Name="CommentToken" Hidden="true" />
+      <Field Name="fComment" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Tokenizing\CommentToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Tokenizing.IdentifierToken">
+    <Position X="9.5" Y="2.75" Width="2" />
+    <Members>
+      <Field Name="fIdentifier" Hidden="true" />
+      <Method Name="IdentifierToken" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAEAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Tokenizing\IdentifierToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Tokenizing.LiteralToken">
+    <Position X="7.25" Y="2.75" Width="2" />
+    <Members>
+      <Field Name="fDataType" Hidden="true" />
+      <Method Name="LiteralToken" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAEAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tokenizing\LiteralToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Tokenizing.PredefinedDataTypeToken">
+    <Position X="2.75" Y="2.75" Width="2" />
+    <Members>
+      <Field Name="fDataType" Hidden="true" />
+      <Method Name="PredefinedDataTypeToken" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAEAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tokenizing\PredefinedDataTypeToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Tokenizing.PredefinedKeywordToken">
+    <Position X="0.5" Y="2.75" Width="2" />
+    <Members>
+      <Method Name="Equals" Hidden="true" />
+      <Field Name="fKeyword" Hidden="true" />
+      <Method Name="PredefinedKeywordToken" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAQAAAAAAAgAAAAA=</HashCode>
+      <FileName>Tokenizing\PredefinedKeywordToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Tokenizing.PredefinedSymbolToken">
+    <Position X="5" Y="2.75" Width="2" />
+    <Members>
+      <Method Name="Equals" Hidden="true" />
+      <Field Name="fSymbol" Hidden="true" />
+      <Method Name="PredefinedSymbolToken" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAAAAAAAAAACAQ=</HashCode>
+      <FileName>Tokenizing\PredefinedSymbolToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Tokenizing.IntegerLiteralToken">
+    <Position X="11.75" Y="4.75" Width="2" />
+    <Members>
+      <Field Name="fValue" Hidden="true" />
+      <Method Name="IntegerLiteralToken" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAEAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Tokenizing\IntegerLiteralToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Tokenizing.PredefinedLiteralToken">
+    <Position X="7.25" Y="4.75" Width="2" />
+    <Members>
+      <Method Name="Equals" Hidden="true" />
+      <Field Name="fValue" Hidden="true" />
+      <Method Name="GetType" Hidden="true" />
+      <Method Name="PredefinedLiteralToken" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAEgAAAAAAAAAAAAAEAAAAgAAAAAAA=</HashCode>
+      <FileName>Tokenizing\PredefinedLiteralToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Tokenizing.RealLiteralToken">
+    <Position X="14" Y="4.75" Width="2" />
+    <Members>
+      <Field Name="fValue" Hidden="true" />
+      <Method Name="RealLiteralToken" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAEAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Tokenizing\RealLiteralToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Tokenizing.StringLiteralToken">
+    <Position X="9.5" Y="4.75" Width="2" />
+    <Members>
+      <Field Name="fValue" Hidden="true" />
+      <Method Name="StringLiteralToken" Hidden="true" />
+      <Method Name="ToString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAEAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Tokenizing\StringLiteralToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="TC.Magneto.Tokenizing.PredefinedKeyword">
+    <Position X="0.5" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IBKAACBAAACAIoAAEQAEBAAAKCQIgAAgIAIAAAEAAAA=</HashCode>
+      <FileName>Tokenizing\PredefinedKeyword.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TC.Magneto.Tokenizing.PredefinedLiteral">
+    <Position X="7.25" Y="6" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AICAgAAAAACAIAAAAAAAAAAAEAQAAAAAAAgAAAGAAAA=</HashCode>
+      <FileName>Tokenizing\PredefinedLiteral.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TC.Magneto.Tokenizing.PredefinedSymbol">
+    <Position X="5" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ACBAAAAAACAAAEAQgAAAAQABAAAAAEgAACAAAQVAAGA=</HashCode>
+      <FileName>Tokenizing\PredefinedSymbol.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TC.Magneto.Tokenizing.TokenType">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAEAAIAAAAAAAAAAAAAAAAAAQAAAAAAQAEACAA=</HashCode>
+      <FileName>Tokenizing\TokenType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TC.Magneto.DataType">
+    <Position X="2.75" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAwAAEACAAAAgAAgAAACAAAAEAAAA=</HashCode>
+      <FileName>DataType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

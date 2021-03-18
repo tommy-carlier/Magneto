@@ -1,0 +1,22 @@
+﻿body, th, td { color: #000; background: #FFF; font: 11pt Calibri, Tahoma, Arial, sans-serif; }
+a { color: #00A; text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:visited { color: #90A; }
+pre, code, .code, .code td { color: #060; font: 10pt/12pt Consolas, 'Lucida Console', 'Courier New', monospace; }
+p, table, pre, li { margin: 1ex 2em 1ex 3em; }
+h2 { margin-left: 1em; color: #069; }
+h3 { margin-left: 2em; color: #A00; }
+table { border-collapse: collapse; }
+th { font-weight: bold; border-bottom: solid 1px #CCC; text-align: left; }
+th, td { vertical-align: top; padding: 0.5ex 0.5em 0.5ex 0.2em; }
+#title { font: italic 22pt Cambria, Georgia, 'Times New Roman', serif; color: #AAA; float: right; }
+#footer { font-size: 85%; text-align: center; margin-top: 2ex; padding-top: 1ex; border-top: solid 1px #CCC; }
+
+@media print
+{
+	body, th, td { font: 9pt Cambria, Georgia, 'Times New Roman', serif; }
+	a, a:visited { color: #000; }
+	th { font-weight: bold; }
+	pre, code, .code, .code td { font-size: 8pt; line-height: 10pt; page-break-inside: avoid; }
+	h1, h2, h3, tr { page-break-after: avoid; }
+}

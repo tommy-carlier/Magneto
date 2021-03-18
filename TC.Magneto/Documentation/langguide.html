@@ -1,0 +1,513 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Magneto: Language Guide</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<div id="title">Magneto: Language Guide</div>
+<h1>Language Definition</h1>
+<h2>General rules</h2>
+<ul>
+<li>Keywords, variable names and function names are <b>case-insensitive</b>.</li>
+<li>Strings are <b>case-sensitive</b>.</li>
+<li>Variables are <b>strongly typed</b>: they have a fixed type that is checked at compile-time. Variables have to be declared before they are used.</li>
+<li>Implicit conversion between types is only allowed from <code>integer</code> to <code>real</code>.</li>
+</ul>
+
+<h2>Data types</h2>
+<h3>String</h3>
+<p>A <b>string</b> is a collection of Unicode characters. It's the equivalent of the .NET type <code>System.String</code>.</p>
+<p>A string literal is a sequence of characters, enclosed in double quotes: <code>"The quick brown fox jumps over the lazy dog."</code>.</p>
+
+<h3>Integer</h3>
+<p>An <b>integer</b> is a 64-bit integer number. It's the equivalent of the .NET type <code>System.Int64</code>.</p>
+<p>An integer literal is a sequence of digits: <code>123</code>, <code>42</code>, <code>3141592654</code>.</p>
+
+<h3>Real</h3>
+<p>A <b>real</b> is a decimal number. It's the equivalent of the .NET type <code>System.Decimal</code>.</p>
+<p>A real literal is a sequence of digits, followed by a decimal point and another sequence of digits: <code>1.0</code>, <code>3.141590654</code>, <code>123.456</code>.</p>
+
+<h3>Logic</h3>
+<p>A <b>logic</b> is one of the literals <code>true</code> or <code>false</code>. It's the equivalent of the .NET type <code>System.Boolean</code>.</p>
+<p>A logic has boolean behavior: it supports the boolean operators <code>and</code>, <code>or</code>, <code>xor</code> and <code>not</code>.</p>
+
+<h3>Polarity</h3>
+<p>A <b>polarity</b> is one of the literals <code>pos</code> (positive) or <code>neg</code> (negative). It's the equivalent of the custom .NET type <code>TC.Magneto.Polarity</code>.</p>
+<p>A polarity does not have boolean behavior by default. To give it boolean behavior, use one of these boolean declarations:</p>
+<pre>pos := true
+pos := false
+neg := true
+neg := false</pre>
+<p>These boolean declarations cannot be put inside if-statements or loops.</p>
+
+<h3>Magnetic</h3>
+<p>A <b>magnetic</b> is one of the literals <code>north</code> or <code>south</code>. It's the equivalent of the custom .NET type <code>TC.Magneto.Magnetic</code>.</p>
+<p>A magnetic does not have boolean behavior by default. To give it boolean behavior, use one of these boolean declarations:</p>
+<pre>north := true
+north := false
+south := true
+south := false</pre>
+<p>These boolean declarations cannot be put inside if-statements or loops.</p>
+
+<h3>Curl</h3>
+<p>A <b>curl</b> is one of the literals <code>cw</code> (clockwise) or <code>ccw</code> (counterclockwise). It's the equivalent of the custom .NET type <code>TC.Magneto.Curl</code>.</p>
+<p>A curl does not have boolean behavior by default. To give it boolean behavior, use one of these boolean declarations:</p>
+<pre>cw  := true
+cw  := false
+ccw := true
+ccw := false</pre>
+<p>These boolean declarations cannot be put inside if-statements or loops.</p>
+
+<h3>Circuit</h3>
+<p>A <b>circuit</b> is one of the literals <code>open</code> or <code>closed</code>. It's the equivalent of the custom .NET type <code>TC.Magneto.Circuit</code>.</p>
+<p>A circuit does not have boolean behavior by default. To give it boolean behavior, use one of these boolean declarations:</p>
+<pre>open   := true
+open   := false
+closed := true
+closed := false</pre>
+<p>These boolean declarations cannot be put inside if-statements or loops.</p>
+
+<h2>Comments</h2>
+<p>Magneto supports 2 types of comments:</p>
+<ul>
+<li>Single-line comments: start with <code>--</code> and reach until the end of the line.</li>
+<li>Multi-line comments: are enclosed between <code>{</code> and <code>}</code> and can span multiple lines.</li>
+</ul>
+
+<h2>Expressions</h2>
+<p>Expressions are instructions that return a value.</p>
+
+<h3>Relational operators</h3>
+<p>Magneto has the following relational operators, which return a logical value (<code>true</code> or <code>false</code>):</p>
+<table>
+<thead><tr><th>Operator</th><th>Meaning</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td class='code'>==</td><td><i>is equal to</i></td><td class='code'>a == b</td></tr>
+<tr><td class='code'>&lt;&gt;</td><td><i>is not equal to</i></td><td class='code'>a &lt;&gt; b</td></tr>
+<tr><td class='code'>&lt;</td><td><i>is less than</i></td><td class='code'>a &lt; b</td></tr>
+<tr><td class='code'>&gt;</td><td><i>is greater than</i></td><td class='code'>a &gt; b</td></tr>
+<tr><td class='code'>&lt;=</td><td><i>is less than or equal to</i></td><td class='code'>a &lt;= b</td></tr>
+<tr><td class='code'>&gt;=</td><td><i>is greater than or equal to</i></td><td class='code'>a &gt;= b</td></tr>
+</tbody>
+</table>
+<p><code>==</code> and <code>&lt;&gt;</code> can any compare 2 values of the same type. A <code>real</code> can also be compared with an <code>integer</code> (and vice versa).</p>
+<p>The other operators can only compare strings with strings or numbers with numbers.</p>
+
+<h3>Logical operators</h3>
+<p>Magneto has the following logical operators, which are used to determine the <i>truth</i> of an expression:</p>
+<table>
+<thead><tr><th>Operator</th><th>Meaning</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td class='code'>and</td><td><i>true if both values are true, otherwise false</i></td><td class='code'>a and b</td></tr>
+<tr><td class='code'>or</td><td><i>true if one of the values (or both) is true, otherwise false</i></td><td class='code'>a or b</td></tr>
+<tr><td class='code'>xor</td><td><i>true if the values are different, otherwise false</i></td><td class='code'>a xor b</td></tr>
+<tr><td class='code'>not</td><td><i>true if the value false, otherwise false</i></td><td class='code'>not a</td></tr>
+</tbody>
+</table>
+<p>These operators can be applied to values of type <code>logic</code> and return a value of type <code>logic</code>.</p>
+<p>If you added the appropriate boolean declarations, the following types can also be used: <code>polarity</code>,
+<code>magnetic</code>, <code>curl</code> and <code>circuit</code>. In those cases, the returned value is of the same type.</p>
+<p>Here's the truth-table for the binary operators:</p>
+<table>
+<thead><tr><th>Value 1</th><th>Value 2</th><th>AND</th><th>OR</th><th>XOR</th></tr></thead>
+<tbody class='code'>
+<tr><td>false</td><td>false</td><td>false</td><td>false</td><td>false</td></tr>
+<tr><td>false</td><td>true</td><td>false</td><td>true</td><td>true</td></tr>
+<tr><td>true</td><td>false</td><td>false</td><td>true</td><td>true</td></tr>
+<tr><td>true</td><td>true</td><td>true</td><td>true</td><td>false</td></tr>
+</tbody>
+</table>
+<p>Here's the truth-table for the unary operator:</p>
+<table>
+<thead><tr><th>Value</th><th>NOT</th></tr></thead>
+<tbody class='code'>
+<tr><td>false</td><td>true</td></tr>
+<tr><td>true</td><td>false</td></tr>
+</tbody>
+</table>
+<p>The binary operators have short-circuit evaluation: if the left expression suffices to determine the result of the operation, the right expression is not evaluated.
+See <a href="http://en.wikipedia.org/wiki/Short-circuit_evaluation">this Wikipedia article about short-circuit evaluation</a>.</p>
+
+<h3>Arithmetic operators</h3>
+<p>Magneto has the following arithmetic operators, which perform calculations on numeric expressions (of type <code>integer</code> or <code>real</code>):</p>
+<table>
+<thead><tr><th>Operator</th><th>Meaning</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td class='code'>+</td><td><i>addition</i></td><td class='code'>a + b</td></tr>
+<tr><td class='code'>-</td><td><i>subtraction</i></td><td class='code'>a - b</td></tr>
+<tr><td class='code'>*</td><td><i>multiplication</i></td><td class='code'>a * b</td></tr>
+<tr><td class='code'>/</td><td><i>division</i></td><td class='code'>a / b</td></tr>
+<tr><td class='code'>mod</td><td><i>remainder (or modulo)</i></td><td class='code'>a mod b</td></tr>
+<tr><td class='code'>^</td><td><i>raising to a power</i></td><td class='code'>a ^ b</td></tr>
+<tr><td class='code'>+</td><td><i>unary plus</i></td><td class='code'>+a</td></tr>
+<tr><td class='code'>-</td><td><i>negation</i></td><td class='code'>-a</td></tr>
+</tbody>
+</table>
+<p>If the operators are applied to integer values, the result is an integer value. If they are applied to real values, the result is a real value.
+If they are applied to an integer value and a real value (or vice versa), the result is a real value. The only exception is the power-operator <code>^</code>:
+the exponent has to be an integer value and the result is always a real value.</p>
+
+<h3>String operators</h3>
+<p>Magneto has 1 string operator: the concatenation operator <code>&amp;</code>, which concatenates a sequence of values (of any type) into a single
+string. Each value is implicitely converted to a string before concatenating. Example: <code>1 & " + " & 2 & " = " & 1 + 2</code></p>
+
+<h3>Function calls</h3>
+<p>Built-in or external functions can be called like this:</p>
+<pre>x := length("abc def") -- a function with 1 argument
+s := left("abcdef", 3) -- a function with 2 arguments
+writeLine("abc def")   -- a function that does not return a value (a procedure)
+swap(ref a, ref b)     -- a function with arguments that are passed by reference</pre>
+
+<h3>Precedence</h3>
+<p>The precedence of operators in expressions is as follows:</p>
+<table>
+<tbody>
+<tr><td>Highest precedence:</td><td>literals, variables, function calls</td></tr>
+<tr><td></td><td>unary minus (<code>-</code>), unary plus (<code>+</code>), logical <code>not</code></td></tr>
+<tr><td></td><td>power raising (<code>^</code>)</td></tr>
+<tr><td></td><td>multiplication (<code>*</code>), division (<code>/</code>), remainder (<code>mod</code>)</td></tr>
+<tr><td></td><td>addition (<code>+</code>), subtraction (<code>-</code>)</td></tr>
+<tr><td></td><td>concatenation (<code>&amp;</code>)</td></tr>
+<tr><td></td><td>comparison: <code>==</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code></td></tr>
+<tr><td></td><td>logical <code>xor</code></td></tr>
+<tr><td></td><td>logical <code>or</code></td></tr>
+<tr><td>Lowest precedence:</td><td>logical <code>and</code></td></tr>
+</tbody>
+</table>
+<p>Operators on the same line have the same precedence and are evaluated from left to right. To force any order of evaluation, place round braces
+<code>( )</code> around an expression.</p>
+
+<h2>Statements</h2>
+<p>Statements are instructions that don't return a value.</p>
+
+<h3>Boolean declaration</h3>
+<p>A boolean declaration gives a boolean meaning to one of the following types: <code>polarity</code>, <code>magnetic</code>, <code>curl</code>
+and <code>circuit</code>. To make one of these types boolean, just assign the literal <code>true</code> or <code>false</code> to one of its
+values. If you give a value the meaning <code>true</code>, the opposite value automatically becomes <code>false</code>. Examples:</p>
+<pre>neg := false  -- pos becomes true
+north := true -- south becomes false</pre>
+
+<h3>Variable declaration</h3>
+<p>Variables have to be declared before they can be used. There are 2 types of variable declarations: <b>typed declarations</b> and <b>assigned declarations</b>.</p>
+<p>A <b>typed declaration</b> just declares the type of a variable. Its initial value is the default value of the specified type. Examples:</p>
+<pre>var n : integer -- n is an integer variable
+var x, y : real -- both x and y are real variables
+var s : string  -- s is a string variable</pre>
+<p>An <b>assigned declaration</b> declares a new variable and gives it an initial value. Its type is the type of the expression that is assigned to it. Examples:</p>
+<pre>var n := 12345  -- n is an integer variable with an initial value of 12345
+var x, y := 2.0 -- both x and y are real variables with an initial value of 2.0
+var s := "abc"  -- s is a string variable with an initial value of "abc"</pre>
+<p>Multiple variable declarations can be combined:</p>
+<pre>var n : integer, x, y : real, s := "abc", a := pos, b := north</pre>
+<p>If a variable declaration is put inside a containing statement (if, else, loop, ...), the scope of the declared variables is limited to the containing statement.</p>
+
+<h3>Assignment</h3>
+<p>An assignment assigns the value of an expression to a (previously declared) variable:</p>
+<pre>x := x + 1
+s := x & ', ' & y</pre>
+
+<h3>Function call statement</h3>
+<p>A function can be called as a statement, ignoring its return value. Some functions have no return value (procedures) and can only be called like this:</p>
+<pre>writeLine("abcdef")</pre>
+
+<h3>If-statement</h3>
+<p>An <code>if</code>-statement tests a condition and executes a series of statements of the condition evaluates to <code>true</code>.
+There may be optional <code>elsif</code> and <code>else</code> clauses:</p>
+<pre>if a &lt; b then
+    x := 1
+    y := 1
+end if
+
+if a &lt; b then
+    x := a
+else
+    x := b
+end if
+
+if a &lt; b then
+    x := -1
+elsif a &gt; b then
+    x := +1
+else
+    x := 0
+end if</pre>
+
+<h3>While-loop</h3>
+<p>A <code>while</code>-loop repeatedly executes a series of statements, while a condition evaluates to <code>true</code>. The condition is evaluated
+before the statements are executed:</p>
+<pre>while x &lt; y and a &gt; b do
+    x := x + 1
+    a := a - 1
+end while</pre>
+
+<h3>Repeat-loop</h3>
+<p>A <code>repeat</code>-loop repeatedly executes a series of statements, until a condition evaluates to <code>true</code>. The condition is evaluated
+after the statements are executed:</p>
+<pre>repeat
+    x := x + 1
+until x == y</pre>
+
+<h3>For-loop</h3>
+<p>A <code>for</code>-loop repeatedly executes a series of statements while keeping a loop variable.<br />
+The loop variable is implicitly declared by the loop and can only be used inside the loop body:</p>
+<pre>for i := 1 to 100 do
+    writeLine(i)
+end for
+
+for i := 1 to 100 by 5 do
+    writeLine(i)
+end for
+
+for i := 100 to 1 by -2 do
+    writeLine(i)
+end for</pre>
+
+<h3>Break and exit</h3>
+<p>The <code>break</code>-statement breaks out of the current loop. The <code>exit</code>-statement terminates the application.</p>
+
+<h3>Switch-statement</h3>
+<p>A <code>switch</code>-statement matches an expression against multiple expressions of the same type and executes the statements of the first
+case that matches:</p>
+<pre>switch x
+    case 0 then
+        writeLine("x is zero")
+    case 1 then
+        writeLine("x is one")
+    case else
+        writeLine("x is neither zero nor one")
+end switch</pre>
+
+<h1>Built-in functions and constants</h1>
+<p>The following functions and constants are built into the language.</p>
+
+<h2>Conversion functions</h2>
+<p>The following functions convert values from one type to another.</p>
+
+<h3>toString(value)</h3>
+<p>Converts <code>value</code> to type <code>string</code>. <code>value</code> can be of any type.</p>
+
+<h3>toInteger(value)</h3>
+<p>Converts <code>value</code> to type <code>integer</code>. <code>value</code> can be of type <code>string</code>, <code>real</code> or <code>integer</code>.</p>
+
+<h3>toReal(value)</h3>
+<p>Converts <code>value</code> to type <code>real</code>. <code>value</code> can be of type <code>string</code>, <code>integer</code> or <code>real</code>.</p>
+
+<h3>toLogic(value)</h3>
+<p>Converts <code>value</code> to type <code>logic</code>. <code>value</code> can be of type <code>string</code>
+(<code>"true"</code> or <code>"false"</code>) or <code>logic</code>.</p>
+
+<h3>toPolarity(value)</h3>
+<p>Converts <code>value</code> to type <code>polarity</code>. <code>value</code> can be of type <code>string</code>
+(<code>"p"</code>, <code>"pos"</code>, <code>"positive"</code>, <code>"+"</code>, <code>"n"</code>, <code>"neg"</code>,
+<code>"negative"</code> or <code>"-"</code>) or <code>polarity</code>.</p>
+
+<h3>toMagnetic(value)</h3>
+<p>Converts <code>value</code> to type <code>magnetic</code>. <code>value</code> can be of type <code>string</code>
+(<code>"n"</code>, <code>"north"</code>, <code>"s"</code> or <code>"south"</code>) or <code>magnetic</code>.</p>
+
+<h3>toCurl(value)</h3>
+<p>Converts <code>value</code> to type <code>curl</code>. <code>value</code> can be of type <code>string</code>
+(<code>"cw"</code>, <code>"clockwise"</code>, <code>"ccw"</code> or <code>"counterclockwise"</code>) or <code>curl</code>.</p>
+
+<h3>toCircuit(value)</h3>
+<p>Converts <code>value</code> to type <code>circuit</code>. <code>value</code> can be of type <code>string</code>
+(<code>"o"</code>, <code>"open"</code>, <code>"c"</code> or <code>"closed"</code>) or <code>circuit</code>.</p>
+
+<h2>String functions</h2>
+<p>The following functions investigate and manipulate string values.</p>
+
+<h3>length(s)</h3>
+<p>Returns the number of characters in the string <code>s</code>.</p>
+
+<h3>substring(s, i)</h3>
+<p>Returns the substring of the string <code>s</code>, starting at zero-based character index <code>i</code>, until the end of the string.</p>
+
+<h3>substring(s, i, n)</h3>
+<p>Returns the substring of the string <code>s</code>, starting at zero-based character index <code>i</code>, containing <code>n</code> characters.</p>
+
+<h3>left(s, n)</h3>
+<p>Returns the first <code>n</code> characters of string <code>s</code>.</p>
+
+<h3>right(s, n)</h3>
+<p>Returns the last <code>n</code> characters of string <code>s</code>.</p>
+
+<h3>find(s, x)</h3>
+<p>Returns the zero-based character index of string <code>x</code> in string <code>s</code>, or -1 if <code>x</code> could not be found.</p>
+
+<h3>find(s, x, i)</h3>
+<p>Returns the zero-based character index of string <code>x</code> in string <code>s</code>, starting at zero-based character index <code>i</code>,
+or -1 if <code>x</code> could not be found.</p>
+
+<h3>contains(s, x)</h3>
+<p>If string <code>s</code> contains string <code>x</code>, returns <code>true</code>; otherwise <code>false</code>.</p>
+
+<h3>replace(s, s1, s2)</h3>
+<p>Replaces all occurrences of string <code>s1</code> in string <code>s</code> with string <code>s2</code>, and returns the resulting string.</p>
+
+<h3>upper(s)</h3>
+<p>Converts string <code>s</code> to uppercase and returns the converted string.</p>
+
+<h3>lower(s)</h3>
+<p>Converts string <code>s</code> to lowercase and returns the converted string.</p>
+
+<h3>trim(s)</h3>
+<p>Removes all leading and trailing white-space characters from string <code>s</code> and returns the trimmed string.</p>
+
+<h3>char(c)</h3>
+<p>Returns a string of the single character with the integer Unicode code <code>c</code>.</p>
+
+<h3>charCode(s)</h3>
+<p>Returns the integer Unicode code of the first character of string <code>s</code>.</p>
+
+<h2>String constants</h2>
+<p>The following string constants are built into the language.</p>
+
+<h3>tab</h3>
+<p>The tab-character <b>\t</b>.</p>
+
+<h3>newLine</h3>
+<p>The end of a line <b>\r\n</b>.</p>
+
+<h3>quote</h3>
+<p>A double quote <b>&quot;</b>.</p>
+
+<h2>Mathematical functions</h2>
+<p>The following functions perform calculations on numeric values.</p>
+
+<h3>abs(n)</h3>
+<p>Returns the absolute value of <code>n</code>. <code>n</code> can be of type integer or real.</p>
+
+<h3>floor(n)</h3>
+<p>Gets the largest integer value less than or equal to the real value <code>n</code>. The returned value is of type real.</p>
+
+<h3>round(n)</h3>
+<p>Rounds the real value <code>n</code> to the nearest integer. The returned value is of type real.</p>
+
+<h3>round(n, d)</h3>
+<p>Rounds the real value <code>n</code> to <code>d</code> decimals (<code>d</code> is of type integer). The returned value is of type real.</p>
+
+<h3>sign(n)</h3>
+<p>Gets the integer sign of <code>n</code>. <code>n</code> can be of type integer or real. The returned value is <code>-1</code> if <code>n</code>
+is negative, <code>+1</code> if <code>n</code> is positive, or <code>0</code> if <code>n</code> is zero.</p>
+
+<h2>I/O functions</h2>
+<p>The following functions perform input or output to the screen or a file.</p>
+
+<h3>clearScreen()</h3>
+<p>Clears the screen.</p>
+
+<h3>readFile(p)</h3>
+<p>Opens the file with path <code>p</code> to read from. Returns the integer handle of the opened file. After reading from the file, close it via
+the <code>closeFile(f)</code>-function.</p>
+
+<h3>writeFile(p)</h3>
+<p>Opens the file with path <code>p</code> to write to. Returns the integer handle of the opened file. After writing to the file, close it via the
+<code>closeFile(f)</code>-function. The existing data of the file will be overwritten.</p>
+
+<h3>appendFile(p)</h3>
+<p>Opens the file with path <code>p</code> to append to. Returns the integer handle of the opened file. After writing to the file, close it via the
+<code>closeFile(f)</code>-function. The newly written data will be appended to the existing data.</p>
+
+<h3>closeFile(f)</h3>
+<p>Closes the file with integer handle <code>f</code>. You should always close a file you opened as soon as you're done with it.</p>
+
+<h3>write(value)</h3>
+<p>Writes <code>value</code> to the screen. <code>value</code> can be of any type and will be converted to string.</p>
+
+<h3>write(f, value)</h3>
+<p>Writes <code>value</code> to the file with handle <code>f</code>. <code>value</code> can be of any type and will be converted to string.</p>
+
+<h3>writeLine(value)</h3>
+<p>Writes <code>value</code> to the screen, followed by a line terminator. <code>value</code> can be of any type and will be converted to string.</p>
+
+<h3>writeLine(f, value)</h3>
+<p>Writes <code>value</code> to the file with handle <code>f</code>, followed by a line terminator. <code>value</code> can be of any type and
+will be converted to string.</p>
+
+<h3>readLine()</h3>
+<p>Reads a line of text from the keyboard and returns it as a string.</p>
+
+<h3>readLine(f)</h3>
+<p>Reads the next line of text from the file with handle <code>f</code> and returns it as a string.</p>
+
+<h3>readChars(f, n)</h3>
+<p>Reads the next <code>n</code> characters from the file with handle <code>f</code> and returns it as a string. The returned string can be less than
+<code>n</code> characters.</p>
+
+<h3>readAll(f)</h3>
+<p>Reads the entire content of the file with handle <code>f</code> and returns it as a string.</p>
+
+<h3>endOfFile(f)</h3>
+<p>Returns <code>true</code>, if the end of the file with handle <code>f</code> has been reached; otherwise, <code>false</code>.</p>
+
+<h1>Reference</h1>
+<h2>Tokens</h2>
+<table>
+<thead><tr><th>Token</th><th>Syntax</th></tr></thead>
+<tbody>
+<tr><td>word</td><td class='code'>[A-Za-z][A-Za-z0-9_]*</td></tr>
+<tr><td>int</td><td class='code'>[0-9]+</td></tr>
+<tr><td>real</td><td class='code'>[0-9]+ '.' [0-9]+</td></tr>
+<tr><td>string</td><td class='code'>'"' (not '"')* '"'</td></tr>
+<tr><td>single-line-comment</td><td class='code'>'--' (not [\r\n])* [\r\n]</td></tr>
+<tr><td>multi-line-comment</td><td class='code'>'{' (not '}')* '}'</td></tr>
+<tr><td>symbol</td><td class='code'>one of: '+' '-' '*' '/' '^' '&amp;' '(' ')' ',' ':=' '==' '&lt;' '&gt;' '&lt;&gt;' '&lt;=' '&gt;='</td></tr>
+</tbody>
+</table>
+
+<h2>Reserved Keywords</h2>
+<p class='code'>and break by case ccw circuit closed curl cw do else elsif end exit false for if integer logic magnetic
+mod neg north not open or polarity pos real ref repeat south string switch then to true until var while xor</p>
+
+<h2>Statements</h2>
+<table>
+<thead><tr><th>Statement</th><th>Syntax</th></tr></thead>
+<tbody>
+<tr><td>statement</td><td class='code'>one of: boolean-declaration if-statement loop break exit switch-statement
+variable-declaration assignment function-call-statement</td></tr>
+<tr><td>boolean-declaration</td><td class='code'>(one of: 'pos' 'neg' 'north' 'south' 'cw' 'ccw' 'open' 'closed') ':=' ('true' or 'false')</td></tr>
+<tr><td>if-statement</td><td class='code'>'if' expression 'then' statement*<br />('elsif' expression 'then' statement*)*<br />('else' statement*)?<br />'end' 'if'</td></tr>
+<tr><td>loop</td><td class='code'>one of: while-loop repeat-loop for-loop</td></tr>
+<tr><td>while-loop</td><td class='code'>'while' expression 'do' statement* 'end' 'while'</td></tr>
+<tr><td>repeat-loop</td><td class='code'>'repeat' statement* 'until' expression</td></tr>
+<tr><td>for-loop</td><td class='code'>'for' variable ':=' expression 'to' expression ('by' expression)? 'do' statement* 'end' 'for'</td></tr>
+<tr><td>break</td><td class='code'>'break'</td></tr>
+<tr><td>exit</td><td class='code'>'exit'</td></tr>
+<tr><td>switch-statement</td><td class='code'>'switch' expression<br />('case' expression 'then' statement*)*<br />('case' 'else' statement*)?<br />'end' 'switch'</td></tr>
+<tr><td>variable-declaration</td><td class='code'>'var' single-declaration (',' single-declaration)*</td></tr>
+<tr><td>single-declaration</td><td class='code'>typed-declaration or assigned-declaration</td></tr>
+<tr><td>typed-declaration</td><td class='code'>variable-name (',' variable-name)* ':' type</td></tr>
+<tr><td>type</td><td class='code'>one of: 'int' 'real' 'string' 'logic' 'polarity' 'magnetic' 'curl' 'circuit'</td></tr>
+<tr><td>assigned-declaration</td><td class='code'>variable-name (',' variable-name)* ':=' expression</td></tr>
+<tr><td>assignment</td><td class='code'>variable-name ':=' expression</td></tr>
+<tr><td>function-call-statement</td><td class='code'>function-call</td></tr>
+</tbody>
+</table>
+
+<h2>Expressions</h2>
+<table>
+<thead><tr><th>Expression</th><th>Syntax</th></tr></thead>
+<tbody>
+<tr><td>expression</td><td class='code'>and-expression</td></tr>
+<tr><td>and-expression</td><td class='code'>or-expression ('and' or-expression)*</td></tr>
+<tr><td>or-expression</td><td class='code'>xor-expression ('or' xor-expression)*</td></tr>
+<tr><td>xor-expression</td><td class='code'>comparison ('xor' comparison)*</td></tr>
+<tr><td>comparison</td><td class='code'>concatenation (one of: '==' '&lt;&gt;' '&lt;' '&gt;' '&lt;=' '&gt;=') concatenation</td></tr>
+<tr><td>concatenation</td><td class='code'>additive-expression ('&' additive-expression)*</td></tr>
+<tr><td>additive-expression</td><td class='code'>multiplicative-expression (('+' or '-') multiplicative-expression)*</td></tr>
+<tr><td>multiplicative-expression</td><td class='code'>power-expression (('*' or '/' or 'mod') power-expression)*</td></tr>
+<tr><td>power-expression</td><td class='code'>unary-expression ('^' unary-expression)*</td></tr>
+<tr><td>unary-expression</td><td class='code'>('+' or '-' or 'not')? base-expression</td></tr>
+<tr><td>base-expression</td><td class='code'>one of: grouping-expression function-call variable-name literal</td></tr>
+<tr><td>grouping-expression</td><td class='code'>'(' expression ')'</td></tr>
+<tr><td>function-call</td><td class='code'>function-name '(' (function-argument (',' function-argument)*)? ')'</td></tr>
+<tr><td>function-argument</td><td class='code'>('ref' variable-name) or expression</td></tr>
+<tr><td>variable-name</td><td class='code'>word</td></tr>
+<tr><td>function-name</td><td class='code'>word</td></tr>
+<tr><td>literal</td><td class='code'>one of: int real string true false pos neg north south cw ccw open closed</td></tr>
+</tbody>
+</table>
+<div id="footer"><b>Magneto</b> &ndash; Copyright &copy; 2008-2010 <a href="http://blog.tcx.be/">Tommy Carlier</a></div>
+</body>
+</html>

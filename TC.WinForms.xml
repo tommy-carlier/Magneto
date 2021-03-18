@@ -1,0 +1,2180 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TC.WinForms</name>
+    </assembly>
+    <members>
+        <member name="T:TC.WinForms.Animation.Animator">
+            <summary>Static class that provides animation functionality.</summary>
+        </member>
+        <member name="M:TC.WinForms.Animation.Animator.Initialize">
+            <summary>Initializes the <see cref="T:Animator"/> class.</summary>
+            <remarks>This method should be called on the UI-thread.</remarks>
+        </member>
+        <member name="M:TC.WinForms.Animation.Animator.Animate``2(``0,System.String,``1,``1,System.TimeSpan)">
+            <summary>Starts an animation.</summary>
+            <typeparam name="TTarget">The type of object to animate a property of.</typeparam>
+            <typeparam name="TValue">The type of value to animate.</typeparam>
+            <param name="target">The object to animate a property of.</param>
+            <param name="propertyName">The name of the property to animate.</param>
+            <param name="startValue">The start-value of the animation.</param>
+            <param name="endValue">The end-value of the animation.</param>
+            <param name="duration">The duration of the animation.</param>
+        </member>
+        <member name="M:TC.WinForms.Animation.Animator.Animate``2(``0,System.String,``1,``1,System.TimeSpan,System.Int32)">
+            <summary>Starts an animation.</summary>
+            <typeparam name="TTarget">The type of object to animate a property of.</typeparam>
+            <typeparam name="TValue">The type of value to animate.</typeparam>
+            <param name="target">The object to animate a property of.</param>
+            <param name="propertyName">The name of the property to animate.</param>
+            <param name="startValue">The start-value of the animation.</param>
+            <param name="endValue">The end-value of the animation.</param>
+            <param name="duration">The duration of the animation.</param>
+            <param name="pulsationCount">The number of times to pulsate (= reverse the animation and start over).</param>
+        </member>
+        <member name="M:TC.WinForms.Animation.Animator.Animate``2(``0,System.String,``1,``1,System.TimeSpan,System.Action)">
+            <summary>Starts an animation.</summary>
+            <typeparam name="TTarget">The type of object to animate a property of.</typeparam>
+            <typeparam name="TValue">The type of value to animate.</typeparam>
+            <param name="target">The object to animate a property of.</param>
+            <param name="propertyName">The name of the property to animate.</param>
+            <param name="startValue">The start-value of the animation.</param>
+            <param name="endValue">The end-value of the animation.</param>
+            <param name="duration">The duration of the animation.</param>
+            <param name="callback">The function that is called after the animation has finished (can be null).</param>
+        </member>
+        <member name="M:TC.WinForms.Animation.Animator.Animate``2(``0,System.String,``1,``1,System.TimeSpan,System.Int32,System.Action)">
+            <summary>Starts an animation.</summary>
+            <typeparam name="TTarget">The type of object to animate a property of.</typeparam>
+            <typeparam name="TValue">The type of value to animate.</typeparam>
+            <param name="target">The object to animate a property of.</param>
+            <param name="propertyName">The name of the property to animate.</param>
+            <param name="startValue">The start-value of the animation.</param>
+            <param name="endValue">The end-value of the animation.</param>
+            <param name="duration">The duration of the animation.</param>
+            <param name="pulsationCount">The number of times to pulsate (= reverse the animation and start over).</param>
+            <param name="callback">The function that is called after the animation has finished (can be null).</param>
+        </member>
+        <member name="M:TC.WinForms.Animation.Animator.Animate``2(``0,System.String,TC.WinForms.Animation.Interpolator{``1},``1,``1,System.TimeSpan)">
+            <summary>Starts an animation.</summary>
+            <typeparam name="TTarget">The type of object to animate a property of.</typeparam>
+            <typeparam name="TValue">The type of value to animate.</typeparam>
+            <param name="target">The object to animate a property of.</param>
+            <param name="propertyName">The name of the property to animate.</param>
+            <param name="interpolator">A function that calculates the intermediate values between startValue and endValue.</param>
+            <param name="startValue">The start-value of the animation.</param>
+            <param name="endValue">The end-value of the animation.</param>
+            <param name="duration">The duration of the animation.</param>
+        </member>
+        <member name="M:TC.WinForms.Animation.Animator.Animate``2(``0,System.String,TC.WinForms.Animation.Interpolator{``1},``1,``1,System.TimeSpan,System.Int32)">
+            <summary>Starts an animation.</summary>
+            <typeparam name="TTarget">The type of object to animate a property of.</typeparam>
+            <typeparam name="TValue">The type of value to animate.</typeparam>
+            <param name="target">The object to animate a property of.</param>
+            <param name="propertyName">The name of the property to animate.</param>
+            <param name="interpolator">A function that calculates the intermediate values between startValue and endValue.</param>
+            <param name="startValue">The start-value of the animation.</param>
+            <param name="endValue">The end-value of the animation.</param>
+            <param name="duration">The duration of the animation.</param>
+            <param name="pulsationCount">The number of times to pulsate (= reverse the animation and start over).</param>
+        </member>
+        <member name="M:TC.WinForms.Animation.Animator.Animate``2(``0,System.String,TC.WinForms.Animation.Interpolator{``1},``1,``1,System.TimeSpan,System.Action)">
+            <summary>Starts an animation.</summary>
+            <typeparam name="TTarget">The type of object to animate a property of.</typeparam>
+            <typeparam name="TValue">The type of value to animate.</typeparam>
+            <param name="target">The object to animate a property of.</param>
+            <param name="propertyName">The name of the property to animate.</param>
+            <param name="interpolator">A function that calculates the intermediate values between startValue and endValue.</param>
+            <param name="startValue">The start-value of the animation.</param>
+            <param name="endValue">The end-value of the animation.</param>
+            <param name="duration">The duration of the animation.</param>
+            <param name="callback">The function that is called after the animation has finished (can be null).</param>
+        </member>
+        <member name="M:TC.WinForms.Animation.Animator.Animate``2(``0,System.String,TC.WinForms.Animation.Interpolator{``1},``1,``1,System.TimeSpan,System.Int32,System.Action)">
+            <summary>Starts an animation.</summary>
+            <typeparam name="TTarget">The type of object to animate a property of.</typeparam>
+            <typeparam name="TValue">The type of value to animate.</typeparam>
+            <param name="target">The object to animate a property of.</param>
+            <param name="propertyName">The name of the property to animate.</param>
+            <param name="interpolator">A function that calculates the intermediate values between startValue and endValue.</param>
+            <param name="startValue">The start-value of the animation.</param>
+            <param name="endValue">The end-value of the animation.</param>
+            <param name="duration">The duration of the animation.</param>
+            <param name="pulsationCount">The number of times to pulsate (= reverse the animation and start over).</param>
+            <param name="callback">The function that is called after the animation has finished (can be null).</param>
+        </member>
+        <member name="T:TC.WinForms.Animation.Interpolator`1">
+            <summary>Represents a function that calculates intermediate value between 2 values.</summary>
+            <typeparam name="T">The type of values to interpolate.</typeparam>
+            <param name="startValue">The start-value.</param>
+            <param name="endValue">The end-value.</param>
+            <param name="progress">The interpolation progress: a <see cref="T:Int64"/> between 0 and maximum.</param>
+            <param name="maximum">The maximum value of progress.</param>
+            <returns>The calculated intermediate value.</returns>
+        </member>
+        <member name="T:TC.WinForms.Animation.Interpolators">
+            <summary>Provides default implementations of the <see cref="T:Interpolator"/> delegate.</summary>
+        </member>
+        <member name="M:TC.WinForms.Animation.Interpolators.GetInterpolator``1">
+            <summary>Gets the default interpolator for the specified type T.</summary>
+            <typeparam name="T">The type of the values to interpolate.</typeparam>
+            <returns>The default interpolator for the specified type T, or null if no default interpolator exists for T.</returns>
+        </member>
+        <member name="T:TC.WinForms.Animation.PropertySetter`2">
+            <summary>Represents a method that sets the value of a property.</summary>
+            <typeparam name="TTarget">The type of the object to set the property value of.</typeparam>
+            <typeparam name="TValue">The type of the property value.</typeparam>
+            <param name="target">The object to set the property value of.</param>
+            <param name="value">The property value.</param>
+        </member>
+        <member name="T:TC.WinForms.Commands.ApplicationCommand">
+            <summary>Represents an application command that can be created in the Visual Forms Designer.</summary>
+        </member>
+        <member name="P:TC.WinForms.Commands.ApplicationCommand.CanExecute">
+            <summary>Gets or sets a value indicating whether this command can be executed.</summary>
+            <value><c>true</c> if this command can be executed; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:TC.WinForms.Commands.ApplicationCommand.Execute">
+            <summary>Executes this command.</summary>
+        </member>
+        <member name="E:TC.WinForms.Commands.ApplicationCommand.Executed">
+            <summary>Occurs when the command is executed.</summary>
+        </member>
+        <member name="M:TC.WinForms.Commands.ApplicationCommand.OnExecuted(System.EventArgs)">
+            <summary>Raises the <see cref="E:Executed"/> event.</summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:TC.WinForms.Commands.BaseCommand">
+            <summary>The abstract base implementation of <see cref="T:ICommand"/>.</summary>
+        </member>
+        <member name="M:TC.WinForms.Commands.BaseCommand.Execute">
+            <summary>Executes this command.</summary>
+        </member>
+        <member name="P:TC.WinForms.Commands.BaseCommand.CanExecute">
+            <summary>Gets or sets a value indicating whether this command can be executed.</summary>
+            <value><c>true</c> if this command can be executed; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="E:TC.WinForms.Commands.BaseCommand.CanExecuteChanged">
+            <summary>Occurs when the value of the <see cref="P:CanExecute"/> property has changed.</summary>
+        </member>
+        <member name="M:TC.WinForms.Commands.BaseCommand.OnCanExecuteChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:CanExecuteChanged"/> event.</summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:TC.WinForms.Commands.CommandBinding">
+            <summary>Manages the binding between a <see cref="T:ICommand"/> and a <see cref="T:ICommandControl"/>.</summary>
+        </member>
+        <member name="M:TC.WinForms.Commands.CommandBinding.#ctor(TC.WinForms.Commands.ICommandControl)">
+            <summary>Initializes a new instance of the <see cref="T:CommandBinding"/> class.</summary>
+            <param name="control">The <see cref="T:ICommandControl"/> that can be bound to a <see cref="T:ICommand"/>.</param>
+        </member>
+        <member name="P:TC.WinForms.Commands.CommandBinding.Command">
+            <summary>Gets or sets the <see cref="T:ICommand"/> to bind to the <see cref="T:ICommandControl"/>
+            of this <see cref="T:CommandBinding"/>.</summary>
+            <value>The <see cref="T:ICommand"/> to bind to the <see cref="T:ICommandControl"/> 
+            of this <see cref="T:CommandBinding"/>.</value>
+        </member>
+        <member name="T:TC.WinForms.Commands.EditCommand">
+            <summary>Identifies one of the standard edit-commands.</summary>
+        </member>
+        <member name="F:TC.WinForms.Commands.EditCommand.None">
+            <summary>No command.</summary>
+        </member>
+        <member name="F:TC.WinForms.Commands.EditCommand.Undo">
+            <summary>The 'Undo'-command.</summary>
+        </member>
+        <member name="F:TC.WinForms.Commands.EditCommand.Redo">
+            <summary>The 'Redo'-command.</summary>
+        </member>
+        <member name="F:TC.WinForms.Commands.EditCommand.Cut">
+            <summary>The 'Cut'-command.</summary>
+        </member>
+        <member name="F:TC.WinForms.Commands.EditCommand.Copy">
+            <summary>The 'Copy'-command.</summary>
+        </member>
+        <member name="F:TC.WinForms.Commands.EditCommand.Paste">
+            <summary>The 'Paste'-command.</summary>
+        </member>
+        <member name="F:TC.WinForms.Commands.EditCommand.Delete">
+            <summary>The 'Delete'-command.</summary>
+        </member>
+        <member name="F:TC.WinForms.Commands.EditCommand.SelectAll">
+            <summary>The 'Select All'-command.</summary>
+        </member>
+        <member name="T:TC.WinForms.Commands.EditCommandsProxy">
+            <summary>Contains the standard edit-commands, whose implementation is pluggable.</summary>
+        </member>
+        <member name="M:TC.WinForms.Commands.EditCommandsProxy.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Commands.EditCommandsProxy"/> class.</summary>
+        </member>
+        <member name="M:TC.WinForms.Commands.EditCommandsProxy.#ctor(System.ComponentModel.IContainer)">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Commands.EditCommandsProxy"/> class.</summary>
+            <param name="container">The container to add this instance to.</param>
+        </member>
+        <member name="P:TC.WinForms.Commands.EditCommandsProxy.UndoCommand">
+            <summary>Gets the 'Undo'-command.</summary>
+            <value>The 'Undo'-command.</value>
+        </member>
+        <member name="P:TC.WinForms.Commands.EditCommandsProxy.RedoCommand">
+            <summary>Gets the 'Redo'-command.</summary>
+            <value>The 'Redo'-command.</value>
+        </member>
+        <member name="P:TC.WinForms.Commands.EditCommandsProxy.CutCommand">
+            <summary>Gets the 'Cut'-command.</summary>
+            <value>The 'Cut'-command.</value>
+        </member>
+        <member name="P:TC.WinForms.Commands.EditCommandsProxy.CopyCommand">
+            <summary>Gets the 'Copy'-command.</summary>
+            <value>The 'Copy'-command.</value>
+        </member>
+        <member name="P:TC.WinForms.Commands.EditCommandsProxy.PasteCommand">
+            <summary>Gets the 'Paste'-command.</summary>
+            <value>The 'Paste'-command.</value>
+        </member>
+        <member name="P:TC.WinForms.Commands.EditCommandsProxy.DeleteCommand">
+            <summary>Gets the 'Delete'-command.</summary>
+            <value>The 'Delete'-command.</value>
+        </member>
+        <member name="P:TC.WinForms.Commands.EditCommandsProxy.SelectAllCommand">
+            <summary>Gets the 'Select All'-command.</summary>
+            <value>The 'Select All'-command.</value>
+        </member>
+        <member name="P:TC.WinForms.Commands.EditCommandsProxy.Implementation">
+            <summary>Gets or sets the implementation of the edit-commands.</summary>
+            <value>The implementation of the edit-commands.</value>
+        </member>
+        <member name="T:TC.WinForms.Commands.EmptyProxyCommandsImplementation`1">
+            <summary>The empty implementation of <see cref="T:IProxyCommandsImplementation{TCommandIdentifier}"/>.</summary>
+            <typeparam name="TCommandIdentifier">The type of the command identifiers to implement.</typeparam>
+        </member>
+        <member name="F:TC.WinForms.Commands.EmptyProxyCommandsImplementation`1.Instance">
+            <summary>Gets the instance of the <see cref="T:EmptyProxyCommandsImplementation{TCommandIdentifier}"/>.</summary>
+        </member>
+        <member name="M:TC.WinForms.Commands.EmptyProxyCommandsImplementation`1.GetCommand(`0)">
+            <summary>Gets the <see cref="T:ICommand"/> that implements the specified <see cref="T:TCommandIdentifier"/>.</summary>
+            <param name="identifier">The <see cref="T:TCommandIdentifier"/> to get the <see cref="T:ICommand"/> of.</param>
+            <returns>The <see cref="T:ICommand"/> that implements the specified <see cref="T:TCommandIdentifier"/>.</returns>
+        </member>
+        <member name="T:TC.WinForms.Commands.ICommand">
+            <summary>Represents a command that can be executed.</summary>
+        </member>
+        <member name="M:TC.WinForms.Commands.ICommand.Execute">
+            <summary>Executes this command.</summary>
+        </member>
+        <member name="P:TC.WinForms.Commands.ICommand.CanExecute">
+            <summary>Gets a value indicating whether this command can be executed.</summary>
+            <value><c>true</c> if this command can be executed; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="E:TC.WinForms.Commands.ICommand.CanExecuteChanged">
+            <summary>Occurs when the value of the <see cref="P:CanExecute"/> property has changed.</summary>
+        </member>
+        <member name="T:TC.WinForms.Commands.ICommandControl">
+            <summary>Represents a control (or component) that can execute commands.</summary>
+        </member>
+        <member name="M:TC.WinForms.Commands.ICommandControl.SetCommandEnabled(System.Boolean)">
+            <summary>Notifies the control that the bound command is enabled or disabled.</summary>
+            <param name="enabled">if set to <c>true</c> the control should be enabled, otherwise disabled.</param>
+        </member>
+        <member name="E:TC.WinForms.Commands.ICommandControl.Activated">
+            <summary>Occurs when the control is activated.</summary>
+            <remarks>When this event occurs, the bound command will be executed.</remarks>
+        </member>
+        <member name="E:TC.WinForms.Commands.ICommandControl.Disposed">
+            <summary>Occurs when the control has been disposed.</summary>
+        </member>
+        <member name="T:TC.WinForms.Commands.IProxyCommandsImplementation`1">
+            <summary>Represents an object that implements all or some of the
+            <see cref="T:TCommandIdentifier">command identifiers</see>.</summary>
+            <typeparam name="TCommandIdentifier">The type of the command identifiers to implement.</typeparam>
+        </member>
+        <member name="M:TC.WinForms.Commands.IProxyCommandsImplementation`1.GetCommand(`0)">
+            <summary>Gets the <see cref="T:ICommand"/> that implements the specified <see cref="T:TCommandIdentifier"/>.</summary>
+            <param name="identifier">The <see cref="T:TCommandIdentifier"/> to get the <see cref="T:ICommand"/> of.</param>
+            <returns>The <see cref="T:ICommand"/> that implements the specified <see cref="T:TCommandIdentifier"/>.</returns>
+        </member>
+        <member name="T:TC.WinForms.Commands.ProxyCommand">
+            <summary>Represents a command with a pluggable implementation.</summary>
+        </member>
+        <member name="P:TC.WinForms.Commands.ProxyCommand.Implementation">
+            <summary>Gets or sets the <see cref="T:ICommand"/> that implements the functionality
+            of this <see cref="T:ProxyCommand"/>.</summary>
+            <value>The <see cref="T:ICommand"/> that implements the functionality of this <see cref="T:ProxyCommand"/>.</value>
+        </member>
+        <member name="M:TC.WinForms.Commands.ProxyCommand.Execute">
+            <summary>Executes this command.</summary>
+        </member>
+        <member name="P:TC.WinForms.Commands.ProxyCommand.CanExecute">
+            <summary>Gets a value indicating whether this command can be executed.</summary>
+            <value><c>true</c> if this command can be executed; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="E:TC.WinForms.Commands.ProxyCommand.CanExecuteChanged">
+            <summary>Occurs when the value of the <see cref="P:CanExecute"/> property has changed.</summary>
+        </member>
+        <member name="M:TC.WinForms.Commands.ProxyCommand.Dispose(System.Boolean)">
+            <summary>Releases the unmanaged resources used by the <see cref="T:Component"/> and
+            optionally releases the managed resources.</summary>
+            <param name="disposing">true to release both managed and unmanaged resources;
+            false to release only unmanaged resources.</param>
+        </member>
+        <member name="T:TC.WinForms.Commands.SimpleActionCommand">
+            <summary>Represents a command that invokes a simple action.</summary>
+        </member>
+        <member name="M:TC.WinForms.Commands.SimpleActionCommand.#ctor(System.Action)">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Commands.SimpleActionCommand"/> class.</summary>
+            <param name="action">The action to invoke when this command is executed.</param>
+        </member>
+        <member name="M:TC.WinForms.Commands.SimpleActionCommand.Execute">
+            <summary>Executes this command.</summary>
+        </member>
+        <member name="T:TC.WinForms.Controls.TButton">
+            <summary>Represents a Windows button control.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TButton.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Controls.TButton"/> class.</summary>
+        </member>
+        <member name="P:TC.WinForms.Controls.TButton.FlatStyle">
+            <summary>Gets or sets the flat style appearance of the button control.</summary>
+            <returns>One of the <see cref="T:FlatStyle"/> values. The default value is System.</returns>
+        </member>
+        <member name="T:TC.WinForms.Controls.TCheckBox">
+            <summary>Represents a Windows checkbox control.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TCheckBox.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Controls.TCheckBox"/> class.</summary>
+        </member>
+        <member name="P:TC.WinForms.Controls.TCheckBox.FlatStyle">
+            <summary>Gets or sets the flat style appearance of the button control.</summary>
+            <returns>One of the <see cref="T:FlatStyle"/> values. The default value is System.</returns>
+        </member>
+        <member name="T:TC.WinForms.Controls.TListBox`1">
+            <summary>Represents a (strongly typed) list box control.</summary>
+            <typeparam name="TItem">The type of the items.</typeparam>
+        </member>
+        <member name="P:TC.WinForms.Controls.TListBox`1.SelectedItem">
+            <summary>Gets or sets currently selected item in the <see cref="T:TListBox{TItem}"/>.</summary>
+            <value>The currently selected item.</value>
+            <returns>The object that is the currently selected item or null if there is no currently selected item.</returns>
+        </member>
+        <member name="T:TC.WinForms.Controls.TCodeEditor">
+            <summary>Represents a control for editing programming code.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TCodeEditor.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Controls.TCodeEditor"/> class.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TCodeEditor.OnTextChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:TextChanged"/> event.</summary>
+            <param name="e">An <see cref="T:EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="P:TC.WinForms.Controls.TCodeEditor.SystemFont">
+            <summary>Gets the <see cref="T:SystemFont"/> of the control.</summary>
+            <value>The <see cref="T:SystemFont"/> of the control.</value>
+        </member>
+        <member name="P:TC.WinForms.Controls.TCodeEditor.FilePath">
+            <summary>Gets the full path of the document file.</summary>
+            <value>The full path of the document file, or null if it hasn't been saved yet.</value>
+        </member>
+        <member name="E:TC.WinForms.Controls.TCodeEditor.FilePathChanged">
+            <summary>Occurs when the value of the <see cref="P:FilePath"/> property has changed.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TCodeEditor.OnFilePathChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:FilePathChanged"/> event.</summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="P:TC.WinForms.Controls.TCodeEditor.FileName">
+            <summary>Gets or sets the file name of the document file.</summary>
+            <value>The file name of the document file.</value>
+        </member>
+        <member name="E:TC.WinForms.Controls.TCodeEditor.FileNameChanged">
+            <summary>Occurs when the value of the <see cref="P:FileName"/> property has changed.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TCodeEditor.OnFileNameChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:FileNameChanged"/> event.</summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="P:TC.WinForms.Controls.TCodeEditor.IsModified">
+            <summary>Gets a value indicating whether the document is modified.</summary>
+            <value><c>true</c> if the document is modified; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="E:TC.WinForms.Controls.TCodeEditor.IsModifiedChanged">
+            <summary>Occurs when the value of the <see cref="P:IsModified"/> property has changed.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TCodeEditor.OnIsModifiedChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:IsModifiedChanged"/> event.</summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="P:TC.WinForms.Controls.TCodeEditor.DefaultFileDialogFilter">
+            <summary>Gets the default value of the <see cref="P:FileDialogFilter"/> property.</summary>
+            <value>The default value of the <see cref="P:FileDialogFilter"/>.</value>
+        </member>
+        <member name="P:TC.WinForms.Controls.TCodeEditor.FileDialogFilter">
+            <summary>Gets or sets the filter that is used in the dialog to open or save the document.</summary>
+            <value>The filter that is used in the dialog to open or save the document.</value>
+        </member>
+        <member name="E:TC.WinForms.Controls.TCodeEditor.FileDialogFilterChanged">
+            <summary>Occurs when the value of the <see cref="P:FileDialogFilter"/> property has changed.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TCodeEditor.OnFileDialogFilterChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:FileDialogFilterChanged"/> event.</summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TCodeEditor.ClearDocument(System.String)">
+            <summary>Clears the document.</summary>
+            <param name="fileName">The file name of the document.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TCodeEditor.LoadDocument(System.String,System.Int32)">
+            <summary>Loads the document from the specified file path.</summary>
+            <param name="filePath">The full path of the document to load.</param>
+            <param name="filterIndex">The index of the selected filter in the dialog.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TCodeEditor.SaveDocument(System.String,System.Int32)">
+            <summary>Saves the document to specified file path.</summary>
+            <param name="filePath">The full path of the file to save the document to.</param>
+            <param name="filterIndex">The index of the selected filter in the dialog.</param>
+        </member>
+        <member name="T:TC.WinForms.Controls.TComboBox">
+            <summary>Represents a combo box control.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TComboBox.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Controls.TComboBox"/> class.</summary>
+        </member>
+        <member name="P:TC.WinForms.Controls.TComboBox.DropDownStyle">
+            <summary>Gets or sets a value specifying the style of the combo box.</summary>
+            <returns>One of the <see cref="T:ComboBoxStyle"/> values. The default is DropDownList.</returns>
+        </member>
+        <member name="P:TC.WinForms.Controls.TComboBox.DrawMode">
+            <summary>Gets or sets a value indicating whether your code or the operating system
+            will handle drawing of elements in the list.</summary>
+            <returns>One of the <see cref="T:DrawMode"/> enumeration values. 
+            The default is <see cref="F:DrawMode.OwnerDrawFixed"/>.</returns>
+        </member>
+        <member name="M:TC.WinForms.Controls.TComboBox.OnMeasureItem(System.Windows.Forms.MeasureItemEventArgs)">
+            <summary>Raises the <see cref="E:MeasureItem"/> event.</summary>
+            <param name="e">The <see cref="T:MeasureItemEventArgs"/> that was raised.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TComboBox.OnDrawItem(System.Windows.Forms.DrawItemEventArgs)">
+            <summary>Raises the <see cref="E:DrawItem"/> event.</summary>
+            <param name="e">A <see cref="T:DrawItemEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="P:TC.WinForms.Controls.TComboBox.ItemRenderer">
+            <summary>Gets the <see cref="T:ListItemRenderer"/> that renders the items of this control.</summary>
+            <value>The <see cref="T:ListItemRenderer"/> that renders the items of this control.</value>
+        </member>
+        <member name="M:TC.WinForms.Controls.TComboBox.CreateItemRenderer">
+            <summary>Creates a <see cref="T:ListItemRenderer"/> that will render the items of this control.</summary>
+            <returns>The created <see cref="T:ListItemRenderer"/>.</returns>
+        </member>
+        <member name="T:TC.WinForms.Controls.TComboBox`1">
+            <summary>Represents a (strongly typed) combo box control.</summary>
+            <typeparam name="TItem">The type of the items.</typeparam>
+        </member>
+        <member name="P:TC.WinForms.Controls.TComboBox`1.SelectedItem">
+            <summary>Gets or sets currently selected item in the <see cref="T:TComboBox{TItem}"/>.</summary>
+            <value>The currently selected item.</value>
+            <returns>The object that is the currently selected item or null if there is no currently selected item.</returns>
+        </member>
+        <member name="T:TC.WinForms.Controls.THorizontalRule">
+            <summary>Represents a horizontal rule control.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.THorizontalRule.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Controls.THorizontalRule"/> class.</summary>
+        </member>
+        <member name="P:TC.WinForms.Controls.THorizontalRule.Anchor">
+            <summary>Gets or sets the edges of the container to which a control is bound and
+            determines how a control is resized with its parent.</summary>
+            <returns>A bitwise combination of the <see cref="T:AnchorStyles"/> values.
+            The default is Top, Left and Right.</returns>
+        </member>
+        <member name="P:TC.WinForms.Controls.THorizontalRule.ForeColor">
+            <summary>Gets or sets the foreground color of the control.</summary>
+            <returns>The foreground <see cref="T:Color"/> of the control.</returns>
+        </member>
+        <member name="P:TC.WinForms.Controls.THorizontalRule.BackColor">
+            <summary>Gets or sets the background color for the control.</summary>
+            <returns>A <see cref="T:Color"/> that represents the background color of the control.</returns>
+        </member>
+        <member name="P:TC.WinForms.Controls.THorizontalRule.Text">
+            <summary>Gets or sets the text associated with this control.</summary>
+            <returns>The text associated with this control.</returns>
+        </member>
+        <member name="M:TC.WinForms.Controls.THorizontalRule.SetBoundsCore(System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.BoundsSpecified)">
+            <summary>Performs the work of setting the specified bounds of this control.</summary>
+            <param name="x">The new <see cref="P:Left"/> property value of the control.</param>
+            <param name="y">The new <see cref="P:Top"/> property value of the control.</param>
+            <param name="width">The new <see cref="P:Width"/> property value of the control.</param>
+            <param name="height">The new <see cref="P:Height"/> property value of the control.</param>
+            <param name="specified">A bitwise combination of the <see cref="T:BoundsSpecified"/> values.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.THorizontalRule.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>Raises the <see cref="E:Paint"/> event.</summary>
+            <param name="e">A <see cref="T:PaintEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="T:TC.WinForms.Controls.TCommandHyperlink">
+            <summary>Represents a hyperlink that can execute a <see cref="T:ICommand"/>.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TCommandHyperlink.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Controls.TCommandHyperlink"/> class.</summary>
+        </member>
+        <member name="P:TC.WinForms.Controls.TCommandHyperlink.Command">
+            <summary>Gets or sets the <see cref="T:ICommand"/> that is executed when this hyperlink is clicked.</summary>
+            <value>The <see cref="T:ICommand"/> that is executed when this hyperlink is clicked.</value>
+        </member>
+        <member name="E:TC.WinForms.Controls.TCommandHyperlink.CommandChanged">
+            <summary>Occurs when the value of the <see cref="P:Command"/> property has changed.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TCommandHyperlink.OnCommandChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:CommandChanged"/> event.</summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TCommandHyperlink.TC#WinForms#Commands#ICommandControl#SetCommandEnabled(System.Boolean)">
+            <summary>Notifies the control that the bound command is enabled or disabled.</summary>
+            <param name="enabled">if set to <c>true</c> the control should be enabled, otherwise disabled.</param>
+        </member>
+        <member name="E:TC.WinForms.Controls.TCommandHyperlink.TC#WinForms#Commands#ICommandControl#Activated">
+            <summary>Occurs when the control is activated.</summary>
+            <remarks>When this event occurs, the bound command will be executed.</remarks>
+        </member>
+        <member name="P:TC.WinForms.Controls.TCommandHyperlink.Enabled">
+            <summary>Gets or sets a value indicating whether the control can respond to user interaction.</summary>
+            <returns>true if the control can respond to user interaction; otherwise, false. The default is true.</returns>
+        </member>
+        <member name="M:TC.WinForms.Controls.TCommandHyperlink.OnLinkClicked(System.Windows.Forms.LinkLabelLinkClickedEventArgs)">
+            <summary>Raises the <see cref="E:LinkClicked"/> event.</summary>
+            <param name="e">A <see cref="T:LinkLabelLinkClickedEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="T:TC.WinForms.Controls.TDocumentUserControl">
+            <summary>Represents a <see cref="T:UserControl"/> that contains a document.</summary>
+        </member>
+        <member name="P:TC.WinForms.Controls.TDocumentUserControl.DocumentContainer">
+            <summary>Gets or sets the component that contains the actual document.</summary>
+            <value>The component that contains the actual document.</value>
+        </member>
+        <member name="E:TC.WinForms.Controls.TDocumentUserControl.DocumentContainerChanged">
+            <summary>Occurs when the value of the <see cref="P:DocumentContainer"/> property has changed.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TDocumentUserControl.OnDocumentContainerChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:DocumentContainerChanged"/> event.</summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:TC.WinForms.Controls.TListBox">
+            <summary>Represents a list box control.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TListBox.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Controls.TListBox"/> class.</summary>
+        </member>
+        <member name="P:TC.WinForms.Controls.TListBox.DrawMode">
+            <summary>Gets or sets a value indicating whether your code or
+            the operating system will handle drawing of elements in the list.</summary>
+            <returns>One of the <see cref="T:DrawMode"/> enumeration values.
+            The default is <see cref="F:DrawMode.OwnerDrawFixed"/>.</returns>
+        </member>
+        <member name="M:TC.WinForms.Controls.TListBox.OnMeasureItem(System.Windows.Forms.MeasureItemEventArgs)">
+            <summary>Raises the <see cref="E:MeasureItem"/> event.</summary>
+            <param name="e">The <see cref="T:MeasureItemEventArgs"/> that was raised.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TListBox.OnDrawItem(System.Windows.Forms.DrawItemEventArgs)">
+            <summary>Raises the <see cref="E:DrawItem"/> event.</summary>
+            <param name="e">A <see cref="T:DrawItemEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="P:TC.WinForms.Controls.TListBox.ItemRenderer">
+            <summary>Gets the <see cref="T:ListItemRenderer"/> that renders the items of this control.</summary>
+            <value>The <see cref="T:ListItemRenderer"/> that renders the items of this control.</value>
+        </member>
+        <member name="M:TC.WinForms.Controls.TListBox.CreateItemRenderer">
+            <summary>Creates a <see cref="T:ListItemRenderer"/> that will render the items of this control.</summary>
+            <returns>The created <see cref="T:ListItemRenderer"/>.</returns>
+        </member>
+        <member name="T:TC.WinForms.Controls.TPlainTextEditor">
+            <summary>Represents a control for editing multi-line text.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TPlainTextEditor.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Controls.TPlainTextEditor"/> class.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TPlainTextEditor.HandleKey(System.Windows.Forms.Keys,System.Boolean)">
+            <summary>Handles the specified keyboard key.</summary>
+            <param name="keyData">The data of the pressed key.</param>
+            <param name="inReadOnlyMode">Indicates whether the control is currently in read-only mode.</param>
+            <returns>If the key was handled, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.WinForms.Controls.TPlainTextEditor.IncreaseLineIndent">
+            <summary>Increases the line indent.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TPlainTextEditor.DecreaseLineIndent">
+            <summary>Decreases the line indent.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TPlainTextEditor.GetIndentForNewLine(System.String)">
+            <summary>Gets the indent to add to the new line after the user presses the Enter-key.</summary>
+            <param name="previousLine">The previous line.</param>
+            <returns>The indent to add to the new line.</returns>
+        </member>
+        <member name="P:TC.WinForms.Controls.TPlainTextEditor.SystemFont">
+            <summary>Gets the <see cref="T:SystemFont"/> of the control.</summary>
+            <value>The <see cref="T:SystemFont"/> of the control.</value>
+        </member>
+        <member name="P:TC.WinForms.Controls.TPlainTextEditor.Font">
+            <summary>Gets or sets the font used when displaying text in the control.</summary>
+            <returns>The <see cref="T:Font"/> to apply to the text displayed by the control.</returns>
+        </member>
+        <member name="T:TC.WinForms.Controls.TRadioButton">
+            <summary>Represents a Windows radio button control.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TRadioButton.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Controls.TRadioButton"/> class.</summary>
+        </member>
+        <member name="P:TC.WinForms.Controls.TRadioButton.FlatStyle">
+            <summary>Gets or sets the flat style appearance of the button control.</summary>
+            <returns>One of the <see cref="T:FlatStyle"/> values. The default value is System.</returns>
+        </member>
+        <member name="T:TC.WinForms.Controls.TSplitContainer">
+            <summary>Represents a control that contains 2 resizable panels with a splitter inbetween.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TSplitContainer.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TSplitContainer"/> class.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TSplitContainer.LoadSettings(TC.WinForms.Settings.SplitContainerSettings)">
+            <summary>Loads the settings of this control.</summary>
+            <param name="settings">The <see cref="T:SplitContainerSettings"/> to load from.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TSplitContainer.SaveSettings(TC.WinForms.Settings.SplitContainerSettings)">
+            <summary>Saves the settings of this control.</summary>
+            <param name="settings">The <see cref="T:SplitContainerSettings"/> to save to.</param>
+        </member>
+        <member name="T:TC.WinForms.Controls.TTextControl">
+            <summary>The base class for any control for viewing and/or editing multi-line text.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextControl.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Controls.TTextControl"/> class.</summary>
+        </member>
+        <member name="P:TC.WinForms.Controls.TTextControl.AcceptsTab">
+            <summary>Gets or sets a value indicating whether pressing the TAB key in a multiline text box control
+            types a TAB character in the control instead of moving the focus to the next control in the tab order.</summary>
+            <returns>true if users can enter tabs in a multiline text box using the TAB key;
+            false if pressing the TAB key moves the focus. The default is true.</returns>
+        </member>
+        <member name="P:TC.WinForms.Controls.TTextControl.HideSelection">
+            <summary>Gets or sets a value indicating whether the selected text in the text box control 
+            remains highlighted when the control loses focus.</summary>
+            <returns>true if the selected text does not appear highlighted when the text box control loses focus;
+            false, if the selected text remains highlighted when the text box control loses focus. The default is false.</returns>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextControl.WndProc(System.Windows.Forms.Message@)">
+            <summary>Processes Windows messages.</summary>
+            <param name="m">The Windows message to process.</param>
+        </member>
+        <member name="P:TC.WinForms.Controls.TTextControl.CreateParams">
+            <summary>Gets the required creation parameters when the control handle is created.</summary>
+            <returns>A <see cref="T:CreateParams"/> representing the information needed when creating a control.</returns>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextControl.OnTextChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:TextChanged"/> event.</summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextControl.OnSelectionChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:SelectionChanged"/> event.</summary>
+            <param name="e">An <see cref="T:EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextControl.OnKeyDown(System.Windows.Forms.KeyEventArgs)">
+            <summary>Raises the <see cref="E:KeyDown"/> event.</summary>
+            <param name="e">A <see cref="T:KeyEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextControl.HandleKey(System.Windows.Forms.Keys,System.Boolean)">
+            <summary>Handles the specified keyboard key.</summary>
+            <param name="keyData">The data of the pressed key.</param>
+            <param name="inReadOnlyMode">Indicates whether the control is currently in read-only mode.</param>
+            <returns>If the key was handled, true; otherwise, false.</returns>
+        </member>
+        <member name="P:TC.WinForms.Controls.TTextControl.CopyCommand">
+            <summary>Gets the command to copy the selected text to the clipboard.</summary>
+            <value>The command to copy the selected text to the clipboard.</value>
+        </member>
+        <member name="P:TC.WinForms.Controls.TTextControl.SelectAllCommand">
+            <summary>Gets the command to select all the text.</summary>
+            <value>The command to select all the text.</value>
+        </member>
+        <member name="P:TC.WinForms.Controls.TTextControl.CurrentLineNumber">
+            <summary>Gets the current line number.</summary>
+            <value>The current line number.</value>
+        </member>
+        <member name="E:TC.WinForms.Controls.TTextControl.CurrentLineNumberChanged">
+            <summary>Occurs when the value of the <see cref="P:CurrentLineNumber"/> property has changed.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextControl.OnCurrentLineNumberChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:CurrentLineNumberChanged"/> event.</summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="P:TC.WinForms.Controls.TTextControl.CurrentColumnNumber">
+            <summary>Gets the current column number.</summary>
+            <value>The current column number.</value>
+        </member>
+        <member name="E:TC.WinForms.Controls.TTextControl.CurrentColumnNumberChanged">
+            <summary>Occurs when the value of the <see cref="P:CurrentColumnNumber"/> property has changed.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextControl.OnCurrentColumnNumberChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:CurrentColumnNumberChanged"/> event.</summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:TC.WinForms.Controls.TTextEditor">
+            <summary>The base class for any control for editing multi-line text.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextEditor.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Controls.TTextEditor"/> class.</summary>
+        </member>
+        <member name="P:TC.WinForms.Controls.TTextEditor.AllowDrop">
+            <summary>Gets or sets a value indicating whether the control will enable drag-and-drop operations.</summary>
+            <returns>true if drag-and-drop is enabled in the control; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextEditor.OnTextChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:TextChanged"/> event.</summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextEditor.OnSelectionChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:SelectionChanged"/> event.</summary>
+            <param name="e">An <see cref="T:EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextEditor.OnReadOnlyChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:ReadOnlyChanged"/> event.</summary>
+            <param name="e">An <see cref="T:EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextEditor.OnDragOver(System.Windows.Forms.DragEventArgs)">
+            <summary>Raises the <see cref="E:DragOver"/> event.</summary>
+            <param name="drgevent">A <see cref="T:DragEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextEditor.CanInsert(System.Windows.Forms.IDataObject)">
+            <summary>Determines whether the specified data can be inserted into this editor.</summary>
+            <param name="data">The data to check.</param>
+            <returns>If the specified data can be inserted into this editor, <c>true</c>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextEditor.OnDragDrop(System.Windows.Forms.DragEventArgs)">
+            <summary>Raises the <see cref="E:DragDrop"/> event.</summary>
+            <param name="drgevent">A <see cref="T:DragEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextEditor.Insert(System.Windows.Forms.IDataObject)">
+            <summary>Inserts the specified data into this editor.</summary>
+            <param name="data">The data to insert.</param>
+            <returns>If the data could be inserted successfully, <c>true</c>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextEditor.ReplaceSelectedText(System.String,System.Boolean)">
+            <summary>Replaces the currently selected text with the specified string.</summary>
+            <param name="newSelectedText">The text to replace the currently selected text with.</param>
+            <param name="select">if set to <c>true</c> the new text will be selected.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextEditor.HandleKey(System.Windows.Forms.Keys,System.Boolean)">
+            <summary>Handles the specified keyboard key.</summary>
+            <param name="keyData">The data of the pressed key.</param>
+            <param name="inReadOnlyMode">Indicates whether the control is currently in read-only mode.</param>
+            <returns>If the key was handled, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextEditor.IncreaseLineIndent">
+            <summary>Increases the line indent.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextEditor.DecreaseLineIndent">
+            <summary>Decreases the line indent.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextEditor.Paste">
+            <summary>Replaces the current selection in the text box with the contents of the Clipboard.</summary>
+        </member>
+        <member name="P:TC.WinForms.Controls.TTextEditor.OverwriteMode">
+            <summary>Gets a value indicating whether the editor is in overwrite-mode.</summary>
+            <value>If the editor is in overwrite-mode, true; otherwise, false.</value>
+        </member>
+        <member name="E:TC.WinForms.Controls.TTextEditor.OverwriteModeChanged">
+            <summary>Occurs when the value of the <see cref="P:OverwriteMode"/> property has changed.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextEditor.OnOverwriteModeChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:OverwriteModeChanged"/> event.</summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="P:TC.WinForms.Controls.TTextEditor.UndoCommand">
+            <summary>Gets the command to undo changes.</summary>
+            <value>The command to undo changes.</value>
+        </member>
+        <member name="P:TC.WinForms.Controls.TTextEditor.RedoCommand">
+            <summary>Gets the command to redo undone changes.</summary>
+            <value>The command to redo undone changes.</value>
+        </member>
+        <member name="P:TC.WinForms.Controls.TTextEditor.CutCommand">
+            <summary>Gets the command to cut the selected text to the clipboard.</summary>
+            <value>The command to cut the selected text to the clipboard.</value>
+        </member>
+        <member name="P:TC.WinForms.Controls.TTextEditor.PasteCommand">
+            <summary>Gets the command to paste text from the clipboard.</summary>
+            <value>The command to paste text from the clipboard.</value>
+        </member>
+        <member name="P:TC.WinForms.Controls.TTextEditor.DeleteCommand">
+            <summary>Gets the command to delete the selected text.</summary>
+            <value>The command to delete the selected text.</value>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTextEditor.GetCommand(TC.WinForms.Commands.EditCommand)">
+            <summary>Gets the <see cref="T:ICommand"/> that implements the specified <see cref="T:TCommandIdentifier"/>.</summary>
+            <param name="identifier">The <see cref="T:TCommandIdentifier"/> to get the <see cref="T:ICommand"/> of.</param>
+            <returns>The <see cref="T:ICommand"/> that implements the specified <see cref="T:TCommandIdentifier"/>.</returns>
+        </member>
+        <member name="T:TC.WinForms.Controls.TTreeNode">
+            <summary>Represents a node of a <see cref="T:TTreeView"/>.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTreeNode.#ctor(System.String,System.String,System.String,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Controls.TTreeNode"/> class.</summary>
+            <param name="label">The label of the node.</param>
+            <param name="imageKey">The image key of the node.</param>
+            <param name="selectedImageKey">The selected image key of the node.</param>
+            <param name="hasChildNodes">if set to <c>true</c>, the node has child nodes.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTreeNode.LoadChildNodes">
+            <summary>When overriden in a derived class, loads the child-nodes of this node.</summary>
+            <returns>An array of the child-nodes of this node.</returns>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTreeNode.OnDrag(System.Windows.Forms.ItemDragEventArgs)">
+            <summary>Is called when the user starts dragging this node.</summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.ItemDragEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTreeNode.OnDoubleClick(System.Windows.Forms.TreeNodeMouseClickEventArgs)">
+            <summary>Is called when the user double-clicks this node.</summary>
+            <param name="e">The <see cref="T:System.Windows.Forms.TreeNodeMouseClickEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTreeNode.InitializeContextMenu(System.Windows.Forms.ContextMenuStrip)">
+            <summary>When overriden in a derived class, initializes the context-menu of this node.</summary>
+            <param name="contextMenu">The context-menu to initialize.</param>
+        </member>
+        <member name="T:TC.WinForms.Controls.TTreeView">
+            <summary>Displays a hierarchical collection of labeled items, each representing a <see cref="T:TTreeNode"/>.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTreeView.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TTreeView"/> class.</summary>
+        </member>
+        <member name="P:TC.WinForms.Controls.TTreeView.LoadingTreeNodeIcon">
+            <summary>Gets the icon for the 'Loading…'-node, when overriden in a derived class.</summary>
+            <value>The icon for the 'Loading…'-node.</value>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTreeView.InitializeIcons(System.Windows.Forms.ImageList)">
+            <summary>Initializes the icons, when overriden in a derived class.</summary>
+            <param name="icons">The <see cref="T:ImageList"/> to add icons to.</param>
+        </member>
+        <member name="P:TC.WinForms.Controls.TTreeView.ShowLines">
+            <summary>Gets or sets a value indicating whether lines are drawn
+            between tree nodes in the tree view control.</summary>
+            <returns>true if lines are drawn between tree nodes in the tree view control;
+            otherwise, false. The default is false.</returns>
+        </member>
+        <member name="P:TC.WinForms.Controls.TTreeView.ShowNodeToolTips">
+            <summary>Gets or sets a value indicating whether ToolTips are shown when the mouse pointer
+            hovers over a <see cref="T:TreeNode"/>.</summary>
+            <returns>true if ToolTips are shown when the mouse pointer hovers over a <see cref="T:TreeNode"/>;
+            otherwise, false. The default is true.</returns>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTreeView.OnHandleCreated(System.EventArgs)">
+            <summary>Raises the <see cref="E:HandleCreated"/> event.</summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="P:TC.WinForms.Controls.TTreeView.CreateParams">
+            <summary>Overrides <see cref="P:CreateParams"/>.</summary>
+            <returns>A <see cref="T:CreateParams"/> that contains the required creation parameters
+            when the handle to the control is created.</returns>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTreeView.ReloadTopLevelNodes">
+            <summary>Reloads the top-level nodes.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTreeView.LoadTopLevelNodes">
+            <summary>When overriden in a derived class, loads the top-level nodes.</summary>
+            <returns>An array of the top-level nodes.</returns>
+        </member>
+        <member name="P:TC.WinForms.Controls.TTreeView.ReloadSelectedNodeCommand">
+            <summary>Gets the command to reload the child nodes of the selected node.</summary>
+            <value>The command to reload the child nodes of the selected node.</value>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTreeView.ReloadSelectedNode">
+            <summary>Reloads the child nodes of the selected node.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTreeView.OnAfterExpand(System.Windows.Forms.TreeViewEventArgs)">
+            <summary>Raises the <see cref="E:AfterExpand"/> event.</summary>
+            <param name="e">A <see cref="T:TreeViewEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTreeView.OnItemDrag(System.Windows.Forms.ItemDragEventArgs)">
+            <summary>Raises the <see cref="E:ItemDrag"/> event.</summary>
+            <param name="e">An <see cref="T:ItemDragEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTreeView.OnNodeMouseDoubleClick(System.Windows.Forms.TreeNodeMouseClickEventArgs)">
+            <summary>Raises the <see cref="E:NodeMouseDoubleClick"/> event.</summary>
+            <param name="e">A <see cref="T:TreeNodeMouseClickEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TTreeView.OnNodeMouseClick(System.Windows.Forms.TreeNodeMouseClickEventArgs)">
+            <summary>Raises the <see cref="E:NodeMouseClick"/> event.</summary>
+            <param name="e">A <see cref="T:TreeNodeMouseClickEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="T:TC.WinForms.Controls.TCommandButton">
+            <summary>Represents a <see cref="T:Button"/> control that can execute a <see cref="T:ICommand"/>.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TCommandButton.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Controls.TCommandButton"/> class.</summary>
+        </member>
+        <member name="P:TC.WinForms.Controls.TCommandButton.Command">
+            <summary>Gets or sets the <see cref="T:ICommand"/> that is executed when this button is clicked.</summary>
+            <value>The <see cref="T:ICommand"/> that is executed when this button is clicked.</value>
+        </member>
+        <member name="E:TC.WinForms.Controls.TCommandButton.CommandChanged">
+            <summary>Occurs when the value of the <see cref="P:Command"/> property has changed.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TCommandButton.OnCommandChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:CommandChanged"/> event.</summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TCommandButton.TC#WinForms#Commands#ICommandControl#SetCommandEnabled(System.Boolean)">
+            <summary>Notifies the control that the bound command is enabled or disabled.</summary>
+            <param name="enabled">if set to <c>true</c> the control should be enabled, otherwise disabled.</param>
+        </member>
+        <member name="E:TC.WinForms.Controls.TCommandButton.TC#WinForms#Commands#ICommandControl#Activated">
+            <summary>Occurs when the control is activated.</summary>
+            <remarks>When this event occurs, the bound command will be executed.</remarks>
+        </member>
+        <member name="P:TC.WinForms.Controls.TCommandButton.Enabled">
+            <summary>Gets or sets a value indicating whether the control can respond to user interaction.</summary>
+            <returns>true if the control can respond to user interaction; otherwise, false. The default is true.</returns>
+        </member>
+        <member name="T:TC.WinForms.Controls.TLabel">
+            <summary>Represents a standard label control.</summary>
+        </member>
+        <member name="P:TC.WinForms.Controls.TLabel.SystemFont">
+            <summary>Gets or sets the <see cref="T:SystemFont"/> of the control.</summary>
+            <value>The <see cref="T:SystemFont"/> of the control.</value>
+        </member>
+        <member name="P:TC.WinForms.Controls.TLabel.Font">
+            <summary>Gets or sets the font of the text displayed by the control.</summary>
+            <returns>The <see cref="T:Font"/> to apply to the text displayed by the control.</returns>
+        </member>
+        <member name="M:TC.WinForms.Controls.TLabel.OnClick(System.EventArgs)">
+            <summary>Raises the <see cref="E:Click"/> event.</summary>
+            <param name="e">An <see cref="T:EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="T:TC.WinForms.Controls.TToolStripCommandButton">
+            <summary>Represents a <see cref="T:ToolStripButton"/> that can execute a <see cref="T:ICommand"/>.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TToolStripCommandButton.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Controls.TToolStripCommandButton"/> class.</summary>
+        </member>
+        <member name="P:TC.WinForms.Controls.TToolStripCommandButton.Command">
+            <summary>Gets or sets the <see cref="T:ICommand"/> that is executed when this button is clicked.</summary>
+            <value>The <see cref="T:ICommand"/> that is executed when this button is clicked.</value>
+        </member>
+        <member name="E:TC.WinForms.Controls.TToolStripCommandButton.CommandChanged">
+            <summary>Occurs when the value of the <see cref="P:Command"/> property has changed.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TToolStripCommandButton.OnCommandChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:CommandChanged"/> event.</summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TToolStripCommandButton.TC#WinForms#Commands#ICommandControl#SetCommandEnabled(System.Boolean)">
+            <summary>Notifies the control that the bound command is enabled or disabled.</summary>
+            <param name="enabled">if set to <c>true</c> the control should be enabled, otherwise disabled.</param>
+        </member>
+        <member name="E:TC.WinForms.Controls.TToolStripCommandButton.TC#WinForms#Commands#ICommandControl#Activated">
+            <summary>Occurs when the control is activated.</summary>
+            <remarks>When this event occurs, the bound command will be executed.</remarks>
+        </member>
+        <member name="P:TC.WinForms.Controls.TToolStripCommandButton.Enabled">
+            <summary>Gets or sets a value indicating whether the control can respond to user interaction.</summary>
+            <returns>true if the control can respond to user interaction; otherwise, false. The default is true.</returns>
+        </member>
+        <member name="T:TC.WinForms.Controls.TToolStripCommandMenuItem">
+            <summary>Represents a <see cref="T:ToolStripMenuItem"/> that can execute a command.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TToolStripCommandMenuItem.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Controls.TToolStripCommandMenuItem"/> class.</summary>
+        </member>
+        <member name="P:TC.WinForms.Controls.TToolStripCommandMenuItem.Command">
+            <summary>Gets or sets the <see cref="T:ICommand"/> that is executed when this menu item is clicked.</summary>
+            <value>The <see cref="T:ICommand"/> that is executed when this menu item is clicked.</value>
+        </member>
+        <member name="E:TC.WinForms.Controls.TToolStripCommandMenuItem.CommandChanged">
+            <summary>Occurs when the value of the <see cref="P:Command"/> property has changed.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TToolStripCommandMenuItem.OnCommandChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:CommandChanged"/> event.</summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TToolStripCommandMenuItem.TC#WinForms#Commands#ICommandControl#SetCommandEnabled(System.Boolean)">
+            <summary>Notifies the control that the bound command is enabled or disabled.</summary>
+            <param name="enabled">if set to <c>true</c> the control should be enabled, otherwise disabled.</param>
+        </member>
+        <member name="E:TC.WinForms.Controls.TToolStripCommandMenuItem.TC#WinForms#Commands#ICommandControl#Activated">
+            <summary>Occurs when the control is activated.</summary>
+            <remarks>When this event occurs, the bound command will be executed.</remarks>
+        </member>
+        <member name="P:TC.WinForms.Controls.TToolStripCommandMenuItem.Enabled">
+            <summary>Gets or sets a value indicating whether the control can respond to user interaction.</summary>
+            <returns>true if the control can respond to user interaction; otherwise, false. The default is true.</returns>
+        </member>
+        <member name="T:TC.WinForms.Controls.TSystemIconBox">
+            <summary>Represents a control that displays one of the system icons.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TSystemIconBox.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Controls.TSystemIconBox"/> class.</summary>
+        </member>
+        <member name="P:TC.WinForms.Controls.TSystemIconBox.AutoSize">
+            <summary>This property is not relevant for this class.</summary>
+            <returns>true if enabled; otherwise, false.</returns>
+        </member>
+        <member name="P:TC.WinForms.Controls.TSystemIconBox.DefaultPadding">
+            <summary>Gets the internal spacing, in pixels, of the contents of a control.</summary>
+            <returns>A <see cref="T:Padding"/> that represents the internal spacing of the contents of a control.</returns>
+        </member>
+        <member name="P:TC.WinForms.Controls.TSystemIconBox.DefaultMinimumSize">
+            <summary>Gets the length and height, in pixels, that is specified as the default minimum size of a control.</summary>
+            <returns>A <see cref="T:Size"/> representing the size of the control.</returns>
+        </member>
+        <member name="P:TC.WinForms.Controls.TSystemIconBox.SystemIcon">
+            <summary>Gets or sets the <see cref="T:SystemIcon"/> that should be displayed.</summary>
+            <value>The <see cref="T:SystemIcon"/> that should be displayed.</value>
+        </member>
+        <member name="P:TC.WinForms.Controls.TSystemIconBox.CustomImage">
+            <summary>Gets or sets the custom image that should be displayed.</summary>
+            <value>The custom image that should be displayed.</value>
+        </member>
+        <member name="M:TC.WinForms.Controls.TSystemIconBox.GetPreferredSize(System.Drawing.Size)">
+            <summary>Retrieves the size of a rectangular area into which a control can be fitted.</summary>
+            <param name="proposedSize">The custom-sized area for a control.</param>
+            <returns>An ordered pair of type <see cref="T:Size"/> representing the width and height of a rectangle.</returns>
+        </member>
+        <member name="M:TC.WinForms.Controls.TSystemIconBox.OnPaint(System.Windows.Forms.PaintEventArgs)">
+            <summary>Raises the <see cref="E:Paint"/> event.</summary>
+            <param name="e">A <see cref="T:PaintEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="T:TC.WinForms.Controls.TUserControl">
+            <summary>Represents a container of other controls, to be used as a part of a Form.</summary>
+        </member>
+        <member name="P:TC.WinForms.Controls.TUserControl.Commands">
+            <summary>Gets the commands of this <see cref="T:TUserControl"/>.</summary>
+            <value>The commands of this <see cref="T:TUserControl"/>.</value>
+            <remarks>This property enables you to add commands in the Visual Forms Designer.</remarks>
+        </member>
+        <member name="P:TC.WinForms.Controls.TUserControl.ApplicationAboutCommand">
+            <summary>Gets the command to display information about the current application.</summary>
+            <value>The command to display information about the current application.</value>
+        </member>
+        <member name="P:TC.WinForms.Controls.TUserControl.Application">
+            <summary>Gets the current application.</summary>
+            <value>The current application.</value>
+        </member>
+        <member name="M:TC.WinForms.Controls.TUserControl.ShowInfo(System.String)">
+            <summary>Shows an informational message dialog.</summary>
+            <param name="message">The message to display.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TUserControl.ShowError(System.String)">
+            <summary>Shows an error message dialog.</summary>
+            <param name="errorMessage">The error message to display.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TUserControl.ShowError(System.Exception)">
+            <summary>Shows an error message dialog.</summary>
+            <param name="exception">The <see cref="T:Exception"/> to display the message of.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TUserControl.ShowWarning(System.String)">
+            <summary>Shows a warning message dialog.</summary>
+            <param name="warningMessage">The warning message to display.</param>
+        </member>
+        <member name="M:TC.WinForms.Controls.TUserControl.AskToConfirm(System.String,System.String,System.Boolean)">
+            <summary>Asks the user to confirm an action.</summary>
+            <param name="question">The question to display.</param>
+            <param name="confirmButtonCaption">The caption of the button to confirm.</param>
+            <param name="dangerousAction">Indicates that the action to confirm is potentially dangerous 
+            and a warning icon should be displayed.</param>
+            <returns>If the user pressed the confirm button, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.WinForms.Controls.TUserControl.AskYesNo(System.String,System.String,System.String,System.Boolean)">
+            <summary>Asks the user a question where the answer can be yes or no.</summary>
+            <param name="question">The question to display.</param>
+            <param name="yesButtonCaption">The caption of the Yes-button.</param>
+            <param name="noButtonCaption">The caption of the No-button.</param>
+            <param name="dangerousAction">Indicates that the action is potentially dangerous
+            and a warning icon should be displayed.</param>
+            <returns>If the user pressed the Yes-button, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.WinForms.Controls.TUserControl.AskYesNo(System.String,System.Boolean)">
+            <summary>Asks the user a question where the answer can be yes or no.</summary>
+            <param name="question">The question to display.</param>
+            <param name="dangerousAction">Indicates that the action is potentially dangerous
+            and a warning icon should be displayed.</param>
+            <returns>If the user pressed the Yes-button, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.WinForms.Controls.TUserControl.AskYesNoCancel(System.String,System.String,System.String,System.Boolean)">
+            <summary>Asks the user a question where the answer can be yes, no or cancel.</summary>
+            <param name="question">The question to display.</param>
+            <param name="yesButtonCaption">The caption of the Yes-button.</param>
+            <param name="noButtonCaption">The caption of the No-button.</param>
+            <param name="dangerousAction">Indicates that the action is potentially dangerous
+            and a warning icon should be displayed.</param>
+            <returns>The dialog result.</returns>
+        </member>
+        <member name="M:TC.WinForms.Controls.TUserControl.AskYesNoCancel(System.String,System.Boolean)">
+            <summary>Asks the user a question where the answer can be yes, no or cancel.</summary>
+            <param name="question">The question to display.</param>
+            <param name="dangerousAction">Indicates that the action is potentially dangerous
+            and a warning icon should be displayed.</param>
+            <returns>The dialog result.</returns>
+        </member>
+        <member name="M:TC.WinForms.Controls.TUserControl.LoadSettings">
+            <summary>Loads the settings of this control.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TUserControl.LoadSettingsCore">
+            <summary>When overriden in a derived class, loads the settings of this control.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TUserControl.SaveSettings">
+            <summary>Saves the settings of this control.</summary>
+        </member>
+        <member name="M:TC.WinForms.Controls.TUserControl.SaveSettingsCore">
+            <summary>When overriden in a derived class, saves the settings of this control.</summary>
+        </member>
+        <member name="T:TC.WinForms.Dialogs.TAboutDialogContentControl">
+            <summary>Represents the content of the About-dialog.</summary>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TAboutDialogContentControl.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Dialogs.TAboutDialogContentControl"/> class.</summary>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TAboutDialogContentControl.OnLoad(System.EventArgs)">
+            <summary>Raises the <see cref="E:Load"/> event.</summary>
+            <param name="e">An <see cref="T:EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="F:TC.WinForms.Dialogs.TAboutDialogContentControl.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TAboutDialogContentControl.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TAboutDialogContentControl.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:TC.WinForms.Dialogs.TMessageDialogContentControl">
+            <summary>Represents the content control of a <see cref="T:TMessageDialog"/>.</summary>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TMessageDialogContentControl.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TMessageDialogContentControl"/> class.</summary>
+        </member>
+        <member name="P:TC.WinForms.Dialogs.TMessageDialogContentControl.Message">
+            <summary>Gets or sets the message to display.</summary>
+            <value>The message to display.</value>
+        </member>
+        <member name="P:TC.WinForms.Dialogs.TMessageDialogContentControl.SideImage">
+            <summary>Gets or sets the <see cref="T:DialogSideImage"/> to display.</summary>
+            <value>The <see cref="T:DialogSideImage"/> to display.</value>
+        </member>
+        <member name="P:TC.WinForms.Dialogs.TMessageDialogContentControl.CustomSideImage">
+            <summary>Gets or sets the custom <see cref="T:Image"/> to display.</summary>
+            <value>The custom <see cref="T:Image"/> to display.</value>
+        </member>
+        <member name="F:TC.WinForms.Dialogs.TMessageDialogContentControl.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TMessageDialogContentControl.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TMessageDialogContentControl.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:TC.WinForms.Dialogs.TMessageDialog">
+            <summary>Represents a dialog to display simple messages.</summary>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TMessageDialog.#ctor">
+            <summary>Prevents a default instance of the <see cref="T:TC.WinForms.Dialogs.TMessageDialog"/> class from being created.</summary>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TMessageDialog.ShowInfo(System.Windows.Forms.Control,System.String)">
+            <summary>Shows an informational message dialog.</summary>
+            <param name="owner">The control that will own the dialog.</param>
+            <param name="message">The message to display.</param>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TMessageDialog.ShowError(System.Windows.Forms.Control,System.String)">
+            <summary>Shows an error message dialog.</summary>
+            <param name="owner">The control that will own the dialog.</param>
+            <param name="errorMessage">The error message to display.</param>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TMessageDialog.ShowError(System.Windows.Forms.Control,System.Exception)">
+            <summary>Shows an error message dialog.</summary>
+            <param name="owner">The control that will own the dialog.</param>
+            <param name="exception">The <see cref="T:Exception"/> to display the message of.</param>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TMessageDialog.ShowWarning(System.Windows.Forms.Control,System.String)">
+            <summary>Shows a warning message dialog.</summary>
+            <param name="owner">The control that will own the dialog.</param>
+            <param name="warningMessage">The warning message to display.</param>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TMessageDialog.AskToConfirm(System.Windows.Forms.Control,System.String,System.String,System.Boolean)">
+            <summary>Asks the user to confirm an action.</summary>
+            <param name="owner">The control that will own the dialog.</param>
+            <param name="question">The question to display.</param>
+            <param name="confirmButtonCaption">The caption of the button to confirm.</param>
+            <param name="dangerousAction">Indicates that the action to confirm is potentially dangerous
+            and a warning icon should be displayed.</param>
+            <returns>If the user pressed the confirm button, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TMessageDialog.AskYesNo(System.Windows.Forms.Control,System.String,System.String,System.String,System.Boolean)">
+            <summary>Asks the user a question where the answer can be yes or no.</summary>
+            <param name="owner">The control that will own the dialog.</param>
+            <param name="question">The question to display.</param>
+            <param name="yesButtonCaption">The caption of the Yes-button.</param>
+            <param name="noButtonCaption">The caption of the No-button.</param>
+            <param name="dangerousAction">Indicates that the action is potentially dangerous 
+            and a warning icon should be displayed.</param>
+            <returns>If the user pressed the Yes-button, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TMessageDialog.AskYesNo(System.Windows.Forms.Control,System.String,System.Boolean)">
+            <summary>Asks the user a question where the answer can be yes or no.</summary>
+            <param name="owner">The control that will own the dialog.</param>
+            <param name="question">The question to display.</param>
+            <param name="dangerousAction">Indicates that the action is potentially dangerous 
+            and a warning icon should be displayed.</param>
+            <returns>If the user pressed the Yes-button, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TMessageDialog.AskYesNoCancel(System.Windows.Forms.Control,System.String,System.String,System.String,System.Boolean)">
+            <summary>Asks the user a question where the answer can be yes, no or cancel.</summary>
+            <param name="owner">The control that will own the dialog.</param>
+            <param name="question">The question to display.</param>
+            <param name="yesButtonCaption">The caption of the Yes-button.</param>
+            <param name="noButtonCaption">The caption of the No-button.</param>
+            <param name="dangerousAction">Indicates that the action is potentially dangerous
+            and a warning icon should be displayed.</param>
+            <returns>The dialog result.</returns>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TMessageDialog.AskYesNoCancel(System.Windows.Forms.Control,System.String,System.Boolean)">
+            <summary>Asks the user a question where the answer can be yes, no or cancel.</summary>
+            <param name="owner">The control that will own the dialog.</param>
+            <param name="question">The question to display.</param>
+            <param name="dangerousAction">Indicates that the action is potentially dangerous
+            and a warning icon should be displayed.</param>
+            <returns>The dialog result.</returns>
+        </member>
+        <member name="T:TC.WinForms.Dialogs.DialogValidationException">
+            <summary>Represents an error when validating dialog controls.</summary>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.DialogValidationException.#ctor(System.Windows.Forms.Control,System.String)">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Dialogs.DialogValidationException"/> class.</summary>
+            <param name="invalidControl">The invalid control that caused the error.</param>
+            <param name="message">The error message.</param>
+        </member>
+        <member name="P:TC.WinForms.Dialogs.DialogValidationException.InvalidControl">
+            <summary>Gets the invalid control that caused the error.</summary>
+            <value>The invalid control.</value>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.DialogValidationException.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:DialogValidationException"/> class.</summary>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.DialogValidationException.#ctor(System.String)">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Dialogs.DialogValidationException"/> class.</summary>
+            <param name="message">The error message.</param>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.DialogValidationException.#ctor(System.String,System.Exception)">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Dialogs.DialogValidationException"/> class.</summary>
+            <param name="message">The error message.</param>
+            <param name="inner">The exception that caused this exception to be thrown.</param>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.DialogValidationException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Dialogs.DialogValidationException"/> class.</summary>
+            <param name="info">The <see cref="T:SerializationInfo"/> that holds the serialized object data
+            about the exception being thrown.</param>
+            <param name="context">The <see cref="T:StreamingContext"/> that contains contextual information 
+            about the source or destination.</param>
+            <exception cref="T:ArgumentNullException">The <paramref name="info"/> parameter is null.</exception>
+            <exception cref="T:SerializationException">The class name is null or <see cref="P:HResult"/> is zero (0).</exception>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.DialogValidationException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>When overridden in a derived class, sets the <see cref="T:SerializationInfo"/> 
+            with information about the exception.</summary>
+            <param name="info">The <see cref="T:SerializationInfo"/> that holds the serialized object data
+            about the exception being thrown.</param>
+            <param name="context">The <see cref="T:StreamingContext"/> that contains contextual information
+            about the source or destination.</param>
+            <exception cref="T:ArgumentNullException">The <paramref name="info"/> parameter is a null reference 
+            (Nothing in Visual Basic).</exception>
+        </member>
+        <member name="T:TC.WinForms.Dialogs.DialogResultButton">
+            <summary>Defines a button that sets the <see cref="P:Form.DialogResult"/> of
+            a <see cref="T:TDialog{TContentControl}"/>.</summary>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.DialogResultButton.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Dialogs.DialogResultButton"/> class.</summary>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.DialogResultButton.#ctor(System.Windows.Forms.DialogResult,System.String)">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Dialogs.DialogResultButton"/> class.</summary>
+            <param name="dialogResult">The <see cref="T:DialogResult"/> that is set when the button is clicked.</param>
+            <param name="text">The caption of the button.</param>
+        </member>
+        <member name="P:TC.WinForms.Dialogs.DialogResultButton.DialogResult">
+            <summary>Gets or sets the <see cref="T:DialogResult"/> that is set when the button is clicked.</summary>
+            <value>The <see cref="T:DialogResult"/> that is set when the button is clicked.</value>
+        </member>
+        <member name="P:TC.WinForms.Dialogs.DialogResultButton.Text">
+            <summary>Gets or sets the caption of the button.</summary>
+            <value>The caption of the button.</value>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.DialogResultButton.ToString">
+            <summary>Returns a <see cref="T:String"/> that represents the current <see cref="T:DialogResultButton"/>.</summary>
+            <returns>A <see cref="T:String"/> that represents the current <see cref="T:DialogResultButton"/>.</returns>
+        </member>
+        <member name="P:TC.WinForms.Dialogs.DialogResultButton.OK">
+            <summary>Gets a <see cref="T:DialogResultButton"/> that represents <see cref="F:DialogResult.OK"/>.</summary>
+            <value>The created <see cref="T:DialogResultButton"/>.</value>
+        </member>
+        <member name="P:TC.WinForms.Dialogs.DialogResultButton.Cancel">
+            <summary>Gets a <see cref="T:DialogResultButton"/> that represents <see cref="F:DialogResult.Cancel"/>.</summary>
+            <value>The created <see cref="T:DialogResultButton"/>.</value>
+        </member>
+        <member name="P:TC.WinForms.Dialogs.DialogResultButton.Yes">
+            <summary>Gets a <see cref="T:DialogResultButton"/> that represents <see cref="F:DialogResult.Yes"/>.</summary>
+            <value>The created <see cref="T:DialogResultButton"/>.</value>
+        </member>
+        <member name="P:TC.WinForms.Dialogs.DialogResultButton.No">
+            <summary>Gets a <see cref="T:DialogResultButton"/> that represents <see cref="F:DialogResult.No"/>.</summary>
+            <value>The created <see cref="T:DialogResultButton"/>.</value>
+        </member>
+        <member name="T:TC.WinForms.Dialogs.TDialog`1">
+            <summary>Represents a dialog box.</summary>
+            <typeparam name="TContentControl">The type of the content control.</typeparam>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TDialog`1.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Dialogs.TDialog`1"/> class.</summary>
+        </member>
+        <member name="P:TC.WinForms.Dialogs.TDialog`1.ContentControl">
+            <summary>Gets the control with the content of this dialog.</summary>
+            <value>The control with the content of this dialog.</value>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TDialog`1.SetBounds">
+            <summary>Sets the bounds of this dialog.</summary>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TDialog`1.OnLoad(System.EventArgs)">
+            <summary>Raises the <see cref="E:Load"/> event.</summary>
+            <param name="e">An <see cref="T:EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TDialog`1.OnShown(System.EventArgs)">
+            <summary>Raises the <see cref="E:Shown"/> event.</summary>
+            <param name="e">A <see cref="T:EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TDialog`1.OnClosing(System.ComponentModel.CancelEventArgs)">
+            <summary>Raises the <see cref="E:Closing"/> event.</summary>
+            <param name="e">A <see cref="T:CancelEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TDialog`1.ShowDialog(System.Windows.Forms.Control)">
+            <summary>Shows the dialog modally with the specified owner.</summary>
+            <param name="owner">The <see cref="T:Control"/> that owns the dialog.</param>
+            <returns>The <see cref="T:DialogResult"/> that represents the result of the dialog.</returns>
+        </member>
+        <member name="T:TC.WinForms.Dialogs.TDialogContentControl">
+            <summary>Represents the main content control of a <see cref="T:TDialog{TContentControl}"/>.</summary>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TDialogContentControl.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TDialogContentControl"/> class.</summary>
+        </member>
+        <member name="P:TC.WinForms.Dialogs.TDialogContentControl.DialogResultButtons">
+            <summary>Gets the definition of the buttons that set the <see cref="T:DialogResult"/> of the dialog.</summary>
+            <value>The definition of the buttons that set the <see cref="T:DialogResult"/> of the dialog.</value>
+        </member>
+        <member name="P:TC.WinForms.Dialogs.TDialogContentControl.Text">
+            <summary>Gets or sets the title of the dialog.</summary>
+            <value>The title of the dialog.</value>
+            <returns>The title of the dialog.</returns>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TDialogContentControl.OnTextChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:TextChanged"/> event.</summary>
+            <param name="e">An <see cref="T:EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="P:TC.WinForms.Dialogs.TDialogContentControl.BackColor">
+            <summary>Gets or sets the background color for the control.</summary>
+            <returns>A <see cref="T:Color"/> that represents the background color of the control.</returns>
+        </member>
+        <member name="P:TC.WinForms.Dialogs.TDialogContentControl.ForeColor">
+            <summary>Gets or sets the foreground color of the control.</summary>
+            <returns>The foreground <see cref="T:Color"/> of the control.</returns>
+        </member>
+        <member name="P:TC.WinForms.Dialogs.TDialogContentControl.DefaultMargin">
+            <summary>Gets the space, in pixels, that is specified by default between controls.</summary>
+            <returns>A <see cref="T:Padding"/> that represents the default space between controls.</returns>
+        </member>
+        <member name="P:TC.WinForms.Dialogs.TDialogContentControl.DefaultPadding">
+            <summary>Gets the internal spacing, in pixels, of the contents of a control.</summary>
+            <returns>A <see cref="T:Padding"/> that represents the internal spacing of the contents of a control.</returns>
+        </member>
+        <member name="P:TC.WinForms.Dialogs.TDialogContentControl.DefaultMinimumSize">
+            <summary>Gets the length and height, in pixels, that is specified as the default minimum size of a control.</summary>
+            <returns>A <see cref="T:Size"/> representing the size of the control.</returns>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TDialogContentControl.OnPaintBackground(System.Windows.Forms.PaintEventArgs)">
+            <summary>Paints the background of the control.</summary>
+            <param name="e">A <see cref="T:PaintEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TDialogContentControl.OnResize(System.EventArgs)">
+            <summary>Raises the <see cref="E:Resize"/> event.</summary>
+            <param name="e">An <see cref="T:EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TDialogContentControl.ValidateControls">
+            <summary>Validates the controls of the dialog.</summary>
+            <remarks>If one of the controls is invalid, a <see cref="T:DialogValidationException"/> has to be thrown.</remarks>
+        </member>
+        <member name="M:TC.WinForms.Dialogs.TDialogContentControl.PerformDialogResultAction(System.Windows.Forms.DialogResult,System.Action{System.Windows.Forms.DialogResult})">
+            <summary>Performs the action that produces the dialog result.</summary>
+            <param name="dialogResult">The <see cref="T:DialogResult"/> of the pressed dialog button.</param>
+            <param name="callback">The callback function that has to be called when the action is performed.</param>
+        </member>
+        <member name="T:TC.WinForms.DrawingUtilities">
+            <summary>Provides drawing functionality.</summary>
+        </member>
+        <member name="M:TC.WinForms.DrawingUtilities.DrawShinyVerticalGradient(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Drawing.Color,System.Drawing.Color)">
+            <summary>Draws a shiny vertical gradient.</summary>
+            <param name="graphics">The drawing surface to draw on.</param>
+            <param name="totalBounds">The bounds of the gradient.</param>
+            <param name="clippingBounds">The bounds to draw within.</param>
+            <param name="lightColor">The light color of the gradient.</param>
+            <param name="darkColor">The dark color of the gradient.</param>
+        </member>
+        <member name="M:TC.WinForms.DrawingUtilities.CreateShinyVerticalGradientBrush(System.Drawing.Rectangle,System.Drawing.Color,System.Drawing.Color)">
+            <summary>Creates a <see cref="T:Brush"/> that can be used to draw a shiny vertical gradient.</summary>
+            <param name="bounds">The bounds of the gradient.</param>
+            <param name="lightColor">The light color of the gradient.</param>
+            <param name="darkColor">The dark color of the gradient.</param>
+            <returns>The created <see cref="T:Brush"/>.</returns>
+        </member>
+        <member name="M:TC.WinForms.DrawingUtilities.DrawSigmaBellGradient(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Drawing.Color,System.Drawing.Color,System.Drawing.Drawing2D.LinearGradientMode)">
+            <summary>Draws a sigma bell gradient.</summary>
+            <param name="graphics">The drawing surface to draw on.</param>
+            <param name="totalBounds">The bounds of the gradient.</param>
+            <param name="clippingBounds">The bounds to draw within.</param>
+            <param name="edgeColor">The color of the gradient edges.</param>
+            <param name="centerColor">The color of the gradient center.</param>
+            <param name="mode">The gradient mode.</param>
+        </member>
+        <member name="M:TC.WinForms.DrawingUtilities.CreateSigmaBellGradientBrush(System.Drawing.Rectangle,System.Drawing.Color,System.Drawing.Color,System.Drawing.Drawing2D.LinearGradientMode)">
+            <summary>Creates a <see cref="T:Brush"/> that can be used to draw a sigma bell gradient.</summary>
+            <param name="bounds">The bounds of the gradient.</param>
+            <param name="edgeColor">The color of the gradient edges.</param>
+            <param name="centerColor">The color of the gradient center.</param>
+            <param name="mode">The gradient mode.</param>
+            <returns>The created <see cref="T:Brush"/>.</returns>
+        </member>
+        <member name="M:TC.WinForms.DrawingUtilities.CreateRoundedRectanglePath(System.Drawing.Rectangle,System.Int32)">
+            <summary>Creates a <see cref="T:GraphicsPath"/> that represents a rounded rectangle.</summary>
+            <param name="rectangle">The <see cref="T:Rectangle"/> to create a <see cref="T:GraphicsPath"/> from.</param>
+            <param name="radius">The radius of the corners.</param>
+            <returns>The created <see cref="T:GraphicsPath"/>.</returns>
+        </member>
+        <member name="M:TC.WinForms.DrawingUtilities.CreateRoundedRectanglePath(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>Creates a <see cref="T:GraphicsPath"/> that represents a rounded rectangle.</summary>
+            <param name="x">The X-coordinate of the upper-left corner of the rectangle.</param>
+            <param name="y">The y-coordinate of the upper-left corner of the rectangle.</param>
+            <param name="width">The width of the rectangle.</param>
+            <param name="height">The height of the rectangle.</param>
+            <param name="radius">The radius of the corners.</param>
+            <returns>The created <see cref="T:GraphicsPath"/>.</returns>
+        </member>
+        <member name="M:TC.WinForms.DrawingUtilities.DrawImage(System.Drawing.Graphics,System.Drawing.Image,System.Drawing.Rectangle,System.Single,System.Single)">
+            <summary>Draws the specified image translucently.</summary>
+            <param name="graphics">The drawing surface to draw the image on.</param>
+            <param name="image">The image to draw.</param>
+            <param name="destination">The destination rectange on the drawing surface.</param>
+            <param name="translucency">The translucency of the image (between 0 and 1: 0 = fully transparent; 1 = fully opaque).</param>
+            <param name="lighting">The lighting of the image (between -1 and 1: -1 = darkest, 0 = normal, 1 = lightest).</param>
+        </member>
+        <member name="M:TC.WinForms.DrawingUtilities.GetAverageColor(System.Drawing.Color,System.Drawing.Color)">
+            <summary>Gets the average of 2 colors.</summary>
+            <param name="color1">The first color.</param>
+            <param name="color2">The second color.</param>
+            <returns>The average of the 2 specified colors.</returns>
+        </member>
+        <member name="M:TC.WinForms.DrawingUtilities.MixColors(System.Drawing.Color,System.Drawing.Color,System.Double)">
+            <summary>Mixes the specified colors.</summary>
+            <param name="color1">The first color.</param>
+            <param name="color2">The second color.</param>
+            <param name="color1Percentage">The percentage of the first color to use (between 0.0 and 1.0).</param>
+            <returns>The mixed color.</returns>
+        </member>
+        <member name="T:TC.WinForms.Forms.TDocumentForm">
+            <summary>Represents a window that contains a document.</summary>
+        </member>
+        <member name="M:TC.WinForms.Forms.TDocumentForm.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Forms.TDocumentForm"/> class.</summary>
+        </member>
+        <member name="P:TC.WinForms.Forms.TDocumentForm.ClearDocumentCommand">
+            <summary>Gets the command to clear the document.</summary>
+            <value>The command to clear the document.</value>
+        </member>
+        <member name="P:TC.WinForms.Forms.TDocumentForm.LoadDocumentCommand">
+            <summary>Gets the command to load a document.</summary>
+            <value>The command to load a document.</value>
+        </member>
+        <member name="P:TC.WinForms.Forms.TDocumentForm.SaveDocumentCommand">
+            <summary>Gets the command to save the current document.</summary>
+            <value>The command to save the current document.</value>
+        </member>
+        <member name="P:TC.WinForms.Forms.TDocumentForm.SaveDocumentAsCommand">
+            <summary>Gets the command to save the current document as a different file.</summary>
+            <value>The command to save the current document as a different file.</value>
+        </member>
+        <member name="P:TC.WinForms.Forms.TDocumentForm.DocumentContainer">
+            <summary>Gets or sets the component that contains the actual document.</summary>
+            <value>The component that contains the actual document.</value>
+        </member>
+        <member name="E:TC.WinForms.Forms.TDocumentForm.DocumentContainerChanged">
+            <summary>Occurs when the value of the <see cref="P:DocumentContainer"/> property has changed.</summary>
+        </member>
+        <member name="M:TC.WinForms.Forms.TDocumentForm.OnDocumentContainerChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:DocumentContainerChanged"/> event.</summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="P:TC.WinForms.Forms.TDocumentForm.DocumentTitle">
+            <summary>Gets the document title.</summary>
+            <value>The document title.</value>
+        </member>
+        <member name="E:TC.WinForms.Forms.TDocumentForm.DocumentTitleChanged">
+            <summary>Occurs when the value of the <see cref="P:DocumentTitle"/> property has changed.</summary>
+        </member>
+        <member name="M:TC.WinForms.Forms.TDocumentForm.OnDocumentTitleChanged(System.EventArgs)">
+            <summary>Raises the <see cref="E:DocumentTitleChanged"/> event.</summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Forms.TDocumentForm.ClearDocument">
+            <summary>Clears the document.</summary>
+        </member>
+        <member name="M:TC.WinForms.Forms.TDocumentForm.LoadDocument">
+            <summary>Loads the document from a file.</summary>
+        </member>
+        <member name="M:TC.WinForms.Forms.TDocumentForm.SaveDocument">
+            <summary>Saves the document to a file.</summary>
+        </member>
+        <member name="M:TC.WinForms.Forms.TDocumentForm.SaveDocumentAs">
+            <summary>Saves the document to a different file.</summary>
+        </member>
+        <member name="M:TC.WinForms.Forms.TDocumentForm.LoadBaseFormSettings(TC.WinForms.Settings.DocumentFormSettings)">
+            <summary>Loads the base document form settings.</summary>
+            <param name="settings">The settings to load.</param>
+        </member>
+        <member name="M:TC.WinForms.Forms.TDocumentForm.SaveBaseFormSettings(TC.WinForms.Settings.DocumentFormSettings)">
+            <summary>Saves the base document form settings.</summary>
+            <param name="settings">The settings to save.</param>
+        </member>
+        <member name="M:TC.WinForms.Forms.TDocumentForm.OnClosing(System.ComponentModel.CancelEventArgs)">
+            <summary>Raises the <see cref="E:Closing"/> event.</summary>
+            <param name="e">A <see cref="T:CancelEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="T:TC.WinForms.Forms.TForm">
+            <summary>Represents a window or dialog box.</summary>
+        </member>
+        <member name="M:TC.WinForms.Forms.TForm.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TForm"/> class.</summary>
+        </member>
+        <member name="P:TC.WinForms.Forms.TForm.Commands">
+            <summary>Gets the commands of this <see cref="T:TForm"/>.</summary>
+            <value>The commands of this <see cref="T:TForm"/>.</value>
+            <remarks>This property enables you to add commands in the Visual Forms Designer.</remarks>
+        </member>
+        <member name="P:TC.WinForms.Forms.TForm.ApplicationAboutCommand">
+            <summary>Gets the command to display information about the current application.</summary>
+            <value>The command to display information about the current application.</value>
+        </member>
+        <member name="P:TC.WinForms.Forms.TForm.CloseCommand">
+            <summary>Gets the command to close this form.</summary>
+            <value>The command to close this form.</value>
+        </member>
+        <member name="P:TC.WinForms.Forms.TForm.ActivateCommand">
+            <summary>Gets the command to activate this form.</summary>
+            <value>The command to activate this form.</value>
+        </member>
+        <member name="P:TC.WinForms.Forms.TForm.Application">
+            <summary>Gets the current application.</summary>
+            <value>The current application.</value>
+        </member>
+        <member name="P:TC.WinForms.Forms.TForm.FirstFocusControl">
+            <summary>Gets or sets the control that gets focus the first time this form is shown.</summary>
+            <value>The control that gets focus the first time this form is shown.</value>
+        </member>
+        <member name="M:TC.WinForms.Forms.TForm.OnLoad(System.EventArgs)">
+            <summary>Raises the <see cref="E:Load"/> event.</summary>
+            <param name="e">An <see cref="T:EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Forms.TForm.OnShown(System.EventArgs)">
+            <summary>Raises the <see cref="E:Shown"/> event.</summary>
+            <param name="e">A <see cref="T:EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Forms.TForm.OnMove(System.EventArgs)">
+            <summary>Raises the <see cref="E:Move"/> event.</summary>
+            <param name="e">An <see cref="T:EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Forms.TForm.OnResize(System.EventArgs)">
+            <summary>Raises the <see cref="E:Resize"/> event.</summary>
+            <param name="e">An <see cref="T:EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.Forms.TForm.OnClosed(System.EventArgs)">
+            <summary>Raises the <see cref="E:Closed"/> event.</summary>
+            <param name="e">The <see cref="T:EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="P:TC.WinForms.Forms.TForm.SystemFont">
+            <summary>Gets the <see cref="T:SystemFont"/> of the control.</summary>
+            <value>The <see cref="T:SystemFont"/> of the control.</value>
+        </member>
+        <member name="P:TC.WinForms.Forms.TForm.Font">
+            <summary>Gets or sets the font of the text displayed by the control.</summary>
+            <returns>The <see cref="T:Font"/> to apply to the text displayed by the control.</returns>
+        </member>
+        <member name="M:TC.WinForms.Forms.TForm.ShowInfo(System.String)">
+            <summary>Shows an informational message dialog.</summary>
+            <param name="message">The message to display.</param>
+        </member>
+        <member name="M:TC.WinForms.Forms.TForm.ShowError(System.String)">
+            <summary>Shows an error message dialog.</summary>
+            <param name="errorMessage">The error message to display.</param>
+        </member>
+        <member name="M:TC.WinForms.Forms.TForm.ShowError(System.Exception)">
+            <summary>Shows an error message dialog.</summary>
+            <param name="exception">The <see cref="T:Exception"/> to display the message of.</param>
+        </member>
+        <member name="M:TC.WinForms.Forms.TForm.ShowWarning(System.String)">
+            <summary>Shows a warning message dialog.</summary>
+            <param name="warningMessage">The warning message to display.</param>
+        </member>
+        <member name="M:TC.WinForms.Forms.TForm.AskToConfirm(System.String,System.String,System.Boolean)">
+            <summary>Asks the user to confirm an action.</summary>
+            <param name="question">The question to display.</param>
+            <param name="confirmButtonCaption">The caption of the button to confirm.</param>
+            <param name="dangerousAction">Indicates that the action to confirm is potentially dangerous
+            and a warning icon should be displayed.</param>
+            <returns>If the user pressed the confirm button, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.WinForms.Forms.TForm.AskYesNo(System.String,System.String,System.String,System.Boolean)">
+            <summary>Asks the user a question where the answer can be yes or no.</summary>
+            <param name="question">The question to display.</param>
+            <param name="yesButtonCaption">The caption of the Yes-button.</param>
+            <param name="noButtonCaption">The caption of the No-button.</param>
+            <param name="dangerousAction">Indicates that the action is potentially dangerous 
+            and a warning icon should be displayed.</param>
+            <returns>If the user pressed the Yes-button, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.WinForms.Forms.TForm.AskYesNo(System.String,System.Boolean)">
+            <summary>Asks the user a question where the answer can be yes or no.</summary>
+            <param name="question">The question to display.</param>
+            <param name="dangerousAction">Indicates that the action is potentially dangerous
+            and a warning icon should be displayed.</param>
+            <returns>If the user pressed the Yes-button, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.WinForms.Forms.TForm.AskYesNoCancel(System.String,System.String,System.String,System.Boolean)">
+            <summary>Asks the user a question where the answer can be yes, no or cancel.</summary>
+            <param name="question">The question to display.</param>
+            <param name="yesButtonCaption">The caption of the Yes-button.</param>
+            <param name="noButtonCaption">The caption of the No-button.</param>
+            <param name="dangerousAction">Indicates that the action is potentially dangerous
+            and a warning icon should be displayed.</param>
+            <returns>The dialog result.</returns>
+        </member>
+        <member name="M:TC.WinForms.Forms.TForm.AskYesNoCancel(System.String,System.Boolean)">
+            <summary>Asks the user a question where the answer can be yes, no or cancel.</summary>
+            <param name="question">The question to display.</param>
+            <param name="dangerousAction">Indicates that the action is potentially dangerous
+            and a warning icon should be displayed.</param>
+            <returns>The dialog result.</returns>
+        </member>
+        <member name="M:TC.WinForms.Forms.TForm.LoadSettings">
+            <summary>Loads the settings of this form.</summary>
+        </member>
+        <member name="M:TC.WinForms.Forms.TForm.LoadSettingsCore">
+            <summary>When overriden in a derived class, loads the settings of this form.</summary>
+        </member>
+        <member name="M:TC.WinForms.Forms.TForm.LoadBaseFormSettings(TC.WinForms.Settings.BaseFormSettings)">
+            <summary>Loads the base form settings.</summary>
+            <param name="settings">The settings to load.</param>
+        </member>
+        <member name="M:TC.WinForms.Forms.TForm.SaveSettings">
+            <summary>Saves the settings of this form.</summary>
+        </member>
+        <member name="M:TC.WinForms.Forms.TForm.SaveSettingsCore">
+            <summary>When overriden in a derived class, saves the settings of this form.</summary>
+        </member>
+        <member name="M:TC.WinForms.Forms.TForm.SaveBaseFormSettings(TC.WinForms.Settings.BaseFormSettings)">
+            <summary>Saves the base form settings.</summary>
+            <param name="settings">The settings to save.</param>
+        </member>
+        <member name="T:TC.WinForms.IDocumentContainer">
+            <summary>Represents a component that contains and manages a document.</summary>
+        </member>
+        <member name="P:TC.WinForms.IDocumentContainer.FilePath">
+            <summary>Gets the full path of the document file.</summary>
+            <value>The full path of the document file, or null if it hasn't been saved yet.</value>
+        </member>
+        <member name="E:TC.WinForms.IDocumentContainer.FilePathChanged">
+            <summary>Occurs when the value of the <see cref="P:FilePath"/> property has changed.</summary>
+        </member>
+        <member name="P:TC.WinForms.IDocumentContainer.FileName">
+            <summary>Gets the file name of the document file.</summary>
+            <value>The file name of the document file.</value>
+        </member>
+        <member name="E:TC.WinForms.IDocumentContainer.FileNameChanged">
+            <summary>Occurs when the value of the <see cref="P:FileName"/> property has changed.</summary>
+        </member>
+        <member name="P:TC.WinForms.IDocumentContainer.IsModified">
+            <summary>Gets a value indicating whether the document is modified.</summary>
+            <value><c>true</c> if the document is modified; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="E:TC.WinForms.IDocumentContainer.IsModifiedChanged">
+            <summary>Occurs when the value of the <see cref="P:IsModified"/> property has changed.</summary>
+        </member>
+        <member name="P:TC.WinForms.IDocumentContainer.FileDialogFilter">
+            <summary>Gets the filter that is used in the dialog to open or save the document.</summary>
+            <value>The filter that is used in the dialog to open or save the document.</value>
+        </member>
+        <member name="M:TC.WinForms.IDocumentContainer.ClearDocument(System.String)">
+            <summary>Clears the document.</summary>
+            <param name="fileName">The file name of the document.</param>
+        </member>
+        <member name="M:TC.WinForms.IDocumentContainer.LoadDocument(System.String,System.Int32)">
+            <summary>Loads the document from the specified file path.</summary>
+            <param name="filePath">The full path of the document to load.</param>
+            <param name="filterIndex">The index of the selected filter in the dialog.</param>
+        </member>
+        <member name="M:TC.WinForms.IDocumentContainer.SaveDocument(System.String,System.Int32)">
+            <summary>Saves the document to specified file path.</summary>
+            <param name="filePath">The full path of the file to save the document to.</param>
+            <param name="filterIndex">The index of the selected filter in the dialog.</param>
+        </member>
+        <member name="T:TC.WinForms.IHasSystemFont">
+            <summary>Represents a control that uses a <see cref="T:SystemFont"/>.</summary>
+        </member>
+        <member name="P:TC.WinForms.IHasSystemFont.SystemFont">
+            <summary>Gets the <see cref="T:SystemFont"/> of the control.</summary>
+            <value>The <see cref="T:SystemFont"/> of the control.</value>
+        </member>
+        <member name="P:TC.WinForms.IHasSystemFont.Font">
+            <summary>Gets or sets the <see cref="T:Font"/> of the control.</summary>
+            <value>The <see cref="T:Font"/> of the control.</value>
+        </member>
+        <member name="T:TC.WinForms.ListControlUtilities">
+            <summary>Provides utilities that deal with list controls.</summary>
+        </member>
+        <member name="M:TC.WinForms.ListControlUtilities.Initialize``1(System.Windows.Forms.ComboBox,System.Collections.Generic.IEnumerable{``0})">
+            <summary>Initializes the specified combo box control with the specified items.</summary>
+            <typeparam name="T">The type of the items to add.</typeparam>
+            <param name="comboBox">The combo box control to initialize.</param>
+            <param name="itemsToAdd">The items to add to the list control.</param>
+        </member>
+        <member name="M:TC.WinForms.ListControlUtilities.Initialize``1(System.Windows.Forms.ListBox,System.Collections.Generic.IEnumerable{``0})">
+            <summary>Initializes the specified list box control with the specified items.</summary>
+            <typeparam name="T">The type of the items to add.</typeparam>
+            <param name="listBox">The list box control to initialize.</param>
+            <param name="itemsToAdd">The items to add to the list control.</param>
+        </member>
+        <member name="M:TC.WinForms.ListControlUtilities.IsEmpty(System.Windows.Forms.ComboBox)">
+            <summary>Determines whether the specified <see cref="T:ComboBox"/> is empty.</summary>
+            <param name="comboBox">The <see cref="T:ComboBox"/> to check.</param>
+            <returns>If the specified <see cref="T:ComboBox"/> is empty, <c>true</c>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:TC.WinForms.ListControlUtilities.IsEmpty(System.Windows.Forms.ListBox)">
+            <summary>Determines whether the specified <see cref="T:ListBox"/> is empty.</summary>
+            <param name="listBox">The <see cref="T:ListBox"/> to check.</param>
+            <returns>If the specified <see cref="T:ListBox"/> is empty, <c>true</c>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:TC.WinForms.ListControlUtilities.HasItems(System.Windows.Forms.ComboBox)">
+            <summary>Determines whether the specified <see cref="T:ComboBox"/> has items.</summary>
+            <param name="comboBox">The <see cref="T:ComboBox"/> to check.</param>
+            <returns>If the specified <see cref="T:ComboBox"/> has items, <c>true</c>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:TC.WinForms.ListControlUtilities.HasItems(System.Windows.Forms.ListBox)">
+            <summary>Determines whether the specified <see cref="T:ListBox"/> has items.</summary>
+            <param name="listBox">The <see cref="T:ListBox"/> to check.</param>
+            <returns>If the specified <see cref="T:ListBox"/> has items, <c>true</c>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:TC.WinForms.ListItemRenderer">
+            <summary>Represents an object that can render items in list controls.</summary>
+        </member>
+        <member name="M:TC.WinForms.ListItemRenderer.#ctor(System.Windows.Forms.ListControl,System.Drawing.Image)">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.ListItemRenderer"/> class.</summary>
+            <param name="control">The control that owns this renderer.</param>
+            <param name="defaultImage">The default image for each item.</param>
+        </member>
+        <member name="M:TC.WinForms.ListItemRenderer.MeasureItemCore(System.Windows.Forms.MeasureItemEventArgs,System.Object)">
+            <summary>Measures the specified item.</summary>
+            <param name="context">The <see cref="T:System.Windows.Forms.MeasureItemEventArgs"/> instance that represents the measuring context.</param>
+            <param name="item">The item to measure.</param>
+            <returns>The size of the specified item.</returns>
+        </member>
+        <member name="M:TC.WinForms.ListItemRenderer.DrawItemCore(System.Windows.Forms.DrawItemEventArgs,System.Object)">
+            <summary>Draws the specified item.</summary>
+            <param name="context">The <see cref="T:System.Windows.Forms.DrawItemEventArgs"/> instance that represents the drawing context.</param>
+            <param name="item">The item to draw.</param>
+        </member>
+        <member name="M:TC.WinForms.ListItemRenderer.GetItemText(System.Object)">
+            <summary>Gets the text to display for the specified item.</summary>
+            <param name="item">The item to get the text representation of.</param>
+            <returns>The text to display for the specified item.</returns>
+        </member>
+        <member name="M:TC.WinForms.ListItemRenderer.GetItemImage(System.Object)">
+            <summary>Gets the image to display for the specified item.</summary>
+            <param name="item">The item to get the display image of.</param>
+            <returns>The image to display for the specified item.</returns>
+        </member>
+        <member name="T:TC.WinForms.ListItemRenderer`1">
+            <summary>Represents an object that can render items in list controls.</summary>
+            <typeparam name="TItem">The type of the items to render.</typeparam>
+        </member>
+        <member name="M:TC.WinForms.ListItemRenderer`1.#ctor(System.Windows.Forms.ListControl,System.Drawing.Image)">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.ListItemRenderer`1"/> class.</summary>
+            <param name="control">The control that owns this renderer.</param>
+            <param name="defaultImage">The default image for each item.</param>
+        </member>
+        <member name="M:TC.WinForms.ListItemRenderer`1.GetItemImage(System.Object)">
+            <summary>Gets the image to display for the specified item.</summary>
+            <param name="item">The item to get the display image of.</param>
+            <returns>The image to display for the specified item.</returns>
+        </member>
+        <member name="M:TC.WinForms.ListItemRenderer`1.GetItemImage(`0)">
+            <summary>Gets the image to display for the specified item.</summary>
+            <param name="item">The item to get the display image of.</param>
+            <returns>The image to display for the specified item.</returns>
+        </member>
+        <member name="M:TC.WinForms.ListItemRenderer`1.GetItemText(System.Object)">
+            <summary>Gets the text to display for the specified item.</summary>
+            <param name="item">The item to get the text representation of.</param>
+            <returns>The text to display for the specified item.</returns>
+        </member>
+        <member name="M:TC.WinForms.ListItemRenderer`1.GetItemText(`0)">
+            <summary>Gets the text to display for the specified item.</summary>
+            <param name="item">The item to get the text representation of.</param>
+            <returns>The text to display for the specified item.</returns>
+        </member>
+        <member name="T:TC.WinForms.ScreenUtilities">
+            <summary>Provides utilities that deal with screens.</summary>
+        </member>
+        <member name="M:TC.WinForms.ScreenUtilities.CalculateTotalWorkingArea">
+            <summary>Calculates the total working area of all screens combined.</summary>
+            <returns>A union of the working areas of all the screens.</returns>
+        </member>
+        <member name="M:TC.WinForms.ScreenUtilities.CalculateTotalScreenBounds">
+            <summary>Calculates the total bounds of all screens combined.</summary>
+            <returns>A union of the bounds of all the screens.</returns>
+        </member>
+        <member name="M:TC.WinForms.ScreenUtilities.AdjustBoundsToWorkingArea(System.Drawing.Rectangle)">
+            <summary>Adjusts the specified bounds to the working area of all screens.</summary>
+            <param name="bounds">The bounds to adjust.</param>
+            <returns>The adjusted bounds.</returns>
+        </member>
+        <member name="T:TC.WinForms.Settings.BaseFormSettings">
+            <summary>The abstract base class for the settings of a <see cref="T:TForm"/>.</summary>
+        </member>
+        <member name="M:TC.WinForms.Settings.BaseFormSettings.#ctor(System.String)">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Settings.BaseFormSettings"/> class.</summary>
+            <param name="xmlElementName">The name of the XML-element that represents this instance.</param>
+        </member>
+        <member name="M:TC.WinForms.Settings.BaseFormSettings.LoadCore(System.Xml.XPath.XPathNavigator)">
+            <summary>Loads the settings from the specified <see cref="T:XPathNavigator"/>.</summary>
+            <param name="xml">The <see cref="T:XPathNavigator"/> to load the settings from.</param>
+        </member>
+        <member name="M:TC.WinForms.Settings.BaseFormSettings.SaveCore(System.Xml.XmlWriter)">
+            <summary>Saves the settings to the specified <see cref="T:XmlWriter"/>.</summary>
+            <param name="writer">The <see cref="T:XmlWriter"/> to save the settings to.</param>
+        </member>
+        <member name="P:TC.WinForms.Settings.BaseFormSettings.X">
+            <summary>Gets or sets the X-coordinate of the location of the form.</summary>
+            <value>The X-coordinate of the location of the form.</value>
+        </member>
+        <member name="P:TC.WinForms.Settings.BaseFormSettings.Y">
+            <summary>Gets or sets the Y-coordinate of the location of the form.</summary>
+            <value>The Y-coordinate of the location of the form.</value>
+        </member>
+        <member name="P:TC.WinForms.Settings.BaseFormSettings.Width">
+            <summary>Gets or sets the width of the form.</summary>
+            <value>The width of the form.</value>
+        </member>
+        <member name="P:TC.WinForms.Settings.BaseFormSettings.Height">
+            <summary>Gets or sets the height of the form.</summary>
+            <value>The height of the form.</value>
+        </member>
+        <member name="P:TC.WinForms.Settings.BaseFormSettings.IsMaximized">
+            <summary>Gets or sets a value indicating whether the form is maximized.</summary>
+            <value><c>true</c> if the form is maximized; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:TC.WinForms.Settings.DocumentFormSettings">
+            <summary>The abstract base class for the settings of a <see cref="T:TDocumentForm"/>.</summary>
+        </member>
+        <member name="M:TC.WinForms.Settings.DocumentFormSettings.#ctor(System.String)">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.Settings.DocumentFormSettings"/> class.</summary>
+            <param name="xmlElementName">The name of the XML-element that represents this instance.</param>
+        </member>
+        <member name="M:TC.WinForms.Settings.DocumentFormSettings.LoadCore(System.Xml.XPath.XPathNavigator)">
+            <summary>Loads the settings from the specified <see cref="T:XPathNavigator"/>.</summary>
+            <param name="xml">The <see cref="T:XPathNavigator"/> to load the settings from.</param>
+        </member>
+        <member name="M:TC.WinForms.Settings.DocumentFormSettings.SaveCore(System.Xml.XmlWriter)">
+            <summary>Saves the settings to the specified <see cref="T:XmlWriter"/>.</summary>
+            <param name="writer">The <see cref="T:XmlWriter"/> to save the settings to.</param>
+        </member>
+        <member name="P:TC.WinForms.Settings.DocumentFormSettings.CurrentDocumentFolder">
+            <summary>Gets or sets the initial folder in file dialogs.</summary>
+            <value>The initial folder in file dialogs.</value>
+        </member>
+        <member name="P:TC.WinForms.Settings.DocumentFormSettings.SelectedFilterIndex">
+            <summary>Gets or sets the index of the selected filter in file dialogs.</summary>
+            <value>The index of the selected filter in file dialogs.</value>
+        </member>
+        <member name="T:TC.WinForms.Settings.SplitContainerSettings">
+            <summary>Contains the settings of a <see cref="T:SplitContainer"/>.</summary>
+        </member>
+        <member name="M:TC.WinForms.Settings.SplitContainerSettings.#ctor(System.String)">
+            <summary>Initializes a new instance of the <see cref="T:SplitContainerSettings"/> class.</summary>
+            <param name="xmlElementName">Name of the XML-element.</param>
+        </member>
+        <member name="M:TC.WinForms.Settings.SplitContainerSettings.LoadCore(System.Xml.XPath.XPathNavigator)">
+            <summary>Loads the settings from the specified <see cref="T:XPathNavigator"/>.</summary>
+            <param name="xml">The <see cref="T:XPathNavigator"/> to load the settings from.</param>
+        </member>
+        <member name="M:TC.WinForms.Settings.SplitContainerSettings.SaveCore(System.Xml.XmlWriter)">
+            <summary>Saves the settings to the specified <see cref="T:XmlWriter"/>.</summary>
+            <param name="writer">The <see cref="T:XmlWriter"/> to save the settings to.</param>
+        </member>
+        <member name="P:TC.WinForms.Settings.SplitContainerSettings.CollapsedPanel">
+            <summary>Gets or sets the collapsed panel.</summary>
+            <value>The collapsed panel.</value>
+        </member>
+        <member name="P:TC.WinForms.Settings.SplitContainerSettings.SplitterDistance">
+            <summary>Gets or sets the splitter distance.</summary>
+            <value>The splitter distance.</value>
+        </member>
+        <member name="T:TC.WinForms.SystemFont">
+            <summary>Represents one of the system fonts.</summary>
+        </member>
+        <member name="F:TC.WinForms.SystemFont.Default">
+            <summary>The default UI font.</summary>
+        </member>
+        <member name="F:TC.WinForms.SystemFont.Bold">
+            <summary>The default UI font, but bold.</summary>
+        </member>
+        <member name="F:TC.WinForms.SystemFont.Italic">
+            <summary>The default UI font, but italic.</summary>
+        </member>
+        <member name="F:TC.WinForms.SystemFont.Header">
+            <summary>The font for headers.</summary>
+        </member>
+        <member name="F:TC.WinForms.SystemFont.Monospace">
+            <summary>The fixed-width or non-proportional font.</summary>
+            <remarks>See http://en.wikipedia.org/wiki/Monospaced_font </remarks>
+        </member>
+        <member name="T:TC.WinForms.ControlUtilities">
+            <summary>Provides utilities that deal with controls.</summary>
+        </member>
+        <member name="M:TC.WinForms.ControlUtilities.EnumerateDescendants``1(System.Windows.Forms.Control,System.Boolean)">
+            <summary>Enumerates the descendants of the specified control that are of type <typeparamref name="T"/>.</summary>
+            <typeparam name="T">The type of the descendants to enumerate.</typeparam>
+            <param name="control">The control to enumerate descendants of.</param>
+            <param name="includeControl">Indicates whether to include the specified control itself.</param>
+            <returns>A collection of all the descendants of the specified control that
+            are of type <typeparamref name="T"/>.</returns>
+        </member>
+        <member name="M:TC.WinForms.ControlUtilities.SelectNextControl(System.Windows.Forms.Form)">
+            <summary>Selects the next control.</summary>
+            <param name="form">The form to select the next control in.</param>
+        </member>
+        <member name="M:TC.WinForms.ControlUtilities.SelectPreviousControl(System.Windows.Forms.Form)">
+            <summary>Selects the previous control.</summary>
+            <param name="form">The form to select the previous control in.</param>
+        </member>
+        <member name="M:TC.WinForms.ControlUtilities.SetWindowTheme(System.Windows.Forms.Control,System.String)">
+            <summary>Causes a control to use a different set of visual style information than its class normally uses.</summary>
+            <param name="control">The control whose visual style information is to be changed.</param>
+            <param name="applicationName">The application name to use in place of the calling application's name.</param>
+        </member>
+        <member name="M:TC.WinForms.ControlUtilities.SetExplorerWindowTheme(System.Windows.Forms.Control)">
+            <summary>Causes a control to use Windows Explorer's visual style information.</summary>
+            <param name="control">The control whose visual style information is to be changed.</param>
+        </member>
+        <member name="T:TC.WinForms.SystemIcon">
+            <summary>Represents one of the system icons.</summary>
+        </member>
+        <member name="F:TC.WinForms.SystemIcon.None">
+            <summary>No icon (empty icon).</summary>
+        </member>
+        <member name="F:TC.WinForms.SystemIcon.Custom">
+            <summary>A custom image.</summary>
+        </member>
+        <member name="F:TC.WinForms.SystemIcon.FormIcon">
+            <summary>The icon of the current form or dialog.</summary>
+        </member>
+        <member name="F:TC.WinForms.SystemIcon.Information">
+            <summary>The information icon.</summary>
+        </member>
+        <member name="F:TC.WinForms.SystemIcon.Question">
+            <summary>The question icon.</summary>
+        </member>
+        <member name="F:TC.WinForms.SystemIcon.Warning">
+            <summary>The warning icon.</summary>
+        </member>
+        <member name="F:TC.WinForms.SystemIcon.Error">
+            <summary>The error icon.</summary>
+        </member>
+        <member name="T:TC.WinForms.Dispatcher">
+            <summary>Provides functions to invoke methods on the UI-thread.</summary>
+        </member>
+        <member name="M:TC.WinForms.Dispatcher.Invoke(System.Windows.Forms.Control,System.Action)">
+            <summary>Invokes the specified method on the UI-thread.</summary>
+            <param name="control">The control that was created on the UI-thread.</param>
+            <param name="method">The method to invoke.</param>
+        </member>
+        <member name="M:TC.WinForms.Dispatcher.InvokeAsync(System.Windows.Forms.Control,System.Action)">
+            <summary>Invokes the specified method on the UI-thread, asynchronously.</summary>
+            <param name="control">The control that was created on the UI-thread.</param>
+            <param name="method">The method to invoke.</param>
+        </member>
+        <member name="M:TC.WinForms.Dispatcher.Invoke``1(System.Windows.Forms.Control,System.Action{``0},``0)">
+            <summary>Invokes the specified method on the UI-thread.</summary>
+            <typeparam name="TArg">The type of the argument to pass to the method.</typeparam>
+            <param name="control">The control that was created on the UI-thread.</param>
+            <param name="method">The method to invoke.</param>
+            <param name="argument">The argument to pass to the method.</param>
+        </member>
+        <member name="M:TC.WinForms.Dispatcher.InvokeAsync``1(System.Windows.Forms.Control,System.Action{``0},``0)">
+            <summary>Invokes the specified method on the UI-thread, asynchronously.</summary>
+            <typeparam name="TArg">The type of the argument to pass to the method.</typeparam>
+            <param name="control">The control that was created on the UI-thread.</param>
+            <param name="method">The method to invoke.</param>
+            <param name="argument">The argument to pass to the method.</param>
+        </member>
+        <member name="M:TC.WinForms.Dispatcher.Invoke``2(System.Windows.Forms.Control,System.Action{``0,``1},``0,``1)">
+            <summary>Invokes the specified method on the UI-thread.</summary>
+            <typeparam name="TArg1">The type of the first argument to pass to the method.</typeparam>
+            <typeparam name="TArg2">The type of the second argument to pass to the method.</typeparam>
+            <param name="control">The control that was created on the UI-thread.</param>
+            <param name="method">The method to invoke.</param>
+            <param name="argument1">The first argument to pass to the method.</param>
+            <param name="argument2">The second argument to pass to the method.</param>
+        </member>
+        <member name="M:TC.WinForms.Dispatcher.InvokeAsync``2(System.Windows.Forms.Control,System.Action{``0,``1},``0,``1)">
+            <summary>Invokes the specified method on the UI-thread, asynchronously.</summary>
+            <typeparam name="TArg1">The type of the first argument to pass to the method.</typeparam>
+            <typeparam name="TArg2">The type of the second argument to pass to the method.</typeparam>
+            <param name="control">The control that was created on the UI-thread.</param>
+            <param name="method">The method to invoke.</param>
+            <param name="argument1">The first argument to pass to the method.</param>
+            <param name="argument2">The second argument to pass to the method.</param>
+        </member>
+        <member name="T:TC.WinForms.FontUtilities">
+            <summary>Provides utilities that deal with fonts.</summary>
+        </member>
+        <member name="M:TC.WinForms.FontUtilities.GetFontFamily(System.String)">
+            <summary>Gets the <see cref="T:FontFamily"/> of the font with the specified name.</summary>
+            <param name="fontName">The name of the font to get the <see cref="T:FontFamily"/> of.</param>
+            <returns>The <see cref="T:FontFamily"/> of the font with the specified name,
+            or null if the specified font cannot be found.</returns>
+        </member>
+        <member name="M:TC.WinForms.FontUtilities.GetFontFamily(System.String,System.String)">
+            <summary>Gets the <see cref="T:FontFamily"/> of the font with one of the specified names.</summary>
+            <param name="fontName">The name of the font to get the <see cref="T:FontFamily"/> of.</param>
+            <param name="alternativeFontName">The name of the alternative font to get the <see cref="T:FontFamily"/> of.</param>
+            <returns>The <see cref="T:FontFamily"/> of the font with the specified name, or the alternative font,
+            or null if none of the specified fonts can be found.</returns>
+        </member>
+        <member name="M:TC.WinForms.FontUtilities.GetFontFamily(System.String[])">
+            <summary>Gets the <see cref="T:FontFamily"/> of the font with one of the specified names.</summary>
+            <param name="fontNames">The names of the possible fonts to get the <see cref="T:FontFamily"/> of.</param>
+            <returns>The <see cref="T:FontFamily"/> of the first font with one of the specified names,
+            or null if none of the specified fonts can be found.</returns>
+        </member>
+        <member name="P:TC.WinForms.FontUtilities.SystemUsesClearTypeRendering">
+            <summary>Gets a value indicating whether the operating system is using ClearType font rendering.</summary>
+            <value><c>true</c> if the operating system is using ClearType font rendering; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="M:TC.WinForms.FontUtilities.ToFont(TC.WinForms.SystemFont)">
+            <summary>Converts the specified <see cref="T:SystemFont"/> to a <see cref="T:Font"/>.</summary>
+            <param name="systemFont">The <see cref="T:SystemFont"/> to convert.</param>
+            <returns>The <see cref="T:Font"/> that represents the specified <see cref="T:SystemFont"/>.</returns>
+        </member>
+        <member name="T:TC.WinForms.TApplication">
+            <summary>Represents the running application.</summary>
+        </member>
+        <member name="M:TC.WinForms.TApplication.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.TApplication"/> class.</summary>
+        </member>
+        <member name="M:TC.WinForms.TApplication.Run``2">
+            <summary>Runs the current application.</summary>
+            <typeparam name="TApp">The type of the application.</typeparam>
+            <typeparam name="TMainForm">The type of the main form.</typeparam>
+        </member>
+        <member name="M:TC.WinForms.TApplication.Run``1">
+            <summary>Runs the current application.</summary>
+            <typeparam name="TMainForm">The type of the main form.</typeparam>
+        </member>
+        <member name="P:TC.WinForms.TApplication.Current">
+            <summary>Gets the current application.</summary>
+            <value>The current application.</value>
+        </member>
+        <member name="P:TC.WinForms.TApplication.Icon">
+            <summary>Gets the icon of the current application.</summary>
+            <value>The icon of the current application.</value>
+        </member>
+        <member name="P:TC.WinForms.TApplication.Title">
+            <summary>Gets the title of the application.</summary>
+            <value>The title of the application.</value>
+        </member>
+        <member name="P:TC.WinForms.TApplication.Version">
+            <summary>Gets the version of the application.</summary>
+            <value>The version of the application.</value>
+        </member>
+        <member name="P:TC.WinForms.TApplication.Copyright">
+            <summary>Gets the copyright information of the application.</summary>
+            <value>The copyright information of the application.</value>
+        </member>
+        <member name="P:TC.WinForms.TApplication.WebsiteUri">
+            <summary>Gets the <see cref="T:Uri"/> of the official website of the application.</summary>
+            <value>The <see cref="T:Uri"/> of the official website of the application.</value>
+        </member>
+        <member name="P:TC.WinForms.TApplication.WebsiteDisplayString">
+            <summary>Gets the title of address of the official website of the application.</summary>
+            <value>The title of address of the official website of the application.</value>
+        </member>
+        <member name="P:TC.WinForms.TApplication.AboutCommand">
+            <summary>Gets the command to show information about the current application.</summary>
+            <value>The command to show information about the current application.</value>
+        </member>
+        <member name="T:TC.WinForms.TToolStripRenderer">
+            <summary>Handles the painting of toolstrips.</summary>
+        </member>
+        <member name="M:TC.WinForms.TToolStripRenderer.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:TC.WinForms.TToolStripRenderer"/> class.</summary>
+        </member>
+        <member name="M:TC.WinForms.TToolStripRenderer.OnRenderToolStripBackground(System.Windows.Forms.ToolStripRenderEventArgs)">
+            <summary>Renders the ToolStrip background.</summary>
+            <param name="e">A <see cref="T:ToolStripRenderEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.TToolStripRenderer.OnRenderToolStripBorder(System.Windows.Forms.ToolStripRenderEventArgs)">
+            <summary>Renders the ToolStrip border.</summary>
+            <param name="e">A <see cref="T:ToolStripRenderEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.TToolStripRenderer.OnRenderImageMargin(System.Windows.Forms.ToolStripRenderEventArgs)">
+            <summary>Renders the image margin.</summary>
+            <param name="e">A <see cref="T:ToolStripRenderEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.TToolStripRenderer.OnRenderButtonBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)">
+            <summary>Renders a button background.</summary>
+            <param name="e">A <see cref="T:ToolStripRenderEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.TToolStripRenderer.OnRenderMenuItemBackground(System.Windows.Forms.ToolStripItemRenderEventArgs)">
+            <summary>Renders a menu-item background.</summary>
+            <param name="e">A <see cref="T:ToolStripItemRenderEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.TToolStripRenderer.OnRenderItemText(System.Windows.Forms.ToolStripItemTextRenderEventArgs)">
+            <summary>Renders an item text.</summary>
+            <param name="e">A <see cref="T:ToolStripItemTextRenderEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.TToolStripRenderer.OnRenderItemImage(System.Windows.Forms.ToolStripItemImageRenderEventArgs)">
+            <summary>Renders an item image.</summary>
+            <param name="e">A <see cref="T:ToolStripItemImageRenderEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.TToolStripRenderer.OnRenderSeparator(System.Windows.Forms.ToolStripSeparatorRenderEventArgs)">
+            <summary>Renders a separator.</summary>
+            <param name="e">A <see cref="T:ToolStripSeparatorRenderEventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="M:TC.WinForms.TToolStripRenderer.OnRenderItemCheck(System.Windows.Forms.ToolStripItemImageRenderEventArgs)">
+            <summary>Renders an item checkbox.</summary>
+            <param name="e">A <see cref="T:ToolStripItemImageRenderEventArgs"/> that contains the event data.</param>
+        </member>
+    </members>
+</doc>

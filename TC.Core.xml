@@ -1,0 +1,806 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TC.Core</name>
+    </assembly>
+    <members>
+        <member name="M:TC.ApplicationWebsiteAttribute.#ctor(System.String,System.String)">
+            <summary>Initializes a new instance of the <see cref="T:ApplicationWebsiteAttribute"/> class.</summary>
+            <param name="uri">The URI of the official website of the running application.</param>
+            <param name="title">The title or address of the official website of the running application.</param>
+        </member>
+        <member name="P:TC.ApplicationWebsiteAttribute.Uri">
+            <summary>Gets the <see cref="T:Uri"/> of the official website of the running application.</summary>
+            <value>The <see cref="T:Uri"/> of the official website of the running application.</value>
+        </member>
+        <member name="P:TC.ApplicationWebsiteAttribute.Title">
+            <summary>Gets the title or address of the official website of the running application.</summary>
+            <value>The title or address of the official website of the running application.</value>
+        </member>
+        <member name="T:TC.CollectionUtilities">
+            <summary>Provides utilities that deal with collections.</summary>
+        </member>
+        <member name="M:TC.CollectionUtilities.CreateEmptyCollection``1">
+            <summary>Creates an empty read-only collection.</summary>
+            <typeparam name="T">The type of the items in the collection.</typeparam>
+            <returns>An empty read-only collection.</returns>
+        </member>
+        <member name="M:TC.CollectionUtilities.CreateOneItemCollection``1(``0)">
+            <summary>Creates a read-only collection that contains one item.</summary>
+            <typeparam name="T">The type of the items in the collection.</typeparam>
+            <param name="item">The item to add to the collection.</param>
+            <returns>A read-only collection that contains the specified item.</returns>
+        </member>
+        <member name="M:TC.CollectionUtilities.ToGeneric``1(System.Collections.IEnumerable)">
+            <summary>Converts the specified non-generic collection to a generic collection of the specified type.</summary>
+            <typeparam name="T">The type of the items in the collection.</typeparam>
+            <param name="collection">The non-generic collection to convert.</param>
+            <returns>The converted collection of type <typeparamref name="T"/>.</returns>
+        </member>
+        <member name="M:TC.CollectionUtilities.GetValue``2(System.Collections.Generic.IDictionary{``0,``1},``0)">
+            <summary>Gets the value associated with the specified key.</summary>
+            <typeparam name="TKey">The type of the key.</typeparam>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="collection">The collection to get the value from.</param>
+            <param name="key">The key to get the associated value from.</param>
+            <returns>The value associated with the specified key, or the default value of type <typeparamref name="TValue"/>.</returns>
+        </member>
+        <member name="M:TC.CollectionUtilities.GetValue``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)">
+            <summary>Gets the value associated with the specified key.</summary>
+            <typeparam name="TKey">The type of the key.</typeparam>
+            <typeparam name="TValue">The type of the value.</typeparam>
+            <param name="collection">The collection to get the value from.</param>
+            <param name="key">The key to get the associated value from.</param>
+            <param name="defaultValue">The default value to return if there is no value associated with the specified key.</param>
+            <returns>The value associated with the specified key, or <paramref name="defaultValue"/>.</returns>
+        </member>
+        <member name="M:TC.CollectionUtilities.IsEmpty``1(``0[])">
+            <summary>Determines whether the specified array is empty.</summary>
+            <typeparam name="T">The type of the items in the array.</typeparam>
+            <param name="array">The array to check.</param>
+            <returns>If the specified array is empty, <c>true</c>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:TC.CollectionUtilities.IsEmpty``1(System.Collections.Generic.ICollection{``0})">
+            <summary>Determines whether the specified collection is null or empty.</summary>
+            <typeparam name="T">The type of the items in the collection.</typeparam>
+            <param name="collection">The collection to check.</param>
+            <returns>If the specified collection is null or empty, <c>true</c>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:TC.CollectionUtilities.IsEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>Determines whether the specified collection is null or empty.</summary>
+            <typeparam name="T">The type of the items in the collection.</typeparam>
+            <param name="collection">The collection to check.</param>
+            <returns>If the specified collection is null or empty, <c>true</c>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:TC.CollectionUtilities.IsEmpty(System.Collections.ICollection)">
+            <summary>Determines whether the specified collection is null or empty.</summary>
+            <param name="collection">The collection to check.</param>
+            <returns>If the specified collection is null or empty, <c>true</c>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:TC.CollectionUtilities.IsEmpty(System.Collections.IEnumerable)">
+            <summary>Determines whether the specified collection is null or empty.</summary>
+            <param name="collection">The collection to check.</param>
+            <returns>If the specified collection is null or empty, <c>true</c>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:TC.CollectionUtilities.HasItems``1(``0[])">
+            <summary>Determines whether the specified array has items.</summary>
+            <typeparam name="T">The type of the items in the array.</typeparam>
+            <param name="array">The array to check.</param>
+            <returns>If the specified array has items, <c>true</c>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:TC.CollectionUtilities.HasItems``1(System.Collections.Generic.ICollection{``0})">
+            <summary>Determines whether the specified collection has items.</summary>
+            <typeparam name="T">The type of the items in the collection.</typeparam>
+            <param name="collection">The collection to check.</param>
+            <returns>If the specified collection is not null and has items, <c>true</c>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:TC.CollectionUtilities.HasItems``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>Determines whether the specified collection has items.</summary>
+            <typeparam name="T">The type of the items in the collection.</typeparam>
+            <param name="collection">The collection to check.</param>
+            <returns>If the specified collection is not null and has items, <c>true</c>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:TC.CollectionUtilities.HasItems(System.Collections.ICollection)">
+            <summary>Determines whether the specified collection has items.</summary>
+            <param name="collection">The collection to check.</param>
+            <returns>If the specified collection is not null and has items, <c>true</c>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:TC.CollectionUtilities.HasItems(System.Collections.IEnumerable)">
+            <summary>Determines whether the specified collection has items.</summary>
+            <param name="collection">The collection to check.</param>
+            <returns>If the specified collection is not null and has items, <c>true</c>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:TC.ConvertBoolean">
+            <summary>Provides functions to convert <see cref="T:Boolean"/> values to
+            culture-independent string values and back.</summary>
+        </member>
+        <member name="M:TC.ConvertBoolean.ToDataString(System.Boolean)">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertBoolean.ToDataString(System.Nullable{System.Boolean})">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertBoolean.TryToBoolean(System.String,System.Boolean@)">
+            <summary>Converts the specified value to a <see cref="T:Boolean"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="result">A reference to the variable that receives the converted value, if the conversion succeeds.</param>
+            <returns>If the conversion succeeds, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.ConvertBoolean.ToBoolean(System.String)">
+            <summary>Converts the specified value to a <see cref="T:Boolean"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or false, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertBoolean.ToBoolean(System.String,System.Boolean)">
+            <summary>Converts the specified value to a <see cref="T:Boolean"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="defaultValue">The default value to return if the conversion fails.</param>
+            <returns>The converted value; or <paramref name="defaultValue"/>, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertBoolean.ToBooleanOrNull(System.String)">
+            <summary>Converts the specified value to a nullable <see cref="T:Boolean"/>.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or null, if the conversion fails.</returns>
+        </member>
+        <member name="T:TC.ConvertByte">
+            <summary>Provides functions to convert <see cref="T:Byte"/> values to
+            culture-independent string values and back.</summary>
+        </member>
+        <member name="M:TC.ConvertByte.ToDataString(System.Byte)">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertByte.ToDataString(System.Nullable{System.Byte})">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertByte.TryToByte(System.String,System.Byte@)">
+            <summary>Converts the specified value to a <see cref="T:Byte"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="result">A reference to the variable that receives the converted value, if the conversion succeeds.</param>
+            <returns>If the conversion succeeds, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.ConvertByte.ToByte(System.String)">
+            <summary>Converts the specified value to a <see cref="T:Byte"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or 0, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertByte.ToByte(System.String,System.Byte)">
+            <summary>Converts the specified value to a <see cref="T:Byte"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="defaultValue">The default value to return if the conversion fails.</param>
+            <returns>The converted value; or <paramref name="defaultValue"/>, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertByte.ToByteOrNull(System.String)">
+            <summary>Converts the specified value to a nullable <see cref="T:Byte"/>.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or null, if the conversion fails.</returns>
+        </member>
+        <member name="T:TC.ConvertBytes">
+            <summary>Provides functions to convert <see cref="T:Byte"/> arrays to
+            Base64 string values and back.</summary>
+        </member>
+        <member name="M:TC.ConvertBytes.ToDataString(System.Byte[])">
+            <summary>Converts the specified array to a Base64 string.</summary>
+            <param name="value">The array to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertBytes.ToDataString(System.Byte[],System.Base64FormattingOptions)">
+            <summary>Converts the specified array to a Base64 string.</summary>
+            <param name="value">The array to convert.</param>
+            <param name="options">The <see cref="T:Base64FormattingOptions"/> to use.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertBytes.TryToBytes(System.String,System.Byte[]@)">
+            <summary>Converts the specified value to a <see cref="T:Byte"/> array.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="result">A reference to the variable that receives the converted value, if the conversion succeeds.</param>
+            <returns>If the conversion succeeds, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.ConvertBytes.ToBytes(System.String)">
+            <summary>Converts the specified value to a <see cref="T:Byte"/> array.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or null, if the conversion fails.</returns>
+        </member>
+        <member name="T:TC.ConvertChar">
+            <summary>Provides functions to convert <see cref="T:Char"/> values to
+            culture-independent string values and back.</summary>
+        </member>
+        <member name="M:TC.ConvertChar.ToDataString(System.Char)">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertChar.ToDataString(System.Nullable{System.Char})">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertChar.TryToChar(System.String,System.Char@)">
+            <summary>Converts the specified value to a <see cref="T:Char"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="result">A reference to the variable that receives the converted value, if the conversion succeeds.</param>
+            <returns>If the conversion succeeds, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.ConvertChar.ToChar(System.String)">
+            <summary>Converts the specified value to a <see cref="T:Char"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or '\0', if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertChar.ToChar(System.String,System.Char)">
+            <summary>Converts the specified value to a <see cref="T:Char"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="defaultValue">The default value to return if the conversion fails.</param>
+            <returns>The converted value; or <paramref name="defaultValue"/>, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertChar.ToCharOrNull(System.String)">
+            <summary>Converts the specified value to a nullable <see cref="T:Char"/>.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or null, if the conversion fails.</returns>
+        </member>
+        <member name="T:TC.ConvertDateTime">
+            <summary>Provides functions to convert <see cref="T:DateTime"/> values to
+            culture-independent string values and back.</summary>
+        </member>
+        <member name="M:TC.ConvertDateTime.ToDataString(System.DateTime)">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertDateTime.ToDataString(System.Nullable{System.DateTime})">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertDateTime.TryToDateTime(System.String,System.DateTime@)">
+            <summary>Converts the specified value to a <see cref="T:DateTime"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="result">A reference to the variable that receives the converted value, if the conversion succeeds.</param>
+            <returns>If the conversion succeeds, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.ConvertDateTime.ToDateTime(System.String)">
+            <summary>Converts the specified value to a <see cref="T:DateTime"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or <see cref="F:DateTime.MinValue"/>, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertDateTime.ToDateTime(System.String,System.DateTime)">
+            <summary>Converts the specified value to a <see cref="T:DateTime"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="defaultValue">The default value to return if the conversion fails.</param>
+            <returns>The converted value; or <paramref name="defaultValue"/>, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertDateTime.ToDateTimeOrNull(System.String)">
+            <summary>Converts the specified value to a nullable <see cref="T:DateTime"/>.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or null, if the conversion fails.</returns>
+        </member>
+        <member name="T:TC.ConvertDecimal">
+            <summary>Provides functions to convert <see cref="T:Decimal"/> values to
+            culture-independent string values and back.</summary>
+        </member>
+        <member name="M:TC.ConvertDecimal.ToDataString(System.Decimal)">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertDecimal.ToDataString(System.Nullable{System.Decimal})">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertDecimal.TryToDecimal(System.String,System.Decimal@)">
+            <summary>Converts the specified value to a <see cref="T:Decimal"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="result">A reference to the variable that receives the converted value, if the conversion succeeds.</param>
+            <returns>If the conversion succeeds, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.ConvertDecimal.ToDecimal(System.String)">
+            <summary>Converts the specified value to a <see cref="T:Decimal"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or 0, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertDecimal.ToDecimal(System.String,System.Decimal)">
+            <summary>Converts the specified value to a <see cref="T:Decimal"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="defaultValue">The default value to return if the conversion fails.</param>
+            <returns>The converted value; or <paramref name="defaultValue"/>, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertDecimal.ToDecimalOrNull(System.String)">
+            <summary>Converts the specified value to a nullable <see cref="T:Decimal"/>.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or null, if the conversion fails.</returns>
+        </member>
+        <member name="T:TC.ConvertDouble">
+            <summary>Provides functions to convert <see cref="T:Double"/> values to
+            culture-independent string values and back.</summary>
+        </member>
+        <member name="M:TC.ConvertDouble.ToDataString(System.Double)">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertDouble.ToDataString(System.Nullable{System.Double})">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertDouble.TryToDouble(System.String,System.Double@)">
+            <summary>Converts the specified value to a <see cref="T:Double"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="result">A reference to the variable that receives the converted value, if the conversion succeeds.</param>
+            <returns>If the conversion succeeds, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.ConvertDouble.ToDouble(System.String)">
+            <summary>Converts the specified value to a <see cref="T:Double"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or 0, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertDouble.ToDouble(System.String,System.Double)">
+            <summary>Converts the specified value to a <see cref="T:Double"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="defaultValue">The default value to return if the conversion fails.</param>
+            <returns>The converted value; or <paramref name="defaultValue"/>, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertDouble.ToDoubleOrNull(System.String)">
+            <summary>Converts the specified value to a nullable <see cref="T:Double"/>.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or null, if the conversion fails.</returns>
+        </member>
+        <member name="T:TC.ConvertGuid">
+            <summary>Provides functions to convert <see cref="T:Guid"/> values to
+            culture-independent string values and back.</summary>
+        </member>
+        <member name="M:TC.ConvertGuid.ToDataString(System.Guid)">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertGuid.ToDataString(System.Nullable{System.Guid})">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertGuid.TryToGuid(System.String,System.Guid@)">
+            <summary>Converts the specified value to a <see cref="T:Guid"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="result">A reference to the variable that receives the converted value, if the conversion succeeds.</param>
+            <returns>If the conversion succeeds, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.ConvertGuid.ToGuid(System.String)">
+            <summary>Converts the specified value to a <see cref="T:Guid"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or 0, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertGuid.ToGuid(System.String,System.Guid)">
+            <summary>Converts the specified value to a <see cref="T:Guid"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="defaultValue">The default value to return if the conversion fails.</param>
+            <returns>The converted value; or <paramref name="defaultValue"/>, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertGuid.ToGuidOrNull(System.String)">
+            <summary>Converts the specified value to a nullable <see cref="T:Guid"/>.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or null, if the conversion fails.</returns>
+        </member>
+        <member name="T:TC.ConvertInt16">
+            <summary>Provides functions to convert <see cref="T:Int16"/> values to
+            culture-independent string values and back.</summary>
+        </member>
+        <member name="M:TC.ConvertInt16.ToDataString(System.Int16)">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertInt16.ToDataString(System.Nullable{System.Int16})">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertInt16.TryToInt16(System.String,System.Int16@)">
+            <summary>Converts the specified value to a <see cref="T:Int16"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="result">A reference to the variable that receives the converted value, if the conversion succeeds.</param>
+            <returns>If the conversion succeeds, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.ConvertInt16.ToInt16(System.String)">
+            <summary>Converts the specified value to a <see cref="T:Int16"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or 0, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertInt16.ToInt16(System.String,System.Int16)">
+            <summary>Converts the specified value to a <see cref="T:Int16"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="defaultValue">The default value to return if the conversion fails.</param>
+            <returns>The converted value; or <paramref name="defaultValue"/>, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertInt16.ToInt16OrNull(System.String)">
+            <summary>Converts the specified value to a nullable <see cref="T:Int16"/>.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or null, if the conversion fails.</returns>
+        </member>
+        <member name="T:TC.ConvertInt32">
+            <summary>Provides functions to convert <see cref="T:Int32"/> values to
+            culture-independent string values and back.</summary>
+        </member>
+        <member name="M:TC.ConvertInt32.ToDataString(System.Int32)">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertInt32.ToDataString(System.Nullable{System.Int32})">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertInt32.TryToInt32(System.String,System.Int32@)">
+            <summary>Converts the specified value to a <see cref="T:Int32"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="result">A reference to the variable that receives the converted value, if the conversion succeeds.</param>
+            <returns>If the conversion succeeds, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.ConvertInt32.ToInt32(System.String)">
+            <summary>Converts the specified value to a <see cref="T:Int32"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or 0, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertInt32.ToInt32(System.String,System.Int32)">
+            <summary>Converts the specified value to a <see cref="T:Int32"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="defaultValue">The default value to return if the conversion fails.</param>
+            <returns>The converted value; or <paramref name="defaultValue"/>, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertInt32.ToInt32OrNull(System.String)">
+            <summary>Converts the specified value to a nullable <see cref="T:Int32"/>.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or null, if the conversion fails.</returns>
+        </member>
+        <member name="T:TC.ConvertInt64">
+            <summary>Provides functions to convert <see cref="T:Int64"/> values to
+            culture-independent string values and back.</summary>
+        </member>
+        <member name="M:TC.ConvertInt64.ToDataString(System.Int64)">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertInt64.ToDataString(System.Nullable{System.Int64})">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertInt64.TryToInt64(System.String,System.Int64@)">
+            <summary>Converts the specified value to a <see cref="T:Int64"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="result">A reference to the variable that receives the converted value, if the conversion succeeds.</param>
+            <returns>If the conversion succeeds, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.ConvertInt64.ToInt64(System.String)">
+            <summary>Converts the specified value to a <see cref="T:Int64"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or 0, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertInt64.ToInt64(System.String,System.Int64)">
+            <summary>Converts the specified value to a <see cref="T:Int64"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="defaultValue">The default value to return if the conversion fails.</param>
+            <returns>The converted value; or <paramref name="defaultValue"/>, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertInt64.ToInt64OrNull(System.String)">
+            <summary>Converts the specified value to a nullable <see cref="T:Int64"/>.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or null, if the conversion fails.</returns>
+        </member>
+        <member name="T:TC.ConvertSingle">
+            <summary>Provides functions to convert <see cref="T:Single"/> values to
+            culture-independent string values and back.</summary>
+        </member>
+        <member name="M:TC.ConvertSingle.ToDataString(System.Single)">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertSingle.ToDataString(System.Nullable{System.Single})">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertSingle.TryToSingle(System.String,System.Single@)">
+            <summary>Converts the specified value to a <see cref="T:Single"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="result">A reference to the variable that receives the converted value, if the conversion succeeds.</param>
+            <returns>If the conversion succeeds, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.ConvertSingle.ToSingle(System.String)">
+            <summary>Converts the specified value to a <see cref="T:Single"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or 0, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertSingle.ToSingle(System.String,System.Single)">
+            <summary>Converts the specified value to a <see cref="T:Single"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="defaultValue">The default value to return if the conversion fails.</param>
+            <returns>The converted value; or <paramref name="defaultValue"/>, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertSingle.ToSingleOrNull(System.String)">
+            <summary>Converts the specified value to a nullable <see cref="T:Single"/>.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or null, if the conversion fails.</returns>
+        </member>
+        <member name="T:TC.ConvertTimeSpan">
+            <summary>Provides functions to convert <see cref="T:TimeSpan"/> values to
+            culture-independent string values and back.</summary>
+        </member>
+        <member name="M:TC.ConvertTimeSpan.ToDataString(System.TimeSpan)">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertTimeSpan.ToDataString(System.Nullable{System.TimeSpan})">
+            <summary>Converts the specified value to a culture-independent string.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted string.</returns>
+        </member>
+        <member name="M:TC.ConvertTimeSpan.TryToTimeSpan(System.String,System.TimeSpan@)">
+            <summary>Converts the specified value to a <see cref="T:TimeSpan"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="result">A reference to the variable that receives the converted value, if the conversion succeeds.</param>
+            <returns>If the conversion succeeds, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.ConvertTimeSpan.ToTimeSpan(System.String)">
+            <summary>Converts the specified value to a <see cref="T:TimeSpan"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or <see cref="F:TimeSpan.Zero"/>, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertTimeSpan.ToTimeSpan(System.String,System.TimeSpan)">
+            <summary>Converts the specified value to a <see cref="T:TimeSpan"/> value.</summary>
+            <param name="value">The value to convert.</param>
+            <param name="defaultValue">The default value to return if the conversion fails.</param>
+            <returns>The converted value; or <paramref name="defaultValue"/>, if the conversion fails.</returns>
+        </member>
+        <member name="M:TC.ConvertTimeSpan.ToTimeSpanOrNull(System.String)">
+            <summary>Converts the specified value to a nullable <see cref="T:TimeSpan"/>.</summary>
+            <param name="value">The value to convert.</param>
+            <returns>The converted value; or null, if the conversion fails.</returns>
+        </member>
+        <member name="T:TC.ReflectionUtilities">
+            <summary>Provides utilities that deal with reflection.</summary>
+        </member>
+        <member name="M:TC.ReflectionUtilities.GetFirstAttribute``1(System.Reflection.ICustomAttributeProvider,System.Boolean)">
+            <summary>Gets the first attribute of the specified type defined on the specified provider.</summary>
+            <typeparam name="TAttribute">The type of the attribute to get.</typeparam>
+            <param name="provider">The <see cref="T:ICustomAttributeProvider"/> to investigate.</param>
+            <param name="inherit">if set to <c>true</c>, look up the hierarchy chain for the inherited attribute.</param>
+            <returns>The first attribute of the specified type, or null if not found.</returns>
+        </member>
+        <member name="M:TC.ReflectionUtilities.GetAttributes``1(System.Reflection.ICustomAttributeProvider,System.Boolean)">
+            <summary>Gets the attributes of the specified type defined on the specified provider.</summary>
+            <typeparam name="TAttribute">The type of the attributes to get.</typeparam>
+            <param name="provider">The <see cref="T:ICustomAttributeProvider"/> to investigate.</param>
+            <param name="inherit">if set to <c>true</c>, look up the hierarchy chain for the inherited attribute.</param>
+            <returns>The collection of attributes of the specified type.</returns>
+        </member>
+        <member name="T:TC.Settings.BaseApplicationSettings">
+            <summary>The abstract base class for the application settings.</summary>
+        </member>
+        <member name="M:TC.Settings.BaseApplicationSettings.#ctor(System.String)">
+            <summary>Initializes a new instance of the <see cref="T:TC.Settings.BaseApplicationSettings"/> class.</summary>
+            <param name="settingsFileName">The full path of the settings file.</param>
+        </member>
+        <member name="P:TC.Settings.BaseApplicationSettings.SettingsFileName">
+            <summary>Gets the full path of the settings file.</summary>
+            <value>The full path of the settings file.</value>
+        </member>
+        <member name="M:TC.Settings.BaseApplicationSettings.RegisterSettings``1(``0)">
+            <summary>Registers settings of the specified type.</summary>
+            <typeparam name="TSettings">The type of the settings to register.</typeparam>
+            <param name="settings">The settings to register.</param>
+            <returns>The registered settings.</returns>
+        </member>
+        <member name="M:TC.Settings.BaseApplicationSettings.Load">
+            <summary>Loads the application settings.</summary>
+        </member>
+        <member name="M:TC.Settings.BaseApplicationSettings.Save">
+            <summary>Saves the application settings.</summary>
+        </member>
+        <member name="M:TC.Settings.BaseApplicationSettings.LoadCore(System.Xml.XPath.XPathNavigator)">
+            <summary>Loads the settings from the specified <see cref="T:XPathNavigator"/>.</summary>
+            <param name="xml">The <see cref="T:XPathNavigator"/> to load the settings from.</param>
+        </member>
+        <member name="M:TC.Settings.BaseApplicationSettings.SaveCore(System.Xml.XmlWriter)">
+            <summary>Saves the settings to the specified <see cref="T:XmlWriter"/>.</summary>
+            <param name="writer">The <see cref="T:XmlWriter"/> to save the settings to.</param>
+        </member>
+        <member name="T:TC.Settings.BaseSettings">
+            <summary>The abstract base class for any kind of settings.</summary>
+        </member>
+        <member name="M:TC.Settings.BaseSettings.#ctor(System.String)">
+            <summary>Initializes a new instance of the <see cref="T:TC.Settings.BaseSettings"/> class.</summary>
+            <param name="xmlElementName">The name of the XML-element that represents this instance.</param>
+        </member>
+        <member name="M:TC.Settings.BaseSettings.LoadCore(System.Xml.XPath.XPathNavigator)">
+            <summary>Loads the settings from the specified <see cref="T:XPathNavigator"/>.</summary>
+            <param name="xml">The <see cref="T:XPathNavigator"/> to load the settings from.</param>
+        </member>
+        <member name="M:TC.Settings.BaseSettings.SaveCore(System.Xml.XmlWriter)">
+            <summary>Saves the settings to the specified <see cref="T:XmlWriter"/>.</summary>
+            <param name="writer">The <see cref="T:XmlWriter"/> to save the settings to.</param>
+        </member>
+        <member name="M:TC.Settings.BaseSettings.Load(System.Xml.XPath.XPathNavigator)">
+            <summary>Loads the settings from the specified <see cref="T:XPathNavigator"/>.</summary>
+            <param name="xml">The <see cref="T:XPathNavigator"/> to load the settings from.</param>
+        </member>
+        <member name="M:TC.Settings.BaseSettings.Save(System.Xml.XmlWriter)">
+            <summary>Saves the settings to the specified <see cref="T:XmlWriter"/>.</summary>
+            <param name="writer">The <see cref="T:XmlWriter"/> to save the settings to.</param>
+        </member>
+        <member name="T:TC.Settings.StringListSettings">
+            <summary>Represents settings that contain a list of strings.</summary>
+        </member>
+        <member name="M:TC.Settings.StringListSettings.#ctor(System.String,System.String,System.Boolean)">
+            <summary>Initializes a new instance of the <see cref="T:TC.Settings.StringListSettings"/> class.</summary>
+            <param name="listElementName">Name of the list element.</param>
+            <param name="listItemElementName">Name of the list-item elements.</param>
+            <param name="sorted">Determines whether the items should be sorted.</param>
+        </member>
+        <member name="P:TC.Settings.StringListSettings.Items">
+            <summary>Gets the list of strings.</summary>
+            <value>The list of strings.</value>
+        </member>
+        <member name="M:TC.Settings.StringListSettings.LoadCore(System.Xml.XPath.XPathNavigator)">
+            <summary>Loads the settings from the specified <see cref="T:XPathNavigator"/>.</summary>
+            <param name="xml">The <see cref="T:XPathNavigator"/> to load the settings from.</param>
+        </member>
+        <member name="M:TC.Settings.StringListSettings.SaveCore(System.Xml.XmlWriter)">
+            <summary>Saves the settings to the specified <see cref="T:XmlWriter"/>.</summary>
+            <param name="writer">The <see cref="T:XmlWriter"/> to save the settings to.</param>
+        </member>
+        <member name="M:TC.Settings.StringListSettings.AddUniqueItem(System.String,System.Boolean)">
+            <summary>Adds a unique item.</summary>
+            <param name="itemToAdd">The item to add.</param>
+            <param name="ignoreCase">if set to <c>true</c>, the case of the string is ignored.</param>
+        </member>
+        <member name="T:TC.StringUtilities">
+            <summary>Provides utilities that deal with strings.</summary>
+        </member>
+        <member name="M:TC.StringUtilities.Join(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>Concatenates the elements of the specified collection, yielding a single concatenated string.</summary>
+            <param name="collection">The collection of elements to join.</param>
+            <returns>The single concatenated string.</returns>
+        </member>
+        <member name="M:TC.StringUtilities.Join(System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>Concatenates the specified separator between each element of the specified collection of strings,
+            yielding a single concatenated string.</summary>
+            <param name="collection">The collection of elements to join.</param>
+            <param name="separator">The separator to concatenate between each element.</param>
+            <returns>The single concatenated string.</returns>
+        </member>
+        <member name="M:TC.StringUtilities.Join(System.Collections.Generic.IEnumerable{System.String},System.String,System.String,System.String)">
+            <summary>Concatenates the specified separator between each element of the specified collection of strings,
+            with an optional prefix and suffix, yielding a single concatenated string.</summary>
+            <param name="collection">The collection of elements to join.</param>
+            <param name="prefix">The optional prefix to concatenate before the first element.</param>
+            <param name="separator">The separator to concatenate between each element.</param>
+            <param name="suffix">The optional suffix to concatenate after the last element.</param>
+            <returns>The single concatenated string.</returns>
+        </member>
+        <member name="M:TC.StringUtilities.LazySplit(System.String,System.String)">
+            <summary>Splits the specified value into substrings that are delimited by the specified separator.</summary>
+            <param name="value">The value to split.</param>
+            <param name="separator">The separator that delimits the substrings.</param>
+            <returns>The collection of substrings.</returns>
+        </member>
+        <member name="M:TC.StringUtilities.LazySplit(System.String,System.Char)">
+            <summary>Splits the specified value into substrings that are delimited by the specified separator.</summary>
+            <param name="value">The value to split.</param>
+            <param name="separator">The separator that delimits the substrings.</param>
+            <returns>The collection of substrings.</returns>
+        </member>
+        <member name="M:TC.StringUtilities.LazySplit(System.String,System.Char[])">
+            <summary>Splits the specified value into substrings that are delimited by the specified separators.</summary>
+            <param name="value">The value to split.</param>
+            <param name="separators">The separators that delimits the substrings.</param>
+            <returns>The collection of substrings.</returns>
+        </member>
+        <member name="M:TC.StringUtilities.FormatInvariant(System.String,System.Object[])">
+            <summary>Replaces the format item in <paramref name="format"/> with the text equivalent of
+            the value of a corresponding object in <paramref name="args"/>.</summary>
+            <param name="format">The composite format string.</param>
+            <param name="args">The objects to format.</param>
+            <returns>A copy of <paramref name="format"/> with the format item replaced by the string equivalent of
+            a corresponding object in <paramref name="args"/>.</returns>
+        </member>
+        <member name="M:TC.StringUtilities.SkipEmpty(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>Returns all the items of the specified collection, skipping nulls and empty strings.</summary>
+            <param name="collection">The collection of strings to enumerate.</param>
+            <returns>The collection of all the non-empty elements of the specified collection.</returns>
+        </member>
+        <member name="M:TC.StringUtilities.Trim(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>Returns all the items of the specified collection, trimming the leading and 
+            trailing white-space from each element.</summary>
+            <param name="collection">The collection of strings to enumerate.</param>
+            <returns>The collection of all the trimmed elements.</returns>
+        </member>
+        <member name="M:TC.StringUtilities.StartsWith(System.String,System.Char)">
+            <summary>Determines whether the first character of the specified string is the specified character.</summary>
+            <param name="value">The string to check.</param>
+            <param name="firstCharacter">The character to check with.</param>
+            <returns>If the specified string starts with the specified character, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.StringUtilities.EndsWith(System.String,System.Char)">
+            <summary>Determines whether the last character of the specified string is the specified character.</summary>
+            <param name="value">The string to check.</param>
+            <param name="lastCharacter">The character to check with.</param>
+            <returns>If the specified string ends with the specified character, true; otherwise, false.</returns>
+        </member>
+        <member name="M:TC.StringUtilities.Contains(System.String,System.String,System.StringComparison)">
+            <summary>Determines whether the specified value contains the specified substring.</summary>
+            <param name="value">The value to check.</param>
+            <param name="substring">The substring to find.</param>
+            <param name="comparisonType">The type of comparison to perform.</param>
+            <returns>If the specified value contains the specified substring, <c>true</c>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:TC.StringUtilities.IsNullOrEmpty(System.String)">
+            <summary>Determines whether the specified value is null or an empty string.</summary>
+            <param name="value">The value to check.</param>
+            <returns>If the specified value is null or an empty string, <c>true</c>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:TC.StringUtilities.IsNotNullOrEmpty(System.String)">
+            <summary>Determines whether the specified value is not null or an empty string.</summary>
+            <param name="value">The value to check.</param>
+            <returns>If the specified value is not null or an empty string, <c>true</c>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:TC.StringUtilities.AppendIfNotEmpty(System.Text.StringBuilder,System.String)">
+            <summary>Appends a copy of the specified string value to the specified <see cref="T:StringBuilder"/>, if it's not empty.</summary>
+            <param name="output">The <see cref="T:StringBuilder"/> to append to.</param>
+            <param name="value">The string value to append.</param>
+            <returns>The specified <see cref="T:StringBuilder"/>.</returns>
+        </member>
+        <member name="T:TC.SystemUtilities">
+            <summary>Provides system utilities.</summary>
+        </member>
+        <member name="M:TC.SystemUtilities.IsCritical(System.Exception)">
+            <summary>Determines whether the specified exception is a critical exception.</summary>
+            <param name="exception">The exception to check.</param>
+            <returns><c>true</c> if the specified exception is critical; otherwise, <c>false</c>.</returns>
+            <remarks>This function is used to determine whether to re-throw an exception 
+            in a generic try { } catch(Exception) { } construct.</remarks>
+        </member>
+        <member name="F:TC.SystemUtilities.DesignMode">
+            <summary>Determines whether the application is currently in design-mode.</summary>
+            <remarks>This is a hack that only works in Visual Studio.
+            See http://www.dotnetjunkies.com/WebLog/mjordan/archive/2003/12/01/4117.aspx</remarks>
+        </member>
+        <member name="F:TC.SystemUtilities.WindowsXPVersion">
+            <summary>Gets the Windows XP version number.</summary>
+        </member>
+        <member name="F:TC.SystemUtilities.WindowsVistaVersion">
+            <summary>Gets the Windows Vista version number.</summary>
+        </member>
+        <member name="F:TC.SystemUtilities.Windows7Version">
+            <summary>Gets the Windows 7 version number.</summary>
+        </member>
+        <member name="F:TC.SystemUtilities.IsRunningOnWindows">
+            <summary>Indicates whether the current OS is Windows NT-based.</summary>
+        </member>
+        <member name="M:TC.SystemUtilities.IsOSVersionAtLeast(System.Version)">
+            <summary>Determines whether the current OS version is at least the specified version.</summary>
+            <param name="version">The version to compare with.</param>
+            <returns><c>true</c> if the current OS version is at least the specified version; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="F:TC.SystemUtilities.IsWindowsXPOrLater">
+            <summary>Indicates whether the current OS is Windows XP or later.</summary>
+        </member>
+        <member name="F:TC.SystemUtilities.IsWindowsVistaOrLater">
+            <summary>Indicates whether the current OS is Windows Vista or later.</summary>
+        </member>
+        <member name="F:TC.SystemUtilities.IsWindows7OrLater">
+            <summary>Indicates whether the current OS is Windows 7 or later.</summary>
+        </member>
+    </members>
+</doc>

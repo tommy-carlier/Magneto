@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TC.Magneto.Parsing.Expression" Collapsed="true">
+    <Position X="4.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parsing\Expression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.ParserNode" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parsing\ParserNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.BinaryExpression" Collapsed="true">
+    <Position X="7.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAGAAAAA=</HashCode>
+      <FileName>Parsing\BinaryExpression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.Concatenation" Collapsed="true">
+    <Position X="6" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parsing\Concatenation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.FunctionCall" Collapsed="true">
+    <Position X="9.5" Y="2.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAIAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parsing\FunctionCall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.Literal&lt;T&gt;" Collapsed="true">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAFAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Parsing\Literal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.UnaryExpression" Collapsed="true">
+    <Position X="2.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parsing\UnaryExpression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.VariableExpression" Collapsed="true">
+    <Position X="4" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parsing\VariableExpression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.Negation" Collapsed="true">
+    <Position X="1.5" Y="3.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parsing\Negation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.NotExpression" Collapsed="true">
+    <Position X="3" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parsing\NotExpression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.BooleanBinaryExpression" Collapsed="true">
+    <Position X="5.75" Y="3.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parsing\BooleanBinaryExpression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.Comparison" Collapsed="true">
+    <Position X="7.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAABAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Parsing\Comparison.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.NumericBinaryExpression" Collapsed="true">
+    <Position X="9.5" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parsing\NumericBinaryExpression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.AndExpression" Collapsed="true">
+    <Position X="2.5" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parsing\AndExpression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.OrExpression" Collapsed="true">
+    <Position X="4.5" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parsing\OrExpression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.XorExpression" Collapsed="true">
+    <Position X="6.5" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parsing\XorExpression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.Addition" Collapsed="true">
+    <Position X="8.5" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parsing\Addition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.Division" Collapsed="true">
+    <Position X="10.75" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parsing\Division.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.ModuloExpression" Collapsed="true">
+    <Position X="10.75" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parsing\ModuloExpression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.Multiplication" Collapsed="true">
+    <Position X="10.75" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parsing\Multiplication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.PowerExpression" Collapsed="true">
+    <Position X="8.5" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parsing\PowerExpression.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.Subtraction" Collapsed="true">
+    <Position X="8.5" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parsing\Subtraction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TC.Magneto.Parsing.VariableReference" Collapsed="true">
+    <Position X="11" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Parsing\VariableReference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
