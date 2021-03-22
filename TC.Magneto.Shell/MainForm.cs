@@ -1,27 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 using TC.WinForms.Forms;
 using TC.WinForms.Settings;
-using System.Threading;
 using System.Diagnostics;
 using System.IO;
-using System.Reflection;
-using System.Reflection.Emit;
-using TC.Magneto.Modules;
-using TC.WinForms.Dialogs;
 using TC.WinForms;
 
 using SWF = System.Windows.Forms;
-using System.Globalization;
 
 namespace TC.Magneto.Shell
 {
-	public partial class MainForm : TDocumentForm
+    public partial class MainForm : TDocumentForm
 	{
 		/// <summary>Initializes a new instance of the <see cref="MainForm"/> class.</summary>
 		public MainForm()
@@ -87,147 +75,27 @@ namespace TC.Magneto.Shell
 			new MainForm().Show();
 		}
 
-		Process runningProcess;
-		static readonly object lockTempDirectory = new object();
-		static readonly MethodInfo
-			exceptionMessageGetter = typeof(Exception).GetProperty("Message").GetGetMethod(),
-			foregroundColorSetter = typeof(Console).GetProperty("ForegroundColor").GetSetMethod(),
-			consoleWriteLineMethod = typeof(Console).GetMethod("WriteLine", new Type[] { typeof(string) }),
-			consoleReadLineMethod = typeof(Console).GetMethod("ReadLine", Type.EmptyTypes);
-
 		private void Run(object sender, EventArgs e)
 		{
-			SetRunState(true);
+			MagnetoRunner.Run(
+				sourceCode: CodeEditor.Text,
+				runStateCallback: running => Dispatcher.InvokeAsync(this, SetRunState, running),
+				exceptionHandler: HandleRunException);
+		}
 
-			string executableFolderPath = Path.GetDirectoryName(SWF.Application.ExecutablePath);
-			string tempFolderPath = Path.Combine(executableFolderPath, "Temp");
-			if (!Directory.Exists(tempFolderPath)) Directory.CreateDirectory(tempFolderPath);
-			string tempSubFolderPath, tempFileName;
-			lock (lockTempDirectory)
-			{
-				do { tempSubFolderPath = Path.Combine(tempFolderPath, DateTime.Now.ToString("yyyyMMddHHmmssfff", CultureInfo.InvariantCulture)); }
-				while (Directory.Exists(tempSubFolderPath));
-				Directory.CreateDirectory(tempSubFolderPath);
+		private void HandleRunException(Exception ex)
+        {
+			ShowError(ex);
 
-				File.Copy(Path.Combine(executableFolderPath, "TC.Magneto.dll"), Path.Combine(tempSubFolderPath, "TC.Magneto.dll"), true);
-				File.Copy(Path.Combine(executableFolderPath, "TC.Core.dll"), Path.Combine(tempSubFolderPath, "TC.Core.dll"), true);
-				string moduleFolderPath = Path.Combine(executableFolderPath, "Modules");
-				if (Directory.Exists(moduleFolderPath))
-					foreach (string file in Directory.GetFiles(moduleFolderPath))
-						File.Copy(file, Path.Combine(tempSubFolderPath, Path.GetFileName(file)), true);
-				tempFileName = Path.Combine(tempSubFolderPath, "Temp.exe");
-			}
-
-			try
-			{
-				using (StringReader reader = new StringReader(CodeEditor.Text))
-				{
-					AssemblyName assemblyName = new AssemblyName("Temp");
-					AssemblyBuilder assemblyBuilder = AppDomain.CurrentDomain.DefineDynamicAssembly(assemblyName, AssemblyBuilderAccess.Save, Path.GetDirectoryName(tempFileName));
-					ModuleBuilder moduleBuilder = assemblyBuilder.DefineDynamicModule(assemblyName.Name, Path.GetFileName(tempFileName));
-					TypeBuilder typeBuilder = moduleBuilder.DefineType("Application", TypeAttributes.NotPublic | TypeAttributes.Sealed);
-					MethodBuilder methodBuilder = typeBuilder.DefineMethod("Main", MethodAttributes.Private | MethodAttributes.Static, typeof(void), Type.EmptyTypes);
-					ILGenerator generator = methodBuilder.GetILGenerator();
-
-					generator.BeginExceptionBlock();
-					MagnetoCompiler.Compile(MagnetoApplication.Current.ModuleManager, reader, generator);
-					generator.BeginCatchBlock(typeof(Exception));
-					generator.Emit(OpCodes.Callvirt, exceptionMessageGetter);
-					generator.Emit(OpCodes.Ldc_I4, (int)ConsoleColor.Red);
-					generator.Emit(OpCodes.Call, foregroundColorSetter);
-					generator.Emit(OpCodes.Ldstr, "");
-					generator.Emit(OpCodes.Call, consoleWriteLineMethod);
-					generator.Emit(OpCodes.Call, consoleWriteLineMethod);
-					generator.BeginFinallyBlock();
-					generator.Emit(OpCodes.Ldc_I4, (int)ConsoleColor.Cyan);
-					generator.Emit(OpCodes.Call, foregroundColorSetter);
-					generator.Emit(OpCodes.Ldstr, "");
-					generator.Emit(OpCodes.Call, consoleWriteLineMethod);
-					generator.Emit(OpCodes.Ldstr, "Finished: press <Enter> to exit.");
-					generator.Emit(OpCodes.Call, consoleWriteLineMethod);
-					generator.Emit(OpCodes.Call, consoleReadLineMethod);
-					generator.EndExceptionBlock();
-					generator.Emit(OpCodes.Ret);
-
-					//	Generated code:
-					//		try
-					//		{
-					//			// compiled application code
-					//		}
-					//		catch(Exception lException)
-					//		{
-					//			Console.ForegroundColor = ConsoleColor.Red;
-					//			Console.WriteLine("");
-					//			Console.WriteLine(lException.Message);
-					//		}
-					//		finally
-					//		{
-					//			Console.ForegroundColor = ConsoleColor.Cyan;
-					//			Console.WriteLine("");
-					//			Console.WriteLine("Finished: press <Enter> to exit.");
-					//			Console.ReadLine();
-					//		}
-
-					typeBuilder.CreateType();
-					assemblyBuilder.SetEntryPoint(methodBuilder, PEFileKinds.ConsoleApplication);
-					assemblyBuilder.Save(Path.GetFileName(tempFileName));
-				}
-
-				runningProcess = new Process();
-				runningProcess.EnableRaisingEvents = true;
-				runningProcess.Exited += HandlerRunningProcessExited;
-				runningProcess.StartInfo = new ProcessStartInfo(tempFileName);
-				runningProcess.StartInfo.UseShellExecute = false;
-				runningProcess.Start();
-			}
-			catch (Exception exception)
-			{
-				if (SystemUtilities.IsCritical(exception)) throw;
-				ShowError(exception);
-
-                if (exception is MagnetoException magnetoException && magnetoException.Position.CharIndex > 0)
-                    CodeEditor.Select(
-                        CodeEditor.GetFirstCharIndexFromLine(magnetoException.Position.LineNumber - 1)
-                            + magnetoException.Position.ColumnNumber - 1, 0);
-
-                try
-				{
-					Directory.Delete(tempSubFolderPath, true);
-				}
-				catch (Exception deleteException)
-				{
-					if (SystemUtilities.IsCritical(deleteException))
-						throw;
-				}
-
-				SetRunState(false);
-			}
+			if (ex is MagnetoException mEx && mEx.Position.CharIndex > 0)
+				CodeEditor.Select(
+					CodeEditor.GetFirstCharIndexFromLine(mEx.Position.LineNumber - 1)
+						+ mEx.Position.ColumnNumber - 1, 0);
 		}
 
 		private void Stop(object sender, EventArgs e)
 		{
-			if (runningProcess != null)
-				runningProcess.Kill();
-		}
-
-		void HandlerRunningProcessExited(object sender, EventArgs e)
-		{
-			string tempSubFolderPath = Path.GetDirectoryName(runningProcess.StartInfo.FileName);
-			runningProcess.Exited -= HandlerRunningProcessExited;
-			runningProcess.Dispose();
-			runningProcess = null;
-
-			try
-			{
-				Directory.Delete(tempSubFolderPath, true);
-			}
-			catch (Exception deleteException)
-			{
-				if (SystemUtilities.IsCritical(deleteException))
-					throw;
-			}
-
-			Dispatcher.InvokeAsync(this, SetRunState, false);
+			MagnetoRunner.StopRunningProcess();
 		}
 
 		void SetRunState(bool running)
@@ -253,8 +121,7 @@ namespace TC.Magneto.Shell
 			}
 			catch (Exception exception)
 			{
-				if (SystemUtilities.IsCritical(exception))
-					throw;
+				if (SystemUtilities.IsCritical(exception)) throw;
 				else ShowError(exception);
 			}
 		}

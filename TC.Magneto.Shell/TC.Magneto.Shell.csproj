@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="ApplicationSettings.cs" />
     <Compile Include="MagnetoApplication.cs" />
+    <Compile Include="MagnetoRunner.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

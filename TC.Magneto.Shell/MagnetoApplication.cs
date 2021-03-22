@@ -22,6 +22,9 @@ namespace TC.Magneto.Shell
 		/// <summary>Gets the <see cref="T:ModuleManager"/>.</summary>
 		public readonly ModuleManager ModuleManager = new ModuleManager();
 
+		/// <summary>Gets the full path of the temporary folder that Magneto uses.</summary>
+		public readonly string TempFolderPath = Path.Combine(Path.GetTempPath(), "Magneto");
+
 		/// <summary>Initializes a new instance of the <see cref="MagnetoApplication"/> class.</summary>
 		public MagnetoApplication()
 		{
@@ -42,7 +45,7 @@ namespace TC.Magneto.Shell
 			string moduleFolderPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "Modules");
 			if (Directory.Exists(moduleFolderPath))
 			{
-				foreach (string moduleFile in Directory.GetFiles(moduleFolderPath, "*.MagnetoModule.dll"))
+				foreach (string moduleFile in Directory.EnumerateFiles(moduleFolderPath, "*.MagnetoModule.dll"))
 					try
 					{
 						ModuleManager.Register(Assembly.LoadFile(moduleFile));
@@ -50,18 +53,20 @@ namespace TC.Magneto.Shell
 					catch (Exception exception)
 					{
 						if (!SystemUtilities.IsCritical(exception))
+						{
 							TMessageDialog.ShowError(null
 								, "Could not load module " + Path.GetFileName(moduleFile) + ":"
 								+ Environment.NewLine + exception.Message);
+						}
+						else throw;
 					}
 			}
 		}
 
 		void ClearTempFolder()
 		{
-			string tempFolderPath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "Temp");
-			if (Directory.Exists(tempFolderPath))
-				foreach(string tempSubFolderPath in Directory.GetDirectories(tempFolderPath))
+			if (Directory.Exists(TempFolderPath))
+				foreach(string tempSubFolderPath in Directory.EnumerateDirectories(TempFolderPath))
 					try { Directory.Delete(tempSubFolderPath, true); }
 					catch (Exception exception) { if (SystemUtilities.IsCritical(exception)) throw; }
 		}
