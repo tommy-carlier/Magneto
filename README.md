@@ -14,7 +14,7 @@ The solution has 3 projects:
 
 `TC.Magneto` does not depend on any other library, except what's provided by .NET 4.6.
 
-TC.Magneto.Shell depends on `TC.Core` and `TC.WinForms`. These libraries are included as DLLs. The source code of these library can be found at https://github.com/tommy-carlier/tc-libs
+`TC.Magneto.Shell` depends on `TC.Core` and `TC.WinForms`. These libraries are included as DLLs. The source code of these library can be found at https://github.com/tommy-carlier/tc-libs
 
 ## Installation
 
