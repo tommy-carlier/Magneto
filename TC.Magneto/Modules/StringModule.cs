@@ -6,7 +6,7 @@ namespace TC.Magneto.Modules
 {
 	/// <summary>Contains string functions and constants.</summary>
 	[Constant("tab", "\t"), Constant("newLine", "\r\n"), Constant("quote", "\"")]
-	public class StringModule : MagnetoModule
+	public sealed class StringModule : MagnetoModule
 	{
 		/// <summary>Gets the length of the specified string.</summary>
 		/// <param name="s">The string to get the length of.</param>

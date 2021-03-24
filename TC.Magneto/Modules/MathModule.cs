@@ -5,7 +5,7 @@ using System.Text;
 namespace TC.Magneto.Modules
 {
 	/// <summary>Contains mathematical functions.</summary>
-	public class MathModule : MagnetoModule
+	public sealed class MathModule : MagnetoModule
 	{
 		/// <summary>Gets the absolute value of the specified value.</summary>
 		/// <param name="value">The value to get the absolute value of.</param>

@@ -140,9 +140,7 @@ namespace TC.Magneto.Parsing
 
 		Statement ParseStatement()
 		{
-			if (AtEndOfSource) return null;
-
-			while (true)
+			while (!AtEndOfSource)
 			{
 				switch (currentToken.TokenType)
 				{
@@ -152,8 +150,9 @@ namespace TC.Magneto.Parsing
 				}
 
 				ThrowException("Expected a statement here.", currentToken.StartPosition);
-				return null;
 			}
+
+			return null;
 		}
 
 		void AddStatement(ICollection<Statement> collection)
@@ -178,16 +177,12 @@ namespace TC.Magneto.Parsing
             //		[pos neg north south cw ccw open closed] := [true false]
 
             if (currentToken is PredefinedLiteralToken token)
-                switch (token.Value)
+                switch (token.DataType)
                 {
-                    case PredefinedLiteral.Positive:
-                    case PredefinedLiteral.Negative:
-                    case PredefinedLiteral.North:
-                    case PredefinedLiteral.South:
-                    case PredefinedLiteral.Clockwise:
-                    case PredefinedLiteral.Counterclockwise:
-                    case PredefinedLiteral.Open:
-                    case PredefinedLiteral.Closed:
+					case DataType.Polarity:
+					case DataType.Magnetic:
+					case DataType.Curl:
+                    case DataType.Circuit:
                         ParseBooleanDeclaration(token.Value);
                         return;
                 }

@@ -6,7 +6,7 @@ using System.Globalization;
 namespace TC.Magneto.Modules
 {
 	/// <summary>Contains conversion functions.</summary>
-	public class ConversionModule : MagnetoModule
+	public sealed class ConversionModule : MagnetoModule
 	{
 		static readonly StringComparer stringComparer = StringComparer.OrdinalIgnoreCase;
 

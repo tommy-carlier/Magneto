@@ -6,7 +6,7 @@ using System.IO;
 namespace TC.Magneto.Modules
 {
 	/// <summary>Contains functions for input and output.</summary>
-	public class IOModule : MagnetoModule
+	public sealed class IOModule : MagnetoModule
 	{
 		/// <summary>Is called when the module is stopped.</summary>
 		protected override void StopCore()
