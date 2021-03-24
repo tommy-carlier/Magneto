@@ -24,8 +24,9 @@ To run the IDE, copy the following files into a directory where the user has per
 - TC.Magneto.dll
 - TC.Core.dll
 - TC.WinForms.dll
-- langguide.html (found in TC.Magneto/Documentation)
-- style.css (found in TC.Magneto/Documentation)
+- Documentation\ (sub-folder)
+  - langguide.html
+  - style.css
 
 Custom Magneto modules are .NET DLLs that provide extra functions and constants to the Magneto language. They have to follow these requirements:
 - The file name of the DLL has to end with ".MagnetoModule.dll" (example: `MyModule.MagnetoModule.dll`)

@@ -108,7 +108,7 @@ namespace TC.Magneto.Shell
 		private void DisplayLanguageGuide(object sender, EventArgs e)
 		{
 			string executableFolderPath = Path.GetDirectoryName(SWF.Application.ExecutablePath);
-			string languageGuidePath = Path.Combine(executableFolderPath, "langguide.html");
+			string languageGuidePath = Path.Combine(executableFolderPath, "Documentation", "langguide.html");
 
 			try
 			{
@@ -117,7 +117,7 @@ namespace TC.Magneto.Shell
 				else ShowError(
 					"The language guide could not be found."
 					+ Environment.NewLine + Environment.NewLine
-					+ "(langguide.html should be placed in the same folder as Magneto.exe)");
+					+ "(langguide.html should be placed in the Documentation sub-folder of the folder where Magneto.exe is placed)");
 			}
 			catch (Exception exception)
 			{
